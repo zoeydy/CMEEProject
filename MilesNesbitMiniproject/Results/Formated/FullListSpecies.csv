@@ -1,0 +1,106 @@
+,SpeciesNumber,Species
+1,1,Chryseobacterium balustinum
+2,2,Enterobacter sp 
+3,3,Pantoea agglomerans 
+4,4,Pantoea agglomerans 
+5,5,Bacillus pumilus
+6,6,Clavibacter michiganensis
+7,7,Pseudomonas fluorescens 
+8,8,Pseudomonas fluorescens 
+9,9,Acinetobacter clacoaceticus 
+10,10,Acinetobacter clacoaceticus 
+11,11,Stenotrophomonas maltophilia 
+12,12,Stenotrophomonas maltophilia 
+13,13,Klebsiella pneumonia
+14,14,Dickeya zeae
+15,15,Pectobacterium carotovorum
+16,16,Pantoea agglomerans 
+17,17,Dickeya zeae 
+18,18,Acinetobacter clacoaceticus 
+19,19,Stenotrophomonas maltophilia 
+20,20,Klebsiella pneumonia 
+21,21,Bacillus pumilus 
+22,22,Clavibacter michiganensis 
+23,23,Tetraselmis tetrahele
+24,24,Soil Microbial Community
+25,25,Staphylococcus spp 
+26,26,Pseudomonas spp 
+27,27,Aerobic Psychotropic 
+28,28,Aerobic Mesophilic 
+29,29,Spoilage
+30,30,Escherichia coli
+31,31,Salmonella Typhimurium
+32,32,Total Viable Cells
+33,33,Pseudomonas spp 
+34,34,lactic acid bacteria
+35,35,Curtobacterium psychrophilum
+36,36,Cytophaga antarctica
+37,37,Cytophaga xantha
+38,38,Spirillum Pleomorphic Um
+39,39,Micrococcus Cryophilus
+40,40,Pseudomonas flourescens
+41,41,totalviablecounts 
+42,42,pseudomonas spp
+43,43,yeastsandmoulds 
+44,44,enterobacteriaceae 
+45,45,lacticacidbacteria 
+46,46,totalviablecounts2
+47,47,pseudomonas sp 
+48,48,yeastsandmoulds 
+49,49,enterobacteriaceae 
+50,50,lacticacidbacteria 
+51,51,totalviablecounts
+52,52,pseudomonas sp
+53,53,yeastsandmoulds
+54,54,enterobacteriaceae
+55,55,totalviablecounts 
+56,56,pseudomonas sp 
+57,57,yeastsandmoulds 
+58,58,enterobacteriaceae 
+59,59,lacticacidbacteria 
+60,60,Aquatic Background Bacteria
+61,61,platecounttotal
+62,62,pseudonomads
+63,63,brochothrix thermosphacta
+64,64,aerobic bacteria
+65,65,Serratia marcescens
+66,66,Arthrobacter sp  
+67,67,Arthrobacter sp  
+68,68,Arthrobacter sp  
+69,69,Arthrobacter aurescens
+70,70,Arthrobacter citreus
+71,71,Arthrobacter globiformis
+72,72,Arthrobacter simplex
+73,73,anoxygenic phototrophic bacteria
+74,74,Lactobacillus plantarum
+75,75,Weissella viridescens
+76,76,Lactobacillus sakei
+77,77,scillatoria agardhii
+78,78,scillatoria agardhii
+79,79,Pseudomonas sp 
+80,80,P  flourescens
+81,81,Lactobaciulus plantarum
+82,82,Flavobacterium
+83,83,Pseudomonas
+84,84,Rahnella
+85,85,Raoultella
+86,86,Sphingobacterium
+87,87,Rhizobium
+88,88,Arthrobacter
+89,89,Citrobacter
+90,90,Pseudomonas
+91,91,Curtobacterium
+92,92,Microbacterium
+93,93,IsoMix
+94,94,Rhizobium
+95,95,Roseomonas
+96,96,Novosphingobium
+97,97,Novosphingobium
+98,98,Raoultella
+99,99,Serratia
+100,100,Chryseobacterium
+101,101,Chryseobacterium
+102,102,Paenibacillus
+103,103,Paenibacillus
+104,104,Bacillus
+105,105,no inoculum

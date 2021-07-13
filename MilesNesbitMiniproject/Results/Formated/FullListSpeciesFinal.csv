@@ -1,0 +1,106 @@
+SpeciesNumber,Species,spp_species,spp_genus,spp_family,spp_order,spp_class
+1,Flavobacterium,Flavobacterium xanthum,Flavobacterium,Flavobacteriaceae,Flavobacteriales,Flavobacteriia
+2,Pseudomonas(1),Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+3,Rahnella,Rahnella aquatilis,Rahnella,Enterobacteriaceae,Enterobacteriales,Gammaproteobacteria
+4,Raoultella(1),Raoultella sp.,Raoultella,Enterobacteriaceae,Enterobacteriales,Gammaproteobacteria
+5,Sphingobacterium,Sphingobacterium sp.,Sphingobacterium,Sphingobacteriaceae,Sphingobacteriales,Sphingobacteriia
+6,Rhizobium(1),Rhizobium sp.,Rhizobium,Rhizobiaceae,Rhizobiales,Alphaproteobacteria
+7,Arthrobacter,Arthrobacter sp.,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+8,Citrobacter,Citrobacter sp.,Citrobacter,Enterobacteriaceae,Enterobacteriales,Gammaproteobacteria
+9,Pseudomonas(2),Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+10,Curtobacterium,Curtobacterium sp.,Curtobacterium,Microbacteriaceae,Actinomycetales,Actinobacteria
+11,Microbacterium,Microbacterium sp.,Microbacterium,Microbacteriaceae,Actinomycetales,Actinobacteria
+12,IsoMix,NA Iso,NA Iso,NA Iso,NA Iso,NA Iso
+13,Rhizobium(2),Rhizobium sp.,Rhizobium,Rhizobiaceae,Rhizobiales,Alphaproteobacteria
+14,Roseomonas,Roseomonas sp.,Roseomonas,Acetobacteraceae,Rhodospirillales,Alphaproteobacteria
+15,Novosphingobium(1),Novosphingobium sp.,Novosphingobium,Sphingomonadaceae,Sphingomonadales,Alphaproteobacteria
+16,Novosphingobium(2),Novosphingobium sp.,Novosphingobium,Sphingomonadaceae,Sphingomonadales,Alphaproteobacteria
+17,Raoultella(2),Raoultella sp.,Raoultella,Enterobacteriaceae,Enterobacteriales,Gammaproteobacteria
+18,Serratia,Serratia marcescens,Serratia,Yersiniaceae,Enterobacterales,Gammaproteobacteria
+19,Chryseobacterium(1),Chryseobacterium sp.,Chryseobacterium,Flavobacteriaceae,Flavobacteriales,Flavobacteriia
+20,Chryseobacterium(2),Chryseobacterium sp.,Chryseobacterium,Flavobacteriaceae,Flavobacteriales,Flavobacteriia
+21,Paenibacillus(1),Paenibacillus sp.,Paenibacillus,Paenibacillaceae,Bacillales,Bacilli
+22,Paenibacillus(2),Paenibacillus sp.,Paenibacillus,Paenibacillaceae,Bacillales,Bacilli
+23,Bacillus,Bacillus pumilus,Bacillus,Bacillaceae,Bacillales,Bacilli
+24,no inoculum,NA No Ino,NA No Ino,NA No Ino,NA No Ino,NA No Ino
+25,pseudonomads,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+26,Pseudomonas sp.,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+27,plate_count_total,NA PCT,NA PCT,NA PCT,NA PCT,NA PCT
+28,brochothrix_thermosphacta,Brochothrix thermosphacta,Brochothrix,Listeriaceae,Bacillales,Bacilli
+29,lactic_acid_bacteria,NA LA,NA LA,NA LA,Lactobacillales,Bacilli
+30,enterobacteriaceae,Enterobacter sp.,Enterobacter,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+31,Spoilage,NA SP,NA SP,NA SP,NA SP,NA SP
+32,Salmonella Typhimurium,Salmonella enterica,Salmonella,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+33,Escherichia coli,Escherichia coli,Escherichia,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+34,Aquatic Background Bacteria,NA Aqua,NA Aqua,NA Aqua,NA Aqua,NA Aqua
+35,Staphylococcus spp.,Staphylococcus sp.,Staphylococcus,Staphylococcaceae,Bacillales,Bacilli
+36,Aerobic Psychotropic.,NA Psy,NA Psy,NA Psy,NA Psy,NA Psy
+37,Pseudomonas spp.,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+38,Aerobic Mesophilic.,NA Meso,NA Meso,NA Meso,NA Meso,NA Meso
+39,total_viable_counts_15._O2,NA TVC,NA TVC,NA TVC,NA TVC,NA TVC
+40,pseudomonas_sp_15._O2,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+41,yeasts_and_moulds_15._O2,NA yeast,NA yeast,NA yeast,NA yeast,NA yeast
+42,enterobacteriaceae_15._O2,Enterobacter sp.,Enterobacter,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+43,lactic_acid_bacteria_15._O2,NA LA,NA LA,NA LA,Lactobacillales,Bacilli
+44,total_viable_counts_20._O2,NA TVC,NA TVC,NA TVC,NA TVC,NA TVC
+45,pseudomonas_sp_20._O2,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+46,yeasts_and_moulds_20._O2,NA yeast,NA yeast,NA yeast,NA yeast,NA yeast
+47,enterobacteriaceae_20._O2,Enterobacter sp.,Enterobacter,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+48,lactic_acid_bacteria_20._O2,NA LA,NA LA,NA LA,Lactobacillales,Bacilli
+49,total_viable_counts,NA TVC,NA TVC,NA TVC,NA TVC,NA TVC
+50,pseudomonas_sp,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+51,yeasts_and_moulds,NA yeast,NA yeast,NA yeast,NA yeast,NA yeast
+52,total_viable_counts_5._O2,NA TVC,NA TVC,NA TVC,NA TVC,NA TVC
+53,pseudomonas_sp_5._O2,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+54,yeasts_and_moulds_5._O2,NA yeast,NA yeast,NA yeast,NA yeast,NA yeast
+55,enterobacteriaceae_5._O2,Enterobacter sp.,Enterobacter,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+56,lactic_acid_bacteria_5._O2,NA LA,NA LA,NA LA,Lactobacillales,Bacilli
+57,Tetraselmis tetrahele,Tetraselmis tetrahele,Tetraselmis,Chlorodendraceae,Chlorodendrales,Chlorodendrophyceae
+58,Total_Viable_Cells,NA TVC,NA TVC,NA TVC,NA TVC,NA TVC
+59,Pseudomonas_spp,Pseudomonas sp.,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+60,Soil Microbial Community,NA Soil,NA Soil,NA Soil,NA Soil,NA Soil
+61,Lactobaciulus plantarum,Lactobacillus plantarum,Lactobacillus,Lactobacillaceae,Lactobacillales,Bacilli
+62,Lactobacillus plantarum,Lactobacillus plantarum,Lactobacillus,Lactobacillaceae,Lactobacillales,Bacilli
+63,Weissella viridescens,Weissella viridescens,Weissella,Leuconostocaceae,Lactobacillales,Bacilli
+64,Lactobacillus sakei,Lactobacillus sakei,Lactobacillus,Lactobacillaceae,Lactobacillales,Bacilli
+65,Serratia marcescens,Serratia marcescens,Serratia,Yersiniaceae,Enterobacterales,Gammaproteobacteria
+66,Curtobacterium_psychrophilum,Cryobacterium psychrophilum,Cryobacterium,Microbacteriaceae,Micrococcales,Actinobacteria
+67,Cytophaga_antarctica,Cytophaga antarctica,Cytophaga,Bacteroidaceae,Bacteroidales,Bacteroidia
+68,Cytophaga_xantha,Cytophaga xantha,Cytophaga,Bacteroidaceae,Bacteroidales,Bacteroidia
+69,Spirillum_pleomorphum,Spirillum pleomorphum,Spirillum,Spirillaceae,Nitrosomonadales,Betaproteobacteria
+70,Micrococcus_cryophilus,Micrococcus cryophilus,Micrococcus,Micrococcaceae,Actinomycetales,Actinobacteria
+71,Pseudomonas_flourescens,Pseudomonas fluorescens,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+72,anoxygenic phototrophic bacteria,NA misc,NA misc,NA misc,NA misc,NA misc
+73,aerobic bacteria,NA aerobic,NA aerobic,NA aerobic,NA aerobic,NA aerobic
+74,Arthrobacter sp. 77,Arthrobacter sp.,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+75,Arthrobacter sp. 88,Arthrobacter sp.,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+76,Arthrobacter sp. 62,Arthrobacter sp.,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+77,Arthrobacter aurescens,Paenarthrobacter aurescens,Paenarthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+78,Arthrobacter citreus,Arthrobacter citreus,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+79,Arthrobacter globiformis,Arthrobacter globiformis,Arthrobacter,Micrococcaceae,Micrococcales,Actinobacteria
+80,Arthrobacter simplex,Pimelobacter simplex,Pimelobacter,Nocardioidaceae,Propionibacteriales,Actinobacteria
+81,P. flourescens,Pseudomonas fluorescens,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+82,Chryseobacterium.balustinum,Chryseobacterium balustinum,Chryseobacterium,Flavobacteriaceae,Flavobacteriales,Flavobacteriia
+83,Enterobacter.sp.,Enterobacter sp.,Enterobacter,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+84,Pantoea.agglomerans.1,Pantoea agglomerans,Pantoea,Erwiniaceae,Enterobacterales,Gammaproteobacteria
+85,Pantoea.agglomerans.2,Pantoea agglomerans,Pantoea,Erwiniaceae,Enterobacterales,Gammaproteobacteria
+86,Clavibacter.michiganensis,Clavibacter michiganensis,Clavibacter,Microbacteriaceae,Micrococcales,Actinobacteria
+87,Pseudomonas.fluorescens.1,Pseudomonas fluorescens,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+88,Pseudomonas.fluorescens.2,Pseudomonas fluorescens,Pseudomonas,Pseudomonadaceae,Pseudomonadales,Gammaproteobacteria
+89,Acinetobacter.clacoaceticus.1,Acinetobacter calcoaceticus,Acinetobacter,Moraxellaceae,Pseudomonadales,Gammaproteobacteria
+90,Acinetobacter.clacoaceticus.2,Acinetobacter calcoaceticus,Acinetobacter,Moraxellaceae,Pseudomonadales,Gammaproteobacteria
+91,Stenotrophomonas.maltophilia.1,Stenotrophomonas maltophilia,Stenotrophomonas,Xanthomonadaceae,Xanthomonadales,Gammaproteobacteria
+92,Stenotrophomonas.maltophilia.2,Stenotrophomonas maltophilia,Stenotrophomonas,Xanthomonadaceae,Xanthomonadales,Gammaproteobacteria
+93,Klebsiella.pneumonia,Klebsiella pneumoniae,Klebsiella,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+94,Dickeya.zeae,Dickeya zeae,Dickeya,Pectobacteriaceae,Enterobacterales,Gammaproteobacteria
+95,Pantoea.agglomerans..RDA.R.,Pantoea agglomerans,Pantoea,Erwiniaceae,Enterobacterales,Gammaproteobacteria
+96,Acinetobacter.clacoaceticus..RDA.R.,Acinetobacter calcoaceticus,Acinetobacter,Moraxellaceae,Pseudomonadales,Gammaproteobacteria
+97,Stenotrophomonas.maltophilia..RDA.R.,Stenotrophomonas maltophilia,Stenotrophomonas,Xanthomonadaceae,Xanthomonadales,Gammaproteobacteria
+98,Klebsiella.pneumonia..RDA.R.,Klebsiella pneumoniae,Klebsiella,Enterobacteriaceae,Enterobacterales,Gammaproteobacteria
+99,Clavibacter.michiganensis..RDA.R.,Clavibacter michiganensis,Clavibacter,Microbacteriaceae,Micrococcales,Actinobacteria
+100,Bacillus.pumilus,Bacillus pumilus,Bacillus,Bacillaceae,Bacillales,Bacilli
+101,Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2,Pectobacterium carotovorum,Pectobacterium,Pectobacteriaceae,Enterobacterales,Gammaproteobacteria
+102,Dickeya.zeae..RDA.R.,Dickeya zeae,Dickeya,Pectobacteriaceae,Enterobacterales,Gammaproteobacteria
+103,Bacillus.pumilus..RDA.R.,Bacillus pumilus,Bacillus,Bacillaceae,Bacillales,Bacilli
+104,Oscillatoria agardhii Strain 97,Oscillatoria agardhii,Oscillatoria,Oscillatoriaceae,Oscillatoriales,Cyanophyceae
+105,Oscillatoria agardhii StrainCYA 128,Oscillatoria agardhii,Oscillatoria,Oscillatoriaceae,Oscillatoriales,Cyanophyceae

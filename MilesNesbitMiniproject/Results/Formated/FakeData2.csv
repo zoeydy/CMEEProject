@@ -1,0 +1,61 @@
+﻿Fake_Data_X,Fake_Data_Y,Hypothesis,Style,r/K
+1,1,a,K not temperature dependent,a
+2,2,a,K not temperature dependent,a
+3,3,a,K not temperature dependent,a
+4,4,a,K not temperature dependent,a
+5,5,a,K not temperature dependent,a
+6,6,a,K not temperature dependent,a
+7,7,a,K not temperature dependent,a
+8,8,a,K not temperature dependent,a
+9,9,a,K not temperature dependent,a
+10,10,a,K not temperature dependent,a
+11,11,a,K not temperature dependent,a
+12,12,a,K not temperature dependent,a
+13,13,a,K not temperature dependent,a
+14,14,a,K not temperature dependent,a
+15,15,a,K not temperature dependent,a
+16,16,a,K not temperature dependent,a
+17,17,a,K not temperature dependent,a
+18,18,a,K not temperature dependent,a
+19,19,a,K not temperature dependent,a
+20,20,a,K not temperature dependent,a
+1,0.5,a,No Tradeoff,a
+2,1,a,No Tradeoff,a
+3,1.5,a,No Tradeoff,a
+4,2,a,No Tradeoff,a
+5,2.5,a,No Tradeoff,a
+6,3,a,No Tradeoff,a
+7,3.5,a,No Tradeoff,a
+8,4,a,No Tradeoff,a
+9,4.5,a,No Tradeoff,a
+10,5,a,No Tradeoff,a
+11,5.5,a,No Tradeoff,a
+12,6,a,No Tradeoff,a
+13,6.5,a,No Tradeoff,a
+14,7,a,No Tradeoff,a
+15,7.5,a,No Tradeoff,a
+16,8,a,No Tradeoff,a
+17,8.5,a,No Tradeoff,a
+18,9,a,No Tradeoff,a
+19,9.5,a,No Tradeoff,a
+20,10,a,No Tradeoff,a
+1,2,a,MTE Tradeoff,a
+2,4,a,MTE Tradeoff,a
+3,6,a,MTE Tradeoff,a
+4,8,a,MTE Tradeoff,a
+5,10,a,MTE Tradeoff,a
+6,12,a,MTE Tradeoff,a
+7,14,a,MTE Tradeoff,a
+8,16,a,MTE Tradeoff,a
+9,18,a,MTE Tradeoff,a
+10,20,a,MTE Tradeoff,a
+11,.,a,MTE Tradeoff,a
+12,.,a,MTE Tradeoff,a
+13,.,a,MTE Tradeoff,a
+14,.,a,MTE Tradeoff,a
+15,.,a,MTE Tradeoff,a
+16,.,a,MTE Tradeoff,a
+17,.,a,MTE Tradeoff,a
+18,.,a,MTE Tradeoff,a
+19,.,a,MTE Tradeoff,a
+20,.,a,MTE Tradeoff,a
