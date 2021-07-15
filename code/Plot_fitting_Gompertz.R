@@ -6,9 +6,9 @@ graphics.off()
 require(ggplot2)
 
 # 1. read the data, starting value and compare models
-StartGom <- read.csv("../result/gompertz_Starting_Value.csv")
+StartGom <- read.csv("../data/gompertz_Starting_Value.csv")
 
-PlotGom <- read.csv("../result/gompertz_plot_points.csv")
+PlotGom <- read.csv("../data/gompertz_plot_points.csv")
 
 Data <- read.csv('../data/pop.csv')
 Data <- Data[order(Data[,'ID'], Data[,'Time']),]
@@ -30,7 +30,7 @@ for (i in 1:285){
     plot_df <- rbind(plot_df, plot_gom)
   }
   
-  FileName <- paste0("../result/plot_result/plot_", i,".png")
+  FileName <- paste0("../results/FitPlotGomp/plot_", i,".png")
   png(file = FileName)
   title <- paste("Fitting Gompertz Model plot, ID:",id)
   p <- ggplot(data, aes(x=Time, y=logN)) +
@@ -38,7 +38,7 @@ for (i in 1:285){
     labs(x = "Time (h)", y = "Logarithm of the population size (logN)") +
     ggtitle(title) +
     # annotate(geom = 'text', x = Inf, y = -Inf, hjust = 0, vjust = -0.2) +
-    # , label = comp_lable
+    # ,label = comp_lable
     # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
     geom_line(data = plot_df ,aes(x = time, y = logN, color = model), size=1)
     # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))

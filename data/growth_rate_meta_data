@@ -1,0 +1,11 @@
+'Temp' - Temperature the measurement is taken at
+'Species' - Species/taxanomic id, not all at species level
+'Medium' - the medium used to get growth curve
+'Rep' - replicate number (not all curves have replicates)
+'Citation' - paper data is from
+'Time' - time of measurment
+'PopBio' - population/biomass value measured
+'Time_units' - units used for time
+'PopBio_unts' - units used for mass
+'n' - number of measurements for this growth curve
+'id'- unique id for each growth curve
