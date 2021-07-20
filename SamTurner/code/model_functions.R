@@ -68,3 +68,4 @@ draw_functions <- list("Logistic" = Logistic , "Gompertz" = Gompertz, "Baranyi" 
 fit_functions <- list("Logistic" = Logistic , "Gompertz" = Gompertz, "Baranyi" = Baranyi, "Buchanan" = Buchanan, "Quadratic" = 2, "Cubic" = 3, "Logistic.exp" = Logistic.exp , "Gompertz.exp" = Gompertz.exp, "Baranyi.exp" = Baranyi.exp, "Buchanan.exp" = Buchanan.exp, "Quadratic.exp" = 2, "Cubic.exp" = 3)
 model_params <- list("Logistic" = 3 , "Gompertz" = 4, "Baranyi" = 4, "Buchanan" = 4, "Quadratic" = 3, "Cubic" = 4, "Logistic.exp" = 3 , "Gompertz.exp" = 4, "Baranyi.exp" = 4, "Buchanan.exp" = 4, "Quadratic.exp" = 3, "Cubic.exp" = 4)
 colours <- c("Logistic" = 'black' , "Gompertz" = 'red', "Baranyi" = 'dark green', "Buchanan" = 'blue', "Quadratic" = '#66a61e', "Cubic" = '#e6ab02', "Logistic.exp" = 'black' , "Gompertz.exp" = 'red', "Baranyi.exp" = 'dark green', "Buchanan.exp" = 'blue', "Quadratic.exp" = '#66a61e', "Cubic.exp" = '#e6ab02')
+ 
