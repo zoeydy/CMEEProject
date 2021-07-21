@@ -1,4 +1,3 @@
-
 rm(list = ls())
 
 # read the data
@@ -21,7 +20,7 @@ for (i in 1:length(unique(Data$id))) {
   }else{
     if (nrow(dat[dat$logPopBio > pop_low & dat$logPopBio < pop_high,])<2) {
       log_lm_fit <- lm(logPopBio~Time, dat[dat$logPopBio > min(dat$logPopBio) + 0.05*interval &
-                                         dat$logPopBio < min(dat$logPopBio) + 0.95*interval,])
+                                             dat$logPopBio < min(dat$logPopBio) + 0.95*interval,])
     }else{
       log_lm_fit <- lm(logPopBio~Time, dat[dat$logPopBio > pop_low & dat$logPopBio < pop_high,])
     }
@@ -35,7 +34,7 @@ for (i in 1:length(unique(Data$id))) {
   }else{
     if (nrow(dat[dat$PopBio > pop_low & dat$PopBio < pop_high,])<2) {
       lin_lm_fit <- lm(PopBio~Time, dat[dat$PopBio > min(dat$PopBio) + 0.05*interval &
-                                             dat$PopBio < min(dat$PopBio) + 0.95*interval,])
+                                          dat$PopBio < min(dat$PopBio) + 0.95*interval,])
     }else{
       lin_lm_fit <- lm(PopBio~Time, dat[dat$PopBio > pop_low & dat$PopBio < pop_high,])
     }

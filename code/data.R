@@ -7,6 +7,7 @@ require(ggplot2)
 
 # read the data
 Data <- read.csv('../data/growth_rate_data.csv')
+Data <- Data[order(Data[,'id'], Data[,'Time']),]
 # id is generated from:
 # Data$ID <- paste(Data$Species,"_",Data$Temp,"_",Data$Medium,"_",Data$Rep,"_",Data$Citation)
 
@@ -80,5 +81,3 @@ colnames(Data)[12] <- 'ID'
 # length(unique(Meta$ID))
 # unique(unique(Data$PopBio) >0)
 # unique(probPopBio$ID)
-
-

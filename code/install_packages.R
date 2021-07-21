@@ -7,6 +7,7 @@ required_packages <- c("matrixStats",
                        "gridExtra",
                        "toOrdinal",
                        "reshape2"
+                       "runner"
                        )
 
 

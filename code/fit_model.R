@@ -147,74 +147,74 @@ saveRDS(fit_list.linear, file = "../data/fit_list_linear.rds")
 
 
 
-########
-# mine #
-########
-
-#################
-# MODEL FITTING #
-#################
-# fit the model, generate the data frame for plotting and save the results
-starts <- start_value_df[start_value_df$id == id, ]
-# sample for getting best starting value
-SampTime <- 1000
-fact <- 2
-SampMin <- runif(SampTime,N0start-abs(N0start)*fact,N0start+abs(N0start)*fact)
-SampMax <- runif(SampTime,Kstart-abs(Kstart)*fact,Kstart+abs(Kstart)*fact)
-Samp_t_lag <- runif(SampTime, tlagStart-abs(tlagStart)*fact, tlagStart+abs(tlagStart)*fact)
-Samp_r_max <- runif(SampTime, 0 , rStart + abs(rStart)*fact)
-# fit Gompertz model
-gomp_plot_df <- data.frame()
-comp <- list()
-for (i in 1:length(unique(Data$ID))){
-  #browser()
-  # subset the Data by ID 
-  idname <- unique(Data$ID)[i]
-  dat <- subset(Data, Data$ID == idname)
-  
-  # for loop in each ID for finding starting value 
-  start_id_list <- list()
-  plot_id_list <- list()
-  for (j in 1:SampTime){
-    result <- GuessStart(dat,t = Time, r_maxS = Samp_r_max[j], N_0S = SampMin[j], KS = SampMax[j],t_lagS = Samp_t_lag[j])
-    start_id_list[[j]] <- result[1:8]
-    plot_id_list[[j]] <- result[9]
-  }
-  
-  # write the start_id_list into data frame
-  n.obs <- sapply(start_id_list, length)
-  seq.max <- seq_len(max(n.obs))
-  start_id_mat <- t(sapply(start_id_list, "[", i = seq.max))
-  start_id_df <- as.data.frame(start_id_mat)
-  start_id_df$index <- seq(1:1000)
-  colnames(start_id_df) <- c("AIC","AICc","BIC","RSq","r_max","N_0","K","t_lag","index")
-  index_AIC <- start_id_df$index[which.min(start_id_df$AIC)]
-  index_AICc <- start_id_df$index[which.min(start_id_df$AICc)]
-  index_BIC <- start_id_df$index[which.min(start_id_df$BIC)]
-  comp[[i]] <- all(sapply(list(index_AIC,index_BIC,index_AICc), function(x) x == index_AICc))
-  
-  # write the plot_id_list into data frame
-  plot_id_df <- as.data.frame(plot_id_list[index_AICc])
-  
-  if (nrow(start_id_df[index_AICc,]) == 0) {
-    start_id_df <- data.frame(ID=idname,Model="gompertz",AIC=NA,AICc=NA,BIC=NA,RSq=NA,r_max=NA,N_0=NA,K=NA,t_lag=NA,index=NA)
-    start_value_df <- rbind(start_value_df, start_id_df)
-    
-    plot_id_df <- data.frame(pred_gom=NA,ID=idname,model="gompertz")
-    gomp_plot_df <- rbind(gomp_plot_df, plot_id_df)
-  }else{
-    start_id_df <- data.frame(ID=idname,model="gompertz",start_id_df[index_AICc,])
-    colnames(start_id_df) <- c("ID","Model","AIC","AICc","BIC","RSq","r_max","N_0","K","t_lag","index")
-    start_value_df <- rbind(start_value_df, start_id_df)
-    
-    plot_id_df$ID <- idname
-    plot_id_df$model <- "gompertz"
-    colnames(plot_id_df) <- c("pred_gom", "ID", "model")
-    gomp_plot_df <- rbind(gomp_plot_df, plot_id_df)
-  }
-}
-# fit Baranyi model
-
-
-
-write.csv(gomp_plot_df, "../results/plot_points.csv")
+# ########
+# # mine #
+# ########
+# 
+# #################
+# # MODEL FITTING #
+# #################
+# # fit the model, generate the data frame for plotting and save the results
+# starts <- start_value_df[start_value_df$id == id, ]
+# # sample for getting best starting value
+# SampTime <- 1000
+# fact <- 2
+# SampMin <- runif(SampTime,N0start-abs(N0start)*fact,N0start+abs(N0start)*fact)
+# SampMax <- runif(SampTime,Kstart-abs(Kstart)*fact,Kstart+abs(Kstart)*fact)
+# Samp_t_lag <- runif(SampTime, tlagStart-abs(tlagStart)*fact, tlagStart+abs(tlagStart)*fact)
+# Samp_r_max <- runif(SampTime, 0 , rStart + abs(rStart)*fact)
+# # fit Gompertz model
+# gomp_plot_df <- data.frame()
+# comp <- list()
+# for (i in 1:length(unique(Data$ID))){
+#   #browser()
+#   # subset the Data by ID 
+#   idname <- unique(Data$ID)[i]
+#   dat <- subset(Data, Data$ID == idname)
+#   
+#   # for loop in each ID for finding starting value 
+#   start_id_list <- list()
+#   plot_id_list <- list()
+#   for (j in 1:SampTime){
+#     result <- GuessStart(dat,t = Time, r_maxS = Samp_r_max[j], N_0S = SampMin[j], KS = SampMax[j],t_lagS = Samp_t_lag[j])
+#     start_id_list[[j]] <- result[1:8]
+#     plot_id_list[[j]] <- result[9]
+#   }
+#   
+#   # write the start_id_list into data frame
+#   n.obs <- sapply(start_id_list, length)
+#   seq.max <- seq_len(max(n.obs))
+#   start_id_mat <- t(sapply(start_id_list, "[", i = seq.max))
+#   start_id_df <- as.data.frame(start_id_mat)
+#   start_id_df$index <- seq(1:1000)
+#   colnames(start_id_df) <- c("AIC","AICc","BIC","RSq","r_max","N_0","K","t_lag","index")
+#   index_AIC <- start_id_df$index[which.min(start_id_df$AIC)]
+#   index_AICc <- start_id_df$index[which.min(start_id_df$AICc)]
+#   index_BIC <- start_id_df$index[which.min(start_id_df$BIC)]
+#   comp[[i]] <- all(sapply(list(index_AIC,index_BIC,index_AICc), function(x) x == index_AICc))
+#   
+#   # write the plot_id_list into data frame
+#   plot_id_df <- as.data.frame(plot_id_list[index_AICc])
+#   
+#   if (nrow(start_id_df[index_AICc,]) == 0) {
+#     start_id_df <- data.frame(ID=idname,Model="gompertz",AIC=NA,AICc=NA,BIC=NA,RSq=NA,r_max=NA,N_0=NA,K=NA,t_lag=NA,index=NA)
+#     start_value_df <- rbind(start_value_df, start_id_df)
+#     
+#     plot_id_df <- data.frame(pred_gom=NA,ID=idname,model="gompertz")
+#     gomp_plot_df <- rbind(gomp_plot_df, plot_id_df)
+#   }else{
+#     start_id_df <- data.frame(ID=idname,model="gompertz",start_id_df[index_AICc,])
+#     colnames(start_id_df) <- c("ID","Model","AIC","AICc","BIC","RSq","r_max","N_0","K","t_lag","index")
+#     start_value_df <- rbind(start_value_df, start_id_df)
+#     
+#     plot_id_df$ID <- idname
+#     plot_id_df$model <- "gompertz"
+#     colnames(plot_id_df) <- c("pred_gom", "ID", "model")
+#     gomp_plot_df <- rbind(gomp_plot_df, plot_id_df)
+#   }
+# }
+# # fit Baranyi model
+# 
+# 
+# 
+# write.csv(gomp_plot_df, "../results/plot_points.csv")
