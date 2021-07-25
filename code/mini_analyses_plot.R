@@ -83,10 +83,12 @@ for (k in 1:length(species)) {
   
   for (l in 1:length(id.spe)) {
     df <- subset(infos, infos$id == id.spe[l])
+    df$temp <- subset(Data, Data$id == id.spe[l])[1,]$Temp
     info.spe <- rbind(info.spe, df)
   }
   
-  filename <- paste0("../results/param_species/", k)
+  # plot rela between tlag and rmax by different model in same species
+  filename <- paste0("../results/param_species/model_", k)
   png(filename)
   p <- ggplot(info.spe, aes(x = info.spe$tlag, y = info.spe$rmax, colour = model)) +
     geom_point(size = 1) +
@@ -95,7 +97,21 @@ for (k in 1:length(species)) {
     ggtitle(paste0('Parameter estimation of species: ', spe))
   print(p)
   graphics.off()
-}
+  
+  
+  # plot rela between tlag and rmax by temp in same species
+  filename <- paste0("../results/param_temp/temp_", k)
+  png(filename)
+  p <- ggplot(info.spe, aes(x = info.spe$tlag, y = info.spe$rmax, colour = temp)) +
+    geom_point(size = 1) +
+    theme_bw() +
+    labs(x = 'lag time', y = 'maximun growth rate') +
+    ggtitle(paste0('Parameter estimation of species: ', spe))
+  print(p)
+  graphics.off()
+
+  
+  }
 
 
 
