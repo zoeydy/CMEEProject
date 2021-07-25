@@ -1,5 +1,5 @@
 rm(list = ls())
-setwd("~/Documents/Project/code")
+setwd("~/Documents/CMEEProject/code")
 require(dplyr)
 
 # read the data

@@ -1,7 +1,7 @@
 rm(list = ls())
 graphics.off()
 
-setwd("~/Documents/Project/code")
+setwd("~/Documents/CMEEProject/code")
 
 ############
 # PACKAGES #
