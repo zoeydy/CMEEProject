@@ -3,7 +3,7 @@
 rm(list = ls())
 graphics.off()
 
-setwd("~/Documents/Project/code")
+setwd("~/Documents/CMEEProject/code")
 
 require(ggplot2)
 
@@ -31,13 +31,14 @@ for (i in 1:length(IDs)){
     models <- unique(info.df$model)
     tit <- c()
     
-    for (j in length(models)) {
+    for (j in 1:length(models)) {
       model <- models[j]
       # get plot notation
-      tit.model <- paste0(model, ': AICc = ', info.df[info.df$model == model, ]$AICc,
-                                            ', AIC = ', info.df[info.df$model == model, ]$AIC,
-                                            ', BIC = ', info.df[info.df$model == model, ]$BIC,
-                                            ', Rsquare = ', info.df[info.df$model == model, ]$rsq)
+      tit1 <- paste0('AICc = ', info.df[info.df$model == model, ]$AICc)
+      tit2 <- paste0('AIC = ', info.df[info.df$model == model, ]$AIC)
+      tit3 <- paste0('BIC = ', info.df[info.df$model == model, ]$BIC)
+      tit4 <- paste0('Rsquare = ', info.df[info.df$model == model, ]$rsq)
+      tit.model <- paste0(model, ': , \n', tit1, '\n', tit2,'\n',  tit3,'\n',  tit4)
       tit <- c(tit, tit.model)
     }
     
@@ -59,7 +60,7 @@ for (i in 1:length(IDs)){
       # ggtitle("Model comparison plot") +
       geom_line(data = plot.df, aes(x = time, y = plot.point, colour = model), size=1) +
       theme(legend.position = 'bottom') +
-      annotate('text', label = title, x = min(data$Time), y = min(data$logN), hjust = -.2, vjust = 0) 
+      annotate('text', label = title, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0) 
       # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
       # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))
     print(p)
@@ -71,11 +72,31 @@ for (i in 1:length(IDs)){
 ####################
 # r_max V.S. t_lag #
 ####################
+temps <- unique(Data$Temp)
+species <- unique(Data$Species)
 
-ggplot(infos, aes(x = rmax, y = tlag, colour = model)) +
-  geom_point(size = 1) 
-  # stat_smooth(method = lm, level = 0.95) +
-  # geom_smooth()
+for (k in 1:length(species)) {
+  spe <- species[k]
+  data.spe <- subset(Data, Data$Species == spe)
+  id.spe <- unique(data.spe$id)
+  info.spe <- data.frame()
+  
+  for (l in 1:length(id.spe)) {
+    df <- subset(infos, infos$id == id.spe[l])
+    info.spe <- rbind(info.spe, df)
+  }
+  
+  filename <- paste0("../results/param_species/", k)
+  png(filename)
+  p <- ggplot(info.spe, aes(x = info.spe$tlag, y = info.spe$rmax, colour = model)) +
+    geom_point(size = 1) +
+    theme_bw() +
+    labs(x = 'lag time', y = 'maximun growth rate') +
+    ggtitle(paste0('Parameter estimation of species: ', spe))
+  print(p)
+  graphics.off()
+}
+
 
 
 ##################################
@@ -87,10 +108,10 @@ write.csv(comp_df, "../data/compare_criteria.csv")
 
 # visualize comparison
 comp.item <- colnames(comp_df)[-1]
-for (j in 1:length(comp.item)) {
-  filename <- paste0("../results/comparasion_", comp.item[j], ".png")
+for (m in 1:length(comp.item)) {
+  filename <- paste0("../results/comparasion_", comp.item[m], ".png")
   png(filename)
-  p <- ggplot(comp_df, aes(x = comp_df[, j+1])) +
+  p <- ggplot(comp_df, aes(x = comp_df[, m+1])) +
     geom_bar() +
     theme_bw() +
     labs(x = "Model", y = "Count") +
