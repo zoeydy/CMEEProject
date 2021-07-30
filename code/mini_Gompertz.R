@@ -3,12 +3,14 @@
 rm(list = ls())
 graphics.off()
 
-setwd("~/Documents/Project/code")
+setwd("~/Documents/CMEEProject/code")
 
 require(minpack.lm)
 
 # 1. define model and starting_value_guess functions
-  
+gompertz_model <- function(t, r_max, K, N_0, t_lag){ # Modified gompertz growth model (Zwietering 1990)
+  return(N_0 + (K - N_0) * exp(-exp(r_max * exp(1) * (t_lag - t)/((K - N_0) * log(10)) + 1)))
+} 
 
 
 

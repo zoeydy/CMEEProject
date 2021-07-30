@@ -1,5 +1,6 @@
 
 
+
 rm(list = ls())
 graphics.off()
 
@@ -72,6 +73,86 @@ for (i in 1:length(IDs)){
 ####################
 # r_max V.S. t_lag #
 ####################
+
+# plot log tlag rmax colour = temp blue to red
+info <- data.frame()
+for (i in 1:length(IDs)) {
+  data <- subset(Data, Data$id == IDs[i])
+  info.id <- subset(infos, infos$id == IDs[i])
+  info.id$temp <- data$Temp[1:2]
+  info.id$Species <- data$Species[1:2]
+  info.id$Medium <- data$Medium[1:2]
+  info <- rbind(info, info.id)
+}
+
+############## plot tlag VS rmax grouped by temp
+ggplot(data = info, aes(x = tlag, y = rmax, colour = temp)) +
+  geom_point(size = 1) +
+  scale_color_gradientn(colours = rainbow(33))
+ggplot(data = info, aes(x = rmax, y = tlag, colour = temp)) +
+  geom_point(size = 1) +
+  scale_color_gradientn(colours = rainbow(33))
+ggplot(data = info, aes(x = log(tlag), y = log(rmax), colour = temp)) +
+  geom_point(size = 1) +
+  scale_color_gradientn(colours = rainbow(33))
+# color palette
+# check the non-positive tlag
+# also rmax 
+# group the temp into 4 groups
+ggplot(data = info, aes(x = log(rmax), y = log(tlag), colour = temp)) +
+  geom_point(size = 1) +
+  scale_color_gradientn(colours = rainbow(33))
+
+############ hist temp tlag
+# library(hrbrthemes)
+# library(viridis)
+# library(forcats)
+# 
+# info %>%
+#   #mutate(text = fct_reorder(text, temp)) %>%
+#   ggplot( aes(x=tlag, color=temp, fill=temp)) +
+#   geom_histogram(alpha=0.6, binwidth = 5) +
+#   scale_fill_viridis(discrete=TRUE) +
+#   scale_color_viridis(discrete=TRUE) +
+#   theme_ipsum() +
+#   theme(
+#     legend.position="none",
+#     panel.spacing = unit(0.1, "lines"),
+#     strip.text.x = element_text(size = 8)
+#   ) +
+#   xlab("tlag value") +
+#   ylab("Count") +
+#   facet_wrap(~text)
+
+# ggplot(data = info, aes(x = tlag, color = temp, fill = temp)) +
+#   geom_histogram() +
+#   theme(legend.position = 'none') +
+#   geom_vline(data = info, aes(xintercept=mean(tlag), color="blue"),
+#              linetype="dashed", size=1) +
+#   xlab("tlag value") +
+#   ylab("Count")
+ggplot(info, aes(x=log(tlag), fill=temp)) +
+  geom_histogram(aes(y=..density..), position="identity", alpha=0.5)+
+  geom_density(alpha=0.6) +
+  geom_vline(data=info, aes(xintercept=mean(info$temp), color=temp),
+             linetype="dashed") +
+  labs(title="tlag histogram plot",x="tlag", y = "count") +
+  theme_classic()
+ggplot(info, aes(x=log(rmax), fill=as.factor(temp))) +
+  geom_histogram() +
+  # geom_histogram(aes(y=..density..), position="identity", alpha=0.5)+
+  # geom_density(alpha=0.6) +
+  geom_vline(data=info, aes(xintercept=mean(info$temp)),
+             linetype="dashed") +
+  labs(title="rmax histogram plot",x="rmax", y = "count") +
+  theme_classic()
+
+
+
+
+
+
+
 temps <- unique(Data$Temp)
 species <- unique(Data$Species)
 
@@ -109,7 +190,16 @@ for (k in 1:length(species)) {
     ggtitle(paste0('Parameter estimation of species: ', spe))
   print(p)
   graphics.off()
-
+  
+  ############## hist temp rmax
+  ggplot(info[info$Species == species[6],], aes(x=rmax, fill=as.factor(temp))) +
+    geom_histogram(aes(y=..density..), position="identity", alpha=0.5)+
+    # geom_density(alpha=0.6) +
+    geom_vline(data=info, aes(xintercept=mean(info[info$Species == species[6],]$temp)),
+               linetype="dashed") +
+    theme(legend.position = 'none')+
+    labs(title="rmax histogram plot",x="rmax", y = "count") +
+    theme_classic()
   
   }
 
