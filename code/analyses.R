@@ -80,12 +80,27 @@ p <- ggplot(data = info.plot, aes(x = tlag, y = rmax, colour = temp_group)) +
   # scale_color_gradientn(colours = rainbow(33))
 print(p)
 graphics.off()
+
 png(filename = "../results/rt_plot/log_tr_plot")
+# yvar <- log(info.plot$rmax)
+# xvar <- log(info.plot$tlag)
+# fmla <-  yvar~ xvar
 p <- ggplot(data = info.plot, aes(x = log(tlag), y = log(rmax), colour = temp_group)) +
   geom_point(size = 1) +
-  geom_smooth(method='lm')
+  # stat_smooth(method = "lm", formula = log(rmax)~log(tlag), se = TRUE)
+  # stat_smooth(aes(fill= temp_group, color = temp_group), method='lm', se = TRUE, formula = fmla) +
+  # stat_regline_equation(aes(label = paste(..eq.label.., ..rr.label.., sep = '~~~~')), formula = fmla)
+  geom_smooth(method='lm', se = TRUE)
+  # stat_poly_eq(formula = fmla, 
+  #              aes(label = paste(..eq.label.., ..rr.label.., sep = '~~~')),
+  #              parse = TRUE) 
+
+
+
 print(p)
 graphics.off()
+# library(ggpmisc)
+# library(ggpubr)
 
 # 2. plot tlag hist gourp by temperature
 png(filename = "../results/rt_plot/tlag_hist")
