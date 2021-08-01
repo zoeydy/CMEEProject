@@ -6,8 +6,66 @@ setwd("~/Documents/CMEEProject/code")
 
 require(ggplot2)
 library(ggpubr)
+# define plot function
+plotrt <- function(dat){
+  ggplot(data = dat, aes(x = log(tlag), y = log(rmax))
+         ,xlim(min(log(tlag)), max(log(tlag)))
+  ) +
+    geom_smooth(method = "lm", se=TRUE, color="black", formula = y ~ x) +
+    geom_point()+
+    stat_cor(label.y = max(dat$rmax, na.rm = TRUE)+1, size = 2)+ #this means at 35th unit in the y axis, the r squared and p value will be shown
+    stat_regline_equation(label.y = max(dat$rmax, na.rm = TRUE)+2.3, size = 2) +
+    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text",
+             x = min(dat$tlag,na.rm = TRUE), y = max(dat$rmax, na.rm = TRUE),
+             hjust = 0, vjust = 0,
+             size = 2.5)
+}
+plotrk <- function(dat){
+  ggplot(data = dat, aes(x = log(Nmax), y = log(rmax))
+         ,xlim(min(log(Nmax)), max(log(Nmax)))
+  ) +
+    geom_smooth(method = "lm", se=TRUE, color="black", formula = y ~ x) +
+    geom_point()+
+    stat_cor(label.y = max(dat$rmax, na.rm = TRUE)+1, size = 2)+ #this means at 35th unit in the y axis, the r squared and p value will be shown
+    stat_regline_equation(label.y = max(dat$rmax, na.rm = TRUE)+2.3, size = 2) +
+    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text",
+             x = min(dat$Nmax,na.rm = TRUE), y = max(dat$rmax, na.rm = TRUE),
+             hjust = 0, vjust = 0,
+             size = 2.5)
+}
+plott_temp <- function(dat){
+  ggplot(data = dat, aes(log(dat$tlag))) +
+    geom_histogram(aes(y=..density..), position="identity", alpha=0.5) +
+    geom_density(alpha=0.6) +
+    # labs(title=paste("log(tlag) histogram plot, temp = ", dat$temp_group),x="log(tlag)", y = "Count") +
+    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text", 
+             x = mean(dat$tlag), y = 0.4, hjust = 1, vjust = 0, size = 2.5)
+}
+plotr_temp <- function(dat){
+  ggplot(data = dat, aes(log(dat$rmax))) +
+    geom_histogram(aes(y=..density..), position="identity", alpha=0.5) +
+    geom_density(alpha=0.6) +
+    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text", 
+             x = mean(dat$rmax), y = 0.4, hjust = 1, vjust = 0, size = 2.5)
+  # labs(title=paste("log(rmax) histogram plot, temp = ", dat$temp_group),x="log(rmax)", y = "Count")
+}
+plotk_temp <- function(dat){
+  ggplot(data = dat, aes(log(dat$Nmax))) +
+    geom_histogram(aes(y=..density..), position="identity", alpha=0.5) +
+    geom_density(alpha=0.6) +
+    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text", 
+             x = mean(dat$Nmax), y = 0.4, hjust = 1, vjust = 0, size = 2.5)
+}
+# plotrtemp.log <- function(dat){
+#   ggplot(data = dat, aes(x = temp, y = log(rmax), colour = temp_group)) +
+#     geom_point(size = 1) +
+#     stat_smooth(formula = y~x, method = lm, se = TRUE)
+# }
+# ggplot(data = info, aes(x = temp, y = log(rmax), colour = temp_group)) +
+#   geom_point(size = 1) +
+#   stat_smooth(formula = y~x, method = lm, se = TRUE)
 
-# 1. read the data, starting value and compare models
+# read the data, starting value and compare models
 infos <- read.csv("../data/gomp.info.csv")
 plot.df <- read.csv("../data/gomp.plot.csv")
 
@@ -16,11 +74,11 @@ Data <- Data[order(Data[,'id'], Data[,'Time']),]
 
 IDs <- unique(Data$id)
 
-################
-# plot fitting #
-################
-# get complete information and plot fitting
+#############################################
+# get complete information and plot fitting #
+#############################################
 info <- data.frame()
+lmm.df <- data.frame()
 for (i in 1:length(IDs)){
   # subset info and data by idname
   idname <- IDs[i]
@@ -34,28 +92,29 @@ for (i in 1:length(IDs)){
   # rbind the data frame
   info <- rbind(info, info.id)
   
-  if (is.na(unique(plot.id$plot.point)[1])){
-    print(paste("Fit was not successful for ID:",idname))
-  }else{
-    
-    legend <- paste0('AICc = ', info.id$AICc, '\nAIC = ', info.id$AIC,
-                  '\nBIC = ', info.id$BIC, '\nRsquare = ', info.id$rsq)
-    
-    # plot fit plot
-    FileName <- paste0("../results/fit_gomp/plot_", idname,".png")
-    png(file = FileName)
-    p <- ggplot(data, aes(x = Time, y = logN)) +
-      geom_point(size = 1) +
-      labs(x = "Time (h)", y = "Logarithm of the population size (logN)") +
-      ggtitle("Gompertz model comparison plot") +
-      geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
-      # theme(legend.position = 'bottom') +
-      annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0) 
-    # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
-    # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))
-    print(p)
-    graphics.off()
-  }
+  
+  # if (is.na(unique(plot.id$plot.point)[1])){
+  #   print(paste("Fit was not successful for ID:",idname))
+  # }else{
+  #   
+  #   legend <- paste0('AICc = ', info.id$AICc, '\nAIC = ', info.id$AIC,
+  #                 '\nBIC = ', info.id$BIC, '\nRsquare = ', info.id$rsq)
+  #   
+  #   # plot fit plot
+  #   FileName <- paste0("../results/fit_gomp/plot_", idname,".png")
+  #   png(file = FileName)
+  #   p <- ggplot(data, aes(x = Time, y = logN)) +
+  #     geom_point(size = 1) +
+  #     labs(x = "Time (h)", y = "Logarithm of the population size (logN)") +
+  #     ggtitle("Gompertz model comparison plot") +
+  #     geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
+  #     # theme(legend.position = 'bottom') +
+  #     annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0) 
+  #   # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
+  #   # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))
+  #   print(p)
+  #   graphics.off()
+  # }
 }
 
 # delete the non-positive parameters
@@ -71,56 +130,64 @@ df3$temp_group <- "20~30"
 df4$temp_group <- "30~40"
 info <- rbind(df1,df2,df3,df4)
 
-##################################
-# r_max V.S. t_lag by temperature#
-##################################
+
+###################################
+# get info for Linear Mixed Model #
+###################################
+# library(lme4)
+# lmm <- lmer(rmax ~ temp+(1|Species)+(1|Medium), data = info)
+# ori.lm <- lm(rmax ~ temp, data = info)
+# log.lm <- lm(log(rmax) ~ temp, data = info)
+# summary(lmm)
+# summary(ori.lm)
+# summary(log.lm)
+
+###################################
+# r_max V.S. t_lag by temperature #
+###################################
 # 1. plot tlag VS rmax grouped by temp
-plotrt <- function(dat){
-  ggplot(data = dat, aes(x = log(tlag), y = log(rmax))
-         ,xlim(min(log(tlag)), max(log(tlag)))
-         ) +
-    geom_smooth(method = "lm", se=TRUE, color="black", formula = y ~ x) +
-    geom_point()+
-    stat_cor(label.y = max(dat$rmax, na.rm = TRUE)+1, size = 2)+ #this means at 35th unit in the y axis, the r squared and p value will be shown
-    stat_regline_equation(label.y = max(dat$rmax, na.rm = TRUE)+2.3, size = 2) +
-    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text",
-             x = min(dat$tlag,na.rm = TRUE), y = max(dat$rmax, na.rm = TRUE),
-             hjust = 0, vjust = 0,
-             size = 2.5)
-}
 pdf(file = "../results/rt_plot/log_rt_temp")
 ggarrange(plotrt(df1), plotrt(df2), plotrt(df3), plotrt(df4),
           #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
           ncol = 1, nrow = 4)
 graphics.off()
 # 2. plot tlag hist gourp by temperature
-plott_temp <- function(dat){
-  ggplot(data = dat, aes(log(dat$tlag))) +
-    geom_histogram(aes(y=..density..), position="identity", alpha=0.5) +
-    geom_density(alpha=0.6) +
-    # labs(title=paste("log(tlag) histogram plot, temp = ", dat$temp_group),x="log(tlag)", y = "Count") +
-    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text", 
-             x = mean(dat$tlag), y = 0.4, hjust = 1, vjust = 0, size = 2.5)
-}
 pdf(file = "../results/rt_plot/tlag_temp")
 ggarrange(plott_temp(df1), plott_temp(df2), plott_temp(df3), plott_temp(df4),
           #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
           ncol = 4, nrow = 1)
 graphics.off()
 # 3. plot rmax hist gourp by temperature
-plotr_temp <- function(dat){
-  ggplot(data = dat, aes(log(dat$rmax))) +
-    geom_histogram(aes(y=..density..), position="identity", alpha=0.5) +
-    geom_density(alpha=0.6) +
-    annotate(label = paste0("temperature = ", dat$temp_group[1]), geom = "text", 
-             x = mean(dat$rmax), y = 0.4, hjust = 1, vjust = 0, size = 2.5)
-    # labs(title=paste("log(rmax) histogram plot, temp = ", dat$temp_group),x="log(rmax)", y = "Count")
-}
+
 pdf(file = "../results/rt_plot/rmax_temp")
 ggarrange(plotr_temp(df1), plotr_temp(df2), plotr_temp(df3), plotr_temp(df4),
           #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
           ncol = 4, nrow = 1)
 graphics.off()
+
+# 4. plot k hist gourp by temperature
+
+pdf(file = "../results/rt_plot/k_temp")
+ggarrange(plotk_temp(df1), plotk_temp(df2), plotk_temp(df3), plotk_temp(df4),
+          #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
+          ncol = 4, nrow = 1)
+graphics.off()
+
+##################################
+# r_max V.S. K by temperature#
+##################################
+# 1. plot K VS rmax grouped by temp
+pdf(file = "../results/rt_plot/log_rk_temp")
+ggarrange(plotrk(df1), plotrk(df2), plotrk(df3), plotrk(df4),
+          #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
+          ncol = 1, nrow = 4)
+graphics.off()
+
+
+###############################
+# linear mixed model analyses #
+###############################
+
 
 # ####################
 # # r_max V.S. t_lag #

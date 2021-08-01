@@ -55,6 +55,8 @@ for (i in 1:length(unique(Data$id))){
 Data <- Data[Data$n > 5,]
 length(unique(Data$ID))
 
+# add taxonomy information
+
 
 # save pop
 write.csv(Data, "../data/mini_pop.csv")
