@@ -55,8 +55,34 @@ for (i in 1:length(unique(Data$id))){
 Data <- Data[Data$n > 5,]
 length(unique(Data$ID))
 
-# add taxonomy information
-
+# # add taxonomy information
+# spe <- unique(Data$Species)
+# taxo.df <- data.frame(genus = c("Chryseobacterium", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""),
+#                       family =c("Weeksellaceae", ""),
+#                       order = c("Flavobacteriales", ""),
+#                       class = c("Flavobacteriia", ""),
+#                       phylum= c("Bacteroidetes", ""),
+#                       domain= c("Bacteria", ""))
+# neg.df <- c(1,)
+# for (i in 1:length(spe)) {
+#   dat <- subset(Data, Data$Species == spe[i])
+#   if (i ) {
+#     dat$gram = "positive"
+#   } else {
+#     dat$gram = "negative" 
+#   }
+#   dat$genus <- genus.df[i]
+#   dat$family <- fam.df[i]
+#   dat$object <- obj.df[i]
+# }
+####################################
+test.id <- subset(Data, Data$id == 643)
+cit <- test.id$Citation
+test.cit <- subset(Data, Data$Citation == cit)
+unique(test.cit$Citation)
+unique(test.cit$id)
+length(unique(test.cit$id))
+length(unique(Data$id))
 
 # save pop
 write.csv(Data, "../data/mini_pop.csv")

@@ -61,9 +61,7 @@ plotk_temp <- function(dat){
 #     geom_point(size = 1) +
 #     stat_smooth(formula = y~x, method = lm, se = TRUE)
 # }
-# ggplot(data = info, aes(x = temp, y = log(rmax), colour = temp_group)) +
-#   geom_point(size = 1) +
-#   stat_smooth(formula = y~x, method = lm, se = TRUE)
+
 
 # read the data, starting value and compare models
 infos <- read.csv("../data/gomp.info.csv")
@@ -172,6 +170,53 @@ ggarrange(plotk_temp(df1), plotk_temp(df2), plotk_temp(df3), plotk_temp(df4),
           #labels = paste(df1$temp_group,df2$temp_group,df3$temp_group,df4$temp_group),
           ncol = 4, nrow = 1)
 graphics.off()
+
+# 5. plot temperature V.S. rmax
+pdf("../results/rt_plot/rmax_temp_log")
+p <- ggplot(data = info, aes(x = temp, y = log(rmax), colour = temp_group)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+print(p)
+graphics.off()
+
+# 5. plot temperature V.S. tlag
+pdf("../results/rt_plot/tlag_temp_log")
+p <- ggplot(data = info, aes(x = temp, y = log(tlag), colour = temp_group)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE) 
+  # stat_regline_equation(label.y = -7, size = 2) 
+  # annotate(label = paste0("temperature = ", info$temp_group[1]), geom = "text",
+  #          x = min(info$Nmax,na.rm = TRUE), y = max(info$tlag, na.rm = TRUE),
+  #          hjust = 0, vjust = 0,
+  #          size = 2.5)
+print(p)
+graphics.off()
+
+
+# p <- 
+ggplot(data = info, aes(x = log(1/tlag), y = log(rmax), colour = temp_group)) +
+geom_point(size = 1) +
+stat_smooth(formula = y~x, method = lm, se = TRUE) 
+
+################################## 
+# plot(similar to figure 1,2,3 in 2nd paper sent from samraat)
+tempe <- unique(info$temp)
+temp.df <- data.frame()
+se <- function(x){
+  sqrt(var(x))/length(x)
+}
+
+for (i in 1:length(tempe)) {
+  info.temp <- subset(info, info$temp == tempe[i])
+  temp.per <- data.frame(MEAN = mean(log(1/info.temp$tlag)), SE = se(log(1/info.temp$tlag)), temp = info.temp$temp[1])
+  temp.df <- rbind(temp.df, temp.per)
+}
+ggplot(data = temp.df, aes(x = temp, y = MEAN)) +
+  geom_point() +
+  stat_smooth(formula = y~x, method = lm, se = TRUE)+
+  geom_errorbar(aes(ymin = MEAN - SE, ymax = MEAN + SE, width = .1)) +
+  labs(title="Temperature VS log(1/tlag)",x="Temperature", y = "MEAN +/- SE (1/h)")
+  
 
 ##################################
 # r_max V.S. K by temperature#
