@@ -6,6 +6,11 @@ setwd("~/Documents/CMEEProject/code")
 
 require(ggplot2)
 library(ggpubr)
+
+# set boltzmann constant 1.38064852 × 10-23 m2 kg s-2 K-1
+K = 1.38064852 * 10^(-23)
+
+
 # define plot function
 plotrt <- function(dat){
   ggplot(data = dat, aes(x = log(tlag), y = log(rmax))
@@ -76,7 +81,7 @@ IDs <- unique(Data$id)
 # get complete information and plot fitting #
 #############################################
 info <- data.frame()
-lmm.df <- data.frame()
+
 for (i in 1:length(IDs)){
   # subset info and data by idname
   idname <- IDs[i]
@@ -87,10 +92,13 @@ for (i in 1:length(IDs)){
   info.id$temp <- data$Temp[1]
   info.id$Species <- data$Species[1]
   info.id$Medium <- data$Medium[1]
+  # add kelvin temperature
+  info.id$kelvin_temp <- info.id$temp + 273
   # rbind the data frame
   info <- rbind(info, info.id)
   
   
+  # # plot the fitting
   # if (is.na(unique(plot.id$plot.point)[1])){
   #   print(paste("Fit was not successful for ID:",idname))
   # }else{
@@ -116,17 +124,19 @@ for (i in 1:length(IDs)){
 }
 
 # delete the non-positive parameters
-info <- subset(info, info$rmax > 0 & info$tlag > 0)
+info_0 <- subset(info, info$rmax > 0 & info$tlag > 0)
 # devide the temperature into 4 groups ((-5:10, 10:20, 20:30, 30:40))
-df1 <- subset(info, info$temp >= -5 & info$temp < 10)
-df2 <- subset(info, info$temp >= 10 & info$temp < 20)
-df3 <- subset(info, info$temp >= 20 & info$temp < 30)
-df4 <- subset(info, info$temp >= 30 & info$temp < 40)
-df1$temp_group <- "-5~10"
-df2$temp_group <- "10~20"
-df3$temp_group <- "20~30"
-df4$temp_group <- "30~40"
-info <- rbind(df1,df2,df3,df4)
+df1 <- subset(info_0, info_0$temp >= -5 & info_0$temp < 10)
+df2 <- subset(info_0, info_0$temp >= 10 & info_0$temp < 20)
+df3 <- subset(info_0, info_0$temp >= 20 & info_0$temp < 30)
+df4 <- subset(info_0, info_0$temp >= 30 & info_0$temp < 40)
+df1$temp_group <- "-5~10 °C"
+df2$temp_group <- "10~20 °C"
+df3$temp_group <- "20~30 °C"
+df4$temp_group <- "30~40 °C"
+info_0 <- rbind(df1,df2,df3,df4)
+
+
 
 
 ###################################
@@ -198,25 +208,25 @@ ggplot(data = info, aes(x = log(1/tlag), y = log(rmax), colour = temp_group)) +
 geom_point(size = 1) +
 stat_smooth(formula = y~x, method = lm, se = TRUE) 
 
-################################## 
-# plot(similar to figure 1,2,3 in 2nd paper sent from samraat)
-tempe <- unique(info$temp)
-temp.df <- data.frame()
-se <- function(x){
-  sqrt(var(x))/length(x)
-}
+##################################
 
-for (i in 1:length(tempe)) {
-  info.temp <- subset(info, info$temp == tempe[i])
-  temp.per <- data.frame(MEAN = mean(log(1/info.temp$tlag)), SE = se(log(1/info.temp$tlag)), temp = info.temp$temp[1])
-  temp.df <- rbind(temp.df, temp.per)
-}
-ggplot(data = temp.df, aes(x = temp, y = MEAN)) +
+
+ggplot(data = info, aes(x = log(1/tlag), y = log(rmax))) +
   geom_point() +
-  stat_smooth(formula = y~x, method = lm, se = TRUE)+
-  geom_errorbar(aes(ymin = MEAN - SE, ymax = MEAN + SE, width = .1)) +
-  labs(title="Temperature VS log(1/tlag)",x="Temperature", y = "MEAN +/- SE (1/h)")
-  
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+
+ggplot(data = info, aes(x = log(rmax), y = log(1/tlag))) +
+  geom_point() +
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+
+infos$rt <- infos$rmax*infos$tlag
+ggplot(data = info, aes(x = log(1/tlag), y = log(rmax), colour = temp_group)) +
+  geom_point() 
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+
+
+
+
 
 ##################################
 # r_max V.S. K by temperature#
