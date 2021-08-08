@@ -5,6 +5,30 @@ require(ggplot2)
 
 # read the data
 Data <- read.csv("../data/growth_rate_data.csv")
+# length(unique(Data$Temp))
+# max(Data$Temp)
+
+# # check the data in each citation and standerdize the species name
+# data.cit <- split(Data, Data$Citation)
+# # 1
+# data.cit1 <- data.cit[[1]]
+# 
+# cit.spe <- unique(data.cit1$Species)
+# spe.df1 <- subset(data.cit1, data.cit1$Species == cit.spe[2])
+# spe.df1$Species = "Enterobacter"
+# spe.df1 <- subset(data.cit1, data.cit1$Species == cit.spe[2])
+# unique(spe.df1$Species)
+# 
+# data.cit1 <- data.cit[[1]]
+# unique(data.cit1$Temp)
+# unique(data.cit1$Species)
+# unique(data.cit1$Medium)
+# unique(data.cit1$Rep)
+# unique(data.cit1$PopBio_unts)
+# unique(data.cit1$n)
+
+
+
 
 # insert ID column
 Data$ID <- paste0(Data$Rep,"_",Data$Species,"_",Data$Temp,"_",Data$Medium,"_",Data$Citation)

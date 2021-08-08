@@ -1,198 +1,276 @@
-
-
-
 rm(list = ls())
 graphics.off()
 
 setwd("~/Documents/CMEEProject/code")
 
-require(ggplot2)
-library(ggpubr)
 
-# set boltzmann constant 1.38064852 × 10-23 m2 kg s-2 K-1
-K = 1.38064852 * 10^(-23)
-
-
-# read the data, starting value and compare models
+#################
+# read the data #
+#################
+# Data <- read.csv('../data/mini_pop.csv')
+# Data <- Data[order(Data[,'id'], Data[,'Time']),]
 infos <- read.csv("../data/gomp.info.csv")
-plot.df <- read.csv("../data/gomp.plot.csv")
+# delete the non-positive parameters
+info0 <- subset(infos, infos$rmax > 0 & infos$tlag > 0)
+# set boltzmann constant 8.617*10^(-5) eV K^(-1)
+K = 8.617*10^(-5)
+# add 1/KT
+info0$one.over.KT <- 1/(K*(info0$temp_k))
+info0$log.r <- log(info0$rmax)
+info0$log.one.t <- log(1/info0$tlag)
 
-Data <- read.csv('../data/mini_pop.csv')
-Data <- Data[order(Data[,'id'], Data[,'Time']),]
 
-IDs <- unique(Data$id)
-spes <- unique(Data$Species)
-temps <- unique(info$temp_group)
-
-###################
-# define function #
-###################
-# function to calculate standard error
-se <- function(x){
-  sqrt(var(x))/length(x)
+####################
+# define functions #
+####################
+# function to calculate the confidence interval
+ci.calc <- function(x){
+  MEAN <- mean(x)
+  SD <- sd(x)
+  n <- length(x)
+  return(qnorm(0.975)*SD/sqrt(n))
 }
-# function to get dataframe by grouping info_0 into specific groups by temp_c_group 
-group_temp <- function(dat, param){
-  temp <- unique(dat$temp_c_group)
-  temp.df <- data.frame()
-  for (i in 1:length(temp)) {
-    info.temp <- subset(dat, dat$temp_c_group == temp[i])
-    if (param == "rmax") {
-      temp.per <- data.frame(MEAN = mean(log(info.temp[,param])), 
-                             SE = se(log(info.temp[,param])), 
-                             GROUP = info.temp$temp_c_group[1])
-    }
-    else{
-      temp.per <- data.frame(MEAN = mean(log(1/info.temp[,param])),
-                             SE = se(log(1/info.temp[,param])),
-                             GROUP = info.temp$temp_c_group[1])
-    }
-    temp.df <- rbind(temp.df, temp.per)
+# function to calculate the mean log(rmax) and lot(1/tlag) with CI under one specific temperature
+MEAN.rate <- function(dat){
+  temps <- unique(dat$temp_c)
+  df <- data.frame()
+  for (i in 1:length(temps)) {
+    tempdf <- dat[dat$temp_c == temps[i], ]
+    meandf <- data.frame(temp_c = tempdf$temp_c[1], mean.log.r = mean(tempdf$log.r), CI.r = ci.calc(tempdf$log.r), 
+                         mean.log.t = mean(tempdf$log.one.t), CI.t = ci.calc(tempdf$log.one.t))
+    df <- rbind(df, meandf)
   }
-  return(temp.df)
+  return(df)
 }
-
-
-# function to plot grouped data frame with SE
-group_plot <- function(dat, param){
-  ggplot(data = dat, aes(x = GROUP, y = MEAN)) +
-    geom_point() +
-    stat_smooth(formula = y~x, method = lm, se = TRUE)+
-    geom_errorbar(aes(ymin = MEAN - SE, ymax = MEAN + SE, width = .1)) +
-    labs(title=paste0("Rate(measured by )", param, " VS Temperature"), 
-         x="Temperature Group", 
-         y="MEAN rate +/- SE (1/h)")
-}
-# group_plot(group_temp(info_4, "tlag"), "tlag")
-
-# function to plot y parameters VS 1/temp
-arrhe_one <- function(dat, param){
-  if(param == "tlag"){
-    ggplot(data = dat, aes(x = 1/temp_k, y = log(1/dat[,param]))) +
-      geom_point() +
-      stat_smooth(method = lm, formula = y~x)
-  }else{
-    ggplot(data = dat, aes(x = 1/temp_k, y = log(dat[,param]))) +
-      geom_point() +
-      stat_smooth(method = lm, formula = y~x) 
-  }
-}
-
-
 # function to save plot
-save_plot <- function(path, plotfun){
-  pdf(path)
-  print(plotfun)
+save.plot <- function(filepath, plo){
+  pdf(paste0(filepath,".pdf"))
+  print(plo)
+  graphics.off()
+}
+save.png <- function(filepath, plo){
+  png(paste0(filepath,"png"))
+  print(plo)
   graphics.off()
 }
 
+################################################################
+# standardize species name and get validate species data frame #
+################################################################
+# (more than 3 data points in each data sets subset by species name and has more than one temperature) #
 
-############################
-# get complete information #
-############################
-info <- data.frame()
-
-for (i in 1:length(IDs)){
-  # subset info and data by idname
-  idname <- IDs[i]
-  data <- Data[Data$id == idname,]
-  # plot.id <- plot.df[plot.df$id == idname, ]
-  info.id <- infos[infos$id == idname, ]
-  # get info about temperature, species and medium
-  info.id$temp_c <- data$Temp[1]
-  info.id$species <- data$Species[1]
-  info.id$medium <- data$Medium[1]
-  # add kelvin temperature
-  info.id$temp_k <- info.id$temp_c + 273
-  # rbind the data frame
-  info <- rbind(info, info.id)
+# fit Arrhenius model, get lnA and E calculated from rmax and tlag with SE (within species), using data has T>=30°C
+spes <- unique(info0$species)
+# same length as spes
+stand.spe <- c("Pantoea.agglomerans", "Clavibacter.michiganensis","Stenotrophomonas.maltophilia","Klebsiella.pneumonia","Dickeya.zeae",
+               "Pectobacterium.carotovorum","Pantoea.agglomerans","Acinetobacter.clacoaceticus","Stenotrophomonas.maltophilia","Klebsiella.pneumonia",
+               "Clavibacter.michiganensis","Chryseobacterium.balustinum","Enterobacter","Bacillus.pumilus","Pseudomonas.fluorescens",
+               "Pseudomonas.fluorescens","Acinetobacter.clacoaceticus","Stenotrophomonas.maltophilia","Dickeya.zeae","Bacillus.pumilus",
+               "Pantoea.agglomerans","Acinetobacter.clacoaceticus","Tetraselmis.tetrahele","Soil.Microbial.Community","Staphylococcus",
+               "Pseudomonas","Aerobic.Psychotropic","Aerobic.Mesophilic" ,"Spoilage","Escherichia.coli",
+               "Salmonella.Typhimurium","Curtobacterium.psychrophilum","Cytophaga.antarctica","Cytophaga.xantha","Spirillum.pleomorphum",
+               "Micrococcus.cryophilus","Pseudomonas.flourescens","pseudomonas","yeasts.and.moulds","enterobacteriaceae",
+               "pseudomonas.sp","enterobacteriaceae","pseudomonas","yeasts.moulds","pseudomonas",
+               "yeasts.moulds","enterobacteriaceae","lactic.acid.bacteria","lactic.acid.bacteria","enterobacteriaceae",
+               "yeasts.and.moulds","pseudonomads","brochothrix.thermosphacta","aerobic.bacteria","Serratia.marcescens",
+               "Arthrobacter","Arthrobacter","Arthrobacter","Arthrobacter.aurescens","Arthrobacter.aurescens",
+               "Arthrobacter.globiformis","Arthrobacter.simplex","Lactobacillus.plantarum","Weissella.viridescens","Lactobacillus.sakei",
+               "Oscillatoria.agardhii","Oscillatoria.agardhii","Pseudomonas","Pseudomonas.flourescens","Lactobaciulus.plantarum",
+               "Flavobacterium","Pseudomonas","Rahnella","Raoultella","Sphingobacterium",
+               "Rhizobium","Arthrobacter","Citrobacter","Pseudomonas",
+               "Curtobacterium","Microbacterium","IsoMix","Rhizobium","Roseomonas","Novosphingobium",
+               "Novosphingobium","Raoultella","Serratia","Chryseobacterium","Chryseobacterium",
+               "Paenibacillus","Paenibacillus","Bacillus")
+# standardize the species name
+info.sta <- data.frame()
+for (i in 1:length(spes)) {
+  sta1 <- info0[info0$species == spes[i],]
+  sta1$sta.spe <- stand.spe[i]
+  info.sta <- rbind(info.sta, sta1)
 }
 
-# delete the non-positive parameters
-info_0 <- subset(info, info$rmax > 0 & info$tlag > 0)
-# devide the temperature into 4 groups ((-5:10, 10:20, 20:30, 30:40))
-df1 <- subset(info_0, info_0$temp_c >= -5 & info_0$temp_c < 10)
-df2 <- subset(info_0, info_0$temp_c >= 10 & info_0$temp_c < 20)
-df3 <- subset(info_0, info_0$temp_c >= 20 & info_0$temp_c < 30)
-df4 <- subset(info_0, info_0$temp_c >= 30 & info_0$temp_c < 40)
-df1$temp_c_group <- "-5~10 °C"
-df2$temp_c_group <- "10~20 °C"
-df3$temp_c_group <- "20~30 °C"
-df4$temp_c_group <- "30~40 °C"
-info_4 <- rbind(df1,df2,df3,df4)
-# devide the temperature into 5 groups ((-5:5, 5:10, 10:20, 20:30, 30:40))
-dm1 <- subset(info_0, info_0$temp_c >= -5 & info_0$temp_c < 5)
-dm2 <- subset(info_0, info_0$temp_c >= 5 & info_0$temp_c < 10)
-dm3 <- subset(info_0, info_0$temp_c >= 10 & info_0$temp_c < 20)
-dm4 <- subset(info_0, info_0$temp_c >= 20 & info_0$temp_c < 30)
-dm5 <- subset(info_0, info_0$temp_c >= 30 & info_0$temp_c < 40)
-dm1$temp_c_group <- "-5~5 °C"
-dm2$temp_c_group <- "5~10 °C"
-dm3$temp_c_group <- "10~20 °C"
-dm4$temp_c_group <- "20~30 °C"
-dm5$temp_c_group <- "30~40 °C"
-info_5 <- rbind(dm1,dm2,dm3,dm4,dm5)
-info_5$temp_c_group <- factor(info_5$temp_c_group, levels = unique(info_5$temp_c_group))
+########################################################
+# fit arrhenius model by species get E and lnA with SE #
+########################################################
+arrhe.df <- data.frame()
+vali.spe <- data.frame()
+spes <- unique(info.sta$sta.spe)
+for (i in 1:length(spes)) {
+  # subset
+  spe.df <- info.sta[info.sta$species == spes[i],]
+  
+  if (nrow(spe.df) < 3 | length(unique(spe.df$temp_c)) < 2) {
+    arrhe.df <- arrhe.df
+  }else{
+    vali.spe <- rbind(vali.spe, spe.df)
+    
+    fit.r <- lm(data = spe.df, formula = log.r~one.over.KT)
+    fit.r.df <- data.frame(summary(fit.r)$coefficients)
+    fit.r.df$id <- rep(spe.df$id[1],2)
+    fit.r.df$from = rep("rmax",2)
+    fit.r.df$param = c("lnA","E")
+    fit.r.df$sta.spe = spe.df$sta.spe[1]
+    
+    fit.t <- lm(data = spe.df, formula = log.one.t~one.over.KT)
+    fit.t.df <- data.frame(summary(fit.t)$coefficients)
+    fit.t.df$id = rep(spe.df$id[1],2)
+    fit.t.df$from = rep("tlag",2)
+    fit.t.df$param = c("lnA","E")
+    fit.t.df$sta.spe = spe.df$sta.spe[1]
+    
+    arrhe.df <- rbind(arrhe.df, fit.r.df, fit.t.df)
+    
+    #########################################
+    # plot arrhenius model (within species) #
+    #########################################
+    if (i == 25|26) {
+      tpk.r <- spe.df[spe.df$log.r == max(spe.df$log.r),]$temp_c
+      p <- ggplot(data = spe.df, aes(x = one.over.KT, y = log.r)) +
+        geom_point() +
+        stat_smooth(data = spe.df[spe.df$temp_c <= tpk.r,], method = 'lm', formula = y~x) +
+        geom_ribbon(data = spe.df[spe.df$temp_c >= tpk.r,], aes(ymin = -Inf, ymax = Inf), alpha = 0.3)
+      save.png(paste0("../results/arrhenius/arrhe_fit/r_spe",i), p)
 
+      tpk.t <- spe.df[spe.df$log.one.t == max(spe.df$log.one.t),]$temp_c
+      p <- ggplot(data = spe.df, aes(x = one.over.KT, y = log.one.t)) +
+        geom_point() +
+        stat_smooth(data = spe.df[spe.df$temp_c <= tpk.t,], method = 'lm', formula = y~x) +
+        geom_ribbon(data = spe.df[spe.df$temp_c >= tpk.t,], aes(ymin = -Inf, ymax = Inf), alpha = 0.3)
+      save.png(paste0("../results/arrhenius/arrhe_fit/t_spe",i), p)
+    } else{
+      p <- ggplot(data = spe.df, aes(x = one.over.KT, y = log.r)) +
+        geom_point() +
+        stat_smooth(data = spe.df[spe.df$temp_c <= 30,], method = 'lm', formula = y~x) +
+        geom_ribbon(data = spe.df[spe.df$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), alpha = 0.3)
+      save.png(paste0("../results/arrhenius/arrhe_fit/r_spe",i), p)
 
-########
-# plot #
-########
-
-# log of 1/tlag and rmax VS temperature(celsius)
-ggplot(data = info_0, aes(x = temp_c, y =log(rmax) )) +
-  geom_point() +
-  stat_smooth(formula = y~x, method = lm)
-ggplot(data = info_0, aes(x = temp_c, y =log(1/tlag) )) +
-  geom_point() +
-  stat_smooth(formula = y~x, method = lm) 
-
-# log of 1/tlag and rmax VS temperature(celsius) in mean value with error bar
-mean_df <- data.frame()
-temp.c.s <- unique(info_0$temp_c)
-for (i in 1:length(temp.c.s)) {
-  df1 <- subset(info_0, info_0$temp_c == temp.c.s[i])
-  mean1 <- data.frame(temp.c = df1$temp_c[1],
-                      mean.rmax = mean(log(df1$rmax)),
-                      mean.1tlag = mean(log(1/df1$tlag)),
-                      se.rmax = se(log(df1$rmax)),
-                      se.1tlag = se(log(1/df1$tlag)))
-  mean_df <- rbind(mean_df, mean1)
-}
-ggplot(data = mean_df, aes(x = temp.c, y =mean.rmax )) +
-  geom_point() +
-  stat_smooth(formula = y~x, method = lm) +
-  geom_errorbar(aes(ymin=mean.rmax - se.rmax, 
-                    ymax=mean.rmax + se.rmax,
-                    width = 0.1))
-ggplot(data = mean_df, aes(x = temp.c, y =mean.1tlag )) +
-  geom_point() +
-  stat_smooth(formula = y~x, method = lm) +
-  geom_errorbar(aes(ymin=mean.1tlag - se.1tlag, 
-                    ymax=mean.1tlag + se.1tlag,
-                    width = 0.1))
-
-# group plot rate VS temp_group
-group_plot(group_temp(info_4,"tlag"), "tlag")
-group_plot(group_temp(info_4,"rmax"), "rmax")
-group_plot(group_temp(info_5,"tlag"), "tlag")
-group_plot(group_temp(info_5,"rmax"), "rmax")
-
-# Arrhenius plot of 1 parameter: rate VS 1/temp
-arrhe_one(info_0, "tlag")
-arrhe_one(info_0, "rmax")
-
-# Arrhenius plot of 2 parameters: ramx*tlag VS 1/temp
-ggplot(data = info_0, aes(x = 1/temp_k, y = log(rmax*tlag))) +
-  geom_point() +
-  stat_smooth(formula = y~x, method = lm) +
-  geom_text(x = 0.003, y = -10, label = lm_eqn(info_0, x = 1/info_0$temp_k, y = log(info_0$rmax*info_0$tlag)), parse = TRUE)
-lm_eqn <- function(df, x, y){
-  m <- lm(y ~ x, df);
-  eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
-                   list(a = format(unname(coef(m)[1]), digits = 2),
-                        b = format(unname(coef(m)[2]), digits = 2),
-                        r2 = format(summary(m)$r.squared, digits = 3)))
-  as.character(as.expression(eq));
+      p <- ggplot(data = spe.df, aes(x = one.over.KT, y = log.one.t)) +
+        geom_point() +
+        stat_smooth(data = spe.df[spe.df$temp_c <= 30,], method = 'lm', formula = y~x) +
+        geom_ribbon(data = spe.df[spe.df$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), alpha = 0.3)
+        # labs(title="log(1/tlag) VS 1/KT (<30°C)",x="1/KT", y = "log(1/tlag)")
+      save.png(paste0("../results/arrhenius/arrhe_fit/t_spe",i), p)
+    }
+  }
 }
 
+
+# # get the E_L and corresponding CI using whole data set
+# fit.r.spe <- lm(info0, formula = log.r ~ one.over.KT)
+# fit.t.spe <- lm(info0, formula = log.one.t~one.over.KT)
+# # summary(fit.r)$coefficients
+# # summary(fit.t)$coefficients
+# # CI = mean +/- 2SE
+# CI.r.spe <- confint(fit.r, level = 0.95)
+# CI.t.spe <- confint(fit.t, level = 0.95)
+
+# get the E_L and corresponding CI using validate species data set
+fit.r.spe <- lm(vali.spe, formula = log.r ~ one.over.KT)
+fit.t.spe <- lm(vali.spe, formula = log.one.t~one.over.KT)
+CI.r.spe <- confint(fit.r.spe, level = 0.95)
+CI.t.spe <- confint(fit.t.spe, level = 0.95)
+
+##########################################################
+# plot E_s and lnA_s with E_L  and lnA_L(acrose species) #
+##########################################################
+# plot the E and lnA estimated from rmax and tlag, using data with temperature not larger than 30°C 
+# and grouped by species validated by checking data points has more than one validate temperature and 3 points
+# add dashed line representing across species E and lnA value with 95% level CI
+
+edf <- arrhe.df[arrhe.df$param == "E",]
+# save E value tables to latex
+E_r <- subset(edf, edf$from == "rmax")
+E_t <- subset(edf, edf$from == "tlag")
+E_rmax <- data.frame(Species = E_r$sta.spe, "E value" = E_r$Estimate, 
+                     "Confidence Interval" = 2*E_r$Std..Error, "P value" = E_r$Pr...t..)
+E_tlag <- data.frame(Species = E_t$sta.spe, "E value" = E_t$Estimate, 
+                     "Confidence Interval" = 2*E_t$Std..Error, "P value" = E_t$Pr...t..)
+library(xtable)
+print(xtable(E_rmax, type = "latex", digits = -10), file = "../results/arrhenius/E_rmax_table.tex")
+print(xtable(E_tlag, type = "latex", digits = -10), file = "../results/arrhenius/E_tlag_table.tex")
+
+mean.e.r <- mean(edf[edf$from == "rmax",]$Estimate)
+mean.e.t <- mean(edf[edf$from == "tlag",]$Estimate)
+mean.e.r.ci <- ci.calc(edf[edf$from == "rmax",]$Estimate)
+mean.e.t.ci <- ci.calc(edf[edf$from == "tlag",]$Estimate)
+p <- ggplot(data = edf, aes(x = Estimate, y = sta.spe, colour = from)) +
+  geom_point()+
+  geom_errorbar(data = edf, aes(xmin = Estimate - 2*Std..Error, xmax = Estimate + 2*Std..Error)) +
+  # geom_rect(aes(xmin=CI.r.spe[2,1], xmax=CI.r.spe[2,2], ymin=-Inf, ymax=Inf), color = 'red') +
+  # geom_rect(aes(xmin=CI.t.spe[2,1], xmax=CI.t.spe[2,2], ymin=-Inf, ymax=Inf), color = 'blue') +
+  # add CI of E_L
+  annotate("rect", xmin=CI.r.spe[2,1], xmax=CI.r.spe[2,2], ymin=-Inf, ymax=Inf, alpha = .2) +
+  annotate("rect", xmin=CI.t.spe[2,1], xmax=CI.t.spe[2,2], ymin=-Inf, ymax=Inf, alpha = .2) +
+  # add E_L slope from fitting the whole validate data set
+  geom_vline(xintercept=fit.r.spe$coefficients[2], linetype="dashed", color = "red") +
+  geom_vline(xintercept=fit.t.spe$coefficients[2], linetype="dashed", color = "blue") +
+  annotate("text", label = "E_L estimated from rmax",size = 2, x = 7*10^(-19), y = "Stenotrophomonas.maltophilia") +
+  geom_segment(aes(x = fit.r.spe$coefficients[2], y = "Stenotrophomonas.maltophilia", xend = 3.5*10^(-19), yend = "Stenotrophomonas.maltophilia"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  annotate("text", label = "E_L estimated from tlag",size = 2, x = -7*10^(-19), y = "Tetraselmis.tetrahele") +
+  geom_segment(aes(x = fit.t.spe$coefficients[2], y = "Tetraselmis.tetrahele", xend = -3.5*10^(-19), yend = "Tetraselmis.tetrahele"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  # add E_s(mean of E_species)
+  geom_vline(xintercept=mean.e.r, linetype="dashed", color = "darkred") +
+  geom_vline(xintercept=mean.e.t, linetype="dashed", color = "darkblue") +
+  annotate("text", label = "E_S estimated from rmax",size = 2, x = 7*10^(-19), y = "Serratia.marcescens") +
+  geom_segment(aes(x = mean.e.r, y = "Serratia.marcescens", xend = 3.5*10^(-19), yend = "Serratia.marcescens"), 
+               arrow = arrow(length = unit(0.1, "cm")), colour = 'black') +
+  annotate("text", label = "E_S estimated from tlag",size = 2, x = -7*10^(-19), y = "Oscillatoria.agardhii") +
+  geom_segment(aes(x = mean.e.t, y = "Oscillatoria.agardhii", xend = -3.5*10^(-19), yend = "Oscillatoria.agardhii"), 
+               arrow = arrow(length = unit(0.1, "cm")), colour = 'black') +
+  # add CI of E_s
+  annotate("rect", xmin=mean.e.r-mean.e.r.ci, xmax=mean.e.r+mean.e.r.ci,ymin=-Inf, ymax=Inf, alpha = .2) +
+  annotate("rect", xmin=mean.e.t-mean.e.t.ci, xmax=mean.e.t+mean.e.t.ci,ymin=-Inf, ymax=Inf, alpha = .2) 
+  # scale_x_continuous(name = "Thermal Sensitivity", limits = c(-1.3*10^(-18), 1*10^(-18)))
+
+save.plot("../results/arrhenius/E_spe", p)
+
+
+adf <- arrhe.df[arrhe.df$param == "lnA",]
+mean.a.r <- mean(adf[adf$from == "rmax",]$Estimate)
+mean.a.t <- mean(adf[adf$from == "tlag",]$Estimate)
+mean.a.r.ci <- ci.calc(adf[adf$from == "rmax",]$Estimate)
+mean.a.t.ci <- ci.calc(adf[adf$from == "tlag",]$Estimate)
+p <- ggplot(data = adf, aes(y = sta.spe, x = Estimate, colour = from)) +
+  geom_point()+
+  geom_errorbar(data = adf, aes(xmin = Estimate - 2*Std..Error, xmax = Estimate + 2*Std..Error)) +
+  # add CI of lnA_L
+  annotate("rect", xmin=CI.r.spe[1,1], xmax=CI.r.spe[1,2], ymin=-Inf, ymax=Inf, alpha = .2) +
+  annotate("rect", xmin=CI.t.spe[1,1], xmax=CI.t.spe[1,2], ymin=-Inf, ymax=Inf, alpha = .2) +
+  # add lnA_L slope from fitting the whole validate data set
+  geom_vline(xintercept=fit.r.spe$coefficients[1], linetype="dashed", color = "red") +
+  geom_vline(xintercept=fit.t.spe$coefficients[1], linetype="dashed", color = "blue") +
+  
+  annotate("text", label = "lnA_L estimated from rmax",size = 2, x = fit.r.spe$coefficients[1]-130, y = "Stenotrophomonas.maltophilia") +
+  geom_segment(aes(x = fit.r.spe$coefficients[1], y = "Stenotrophomonas.maltophilia", xend = fit.r.spe$coefficients[1]-50, yend = "Stenotrophomonas.maltophilia"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  annotate("text", label = "lnA_L estimated from tlag", size = 2,x = fit.r.spe$coefficients[1]+150, y = "Tetraselmis.tetrahele") +
+  geom_segment(aes(x = fit.t.spe$coefficients[1], y = "Tetraselmis.tetrahele", xend = fit.r.spe$coefficients[1]+70, yend = "Tetraselmis.tetrahele"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  # add lnA_s(mean of E_species)
+  geom_vline(xintercept=mean.a.r, linetype="dashed", color = "darkred") +
+  geom_vline(xintercept=mean.a.t, linetype="dashed", color = "darkblue") +
+  annotate("text", label = "lnA_S estimated from rmax",size = 2, x = mean.a.r-130, y = "Serratia.marcescens") +
+  geom_segment(aes(x = mean.a.r, y = "Serratia.marcescens", xend = mean.a.r-50, yend = "Serratia.marcescens"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  annotate("text", label = "lnA_S estimated from tlag",size = 2, x = mean.a.t+150, y = "Oscillatoria.agardhii") +
+  geom_segment(aes(x = mean.a.t, y = "Oscillatoria.agardhii", xend = mean.a.t+50, yend = "Oscillatoria.agardhii"), 
+               arrow = arrow(length = unit(0.15, "cm")), colour = 'black') +
+  # add CI of lnA_s
+  annotate("rect", xmin=mean.a.r-mean.a.r.ci, xmax=mean.a.r+mean.a.r.ci,ymin=-Inf, ymax=Inf, alpha = .2) +
+  annotate("rect", xmin=mean.a.t-mean.a.t.ci, xmax=mean.a.t+mean.a.t.ci,ymin=-Inf, ymax=Inf, alpha = .2) 
+  
+save.plot("../results/arrhenius/lnA_spe", p)
+
+
+
+
+#### fit lm() get different parameter fitting in ggplot
+# fittest <- lm(info0[info0$temp_c <= 30, ], formula =  log.r ~ temp_c)
+# summary(fittest)
+# ggplot(data = info0, aes(x = temp_c, y =log.r )) +
+#   geom_point() +
+#   stat_smooth(data = info0[info0$temp_c <= 30,], formula = y~x, method = lm) +
+#   geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5)+
+#   stat_regline_equation(label.x = 10, label.y = -10)

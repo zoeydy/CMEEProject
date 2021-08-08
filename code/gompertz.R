@@ -50,6 +50,12 @@ for (i in 1:length(IDs)) {
     names(df.id.model) <- c('N0', 'Nmax', 'tlag', 'rmax', 'AIC', 'AICc', 'BIC', 'rsq')
     df.id.model$id <- idname
     df.id.model$model <- "gompertz_model"
+    # get info about temperature, species and medium
+    df.id.model$temp_c <- data$Temp[1]
+    df.id.model$species <- data$Species[1]
+    df.id.model$medium <- data$Medium[1]
+    # add kelvin temperature
+    df.id.model$temp_k <- data$Temp[1] + 273
     
     plot.id.model <- as.data.frame(id.model.list[[1]][9])
     names(plot.id.model) <- 'plot.point'
@@ -57,7 +63,8 @@ for (i in 1:length(IDs)) {
     plot.id.model$id <- idname
     plot.id.model$model <- "gompertz_model"
   } else{
-    df.id.model <- data.frame(N0 = NA, Nmax = NA, tlag = NA, rmax = NA, AIC = NA, AICc = NA, BIC = NA, rsq = NA, id = idname, model = "gompertz_model")
+    df.id.model <- data.frame(N0 = NA, Nmax = NA, tlag = NA, rmax = NA, AIC = NA, AICc = NA, BIC = NA, rsq = NA, 
+                              id = idname, model = "gompertz_model", temp_c=data$Temp[1], species=data$Species[1], medium=data$Medium[1], temp_k=data$Temp[1] + 273)
     plot.id.model <- data.frame(plot.point = NA, time = NA, id = idname, model = "gompertz_model")
   }
   
