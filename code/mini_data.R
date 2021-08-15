@@ -8,7 +8,7 @@ Data <- read.csv("../data/growth_rate_data.csv")
 # length(unique(Data$Temp))
 # max(Data$Temp)
 
-# # check the data in each citation and standerdize the species name
+# # check the data in each citation and standardize the species name
 # data.cit <- split(Data, Data$Citation)
 # # 1
 # data.cit1 <- data.cit[[1]]

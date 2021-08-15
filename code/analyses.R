@@ -7,10 +7,113 @@ setwd("~/Documents/CMEEProject/code")
 require(ggplot2)
 library(ggpubr)
 
-# set boltzmann constant 1.38064852 × 10-23 m2 kg s-2 K-1
-K = 1.38064852 * 10^(-23)
+# set boltzmann constant 8.617*10^(-5)
+K = 8.617*10^(-5)
+
+save.plot <- function(filepath, plo){
+  pdf(paste0(filepath,".pdf"))
+  print(plo)
+  graphics.off()
+}
+library(RColorBrewer)
+# gene_col <- function(n){
+#   qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+#   col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+#   return(as.character(sample(col_vector, n)))
+# }
 
 
+infos <- read.csv("../data/gomp.info.csv")
+info0 <- subset(infos, infos$rmax > 0 & infos$tlag > 0) 
+info0[, "temp_c"] <- round(info0[, "temp_c"], digits = 2)
+
+info0$log.one.t <- log(1/info0$tlag)
+info0$log.r <- log(info0$rmax)
+
+# devide the temperature into 4 groups ((-5:10, 10:20, 20:30, 30:40))
+df1 <- subset(info0, info0$temp_c >= -5 & info0$temp_c < 10)
+df2 <- subset(info0, info0$temp_c >= 10 & info0$temp_c < 20)
+df3 <- subset(info0, info0$temp_c >= 20 & info0$temp_c < 30)
+df4 <- subset(info0, info0$temp_c >= 30 & info0$temp_c < 40)
+df1$temp_c_group <- "-5~10 °C"
+df2$temp_c_group <- "10~20 °C"
+df3$temp_c_group <- "20~30 °C"
+df4$temp_c_group <- "30~40 °C"
+info4 <- rbind(df1,df2,df3,df4)
+info4$temp_c_group <- factor(info4$temp_c_group, levels = unique(info4$temp_c_group))
+# devide the temperature into 5 groups ((-5:5, 5:10, 10:20, 20:30, 30:40))
+dm1 <- subset(info0, info0$temp_c >= -5 & info0$temp_c < 5)
+dm2 <- subset(info0, info0$temp_c >= 5 & info0$temp_c < 10)
+dm3 <- subset(info0, info0$temp_c >= 10 & info0$temp_c < 20)
+dm4 <- subset(info0, info0$temp_c >= 20 & info0$temp_c < 30)
+dm5 <- subset(info0, info0$temp_c >= 30 & info0$temp_c < 40)
+dm1$temp_c_group <- "-5~5 °C"
+dm2$temp_c_group <- "5~10 °C"
+dm3$temp_c_group <- "10~20 °C"
+dm4$temp_c_group <- "20~30 °C"
+dm5$temp_c_group <- "30~40 °C"
+info5 <- rbind(dm1,dm2,dm3,dm4,dm5)
+info5$temp_c_group <- factor(info5$temp_c_group, levels = unique(info5$temp_c_group))
+
+# # color
+# qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+# col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+
+# correlation between rmax and 1/tlag
+p <- ggplot(data = info0, aes(x = log.one.t, y = log.r, colour = temp_c)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, fullrange= TRUE,se = TRUE)
+save.plot("../results/rt_plot/log_rt_col_temp",p)
+p <- ggplot(data = info4, aes(x = log.one.t, y = log.r)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+save.plot("../results/rt_plot/log_rt_temp",p)
+p <- ggplot(data = info4, aes(x = log.one.t, y = log.r, colour = temp_c_group)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE) 
+  # annotate(label = paste0("temperature = ", infos$temp_group[1]), geom = "text",
+  #          x = min(infos$tlag,na.rm = TRUE), y = max(infos$rmax, na.rm = TRUE),
+  #          hjust = 0, vjust = 0,
+  #          size = 2.5)
+save.plot("../results/rt_plot/log_rt_temp_group",p)
+
+
+# plot rmax and 1/tlag V.S. temperature
+p <- ggplot(data = info4, aes(x = temp_c, y = log.r, colour = temp_c_group)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE)
+save.plot("../results/rt_plot/log_rmax_temp_group",p)
+#1/tlag
+p <- ggplot(data = info4, aes(x = temp_c, y = log.one.t, colour = temp_c_group)) +
+  geom_point(size = 1) +
+  stat_smooth(formula = y~x, method = lm, se = TRUE) 
+# stat_regline_equation(label.y = -7, size = 2) 
+# annotate(label = paste0("temperature = ", info$temp_group[1]), geom = "text",
+#          x = min(info$Nmax,na.rm = TRUE), y = max(info$tlag, na.rm = TRUE),
+#          hjust = 0, vjust = 0,
+#          size = 2.5)
+save.plot("../results/rt_plot/log_onetlag_temp_group",p)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################
 # define plot function
 plotrt <- function(dat){
   ggplot(data = dat, aes(x = log(tlag), y = log(rmax))
@@ -86,7 +189,7 @@ for (i in 1:length(IDs)){
   # subset info and data by idname
   idname <- IDs[i]
   data <- Data[Data$id == idname,]
-  plot.id <- plot.df[plot.df$id == idname, ]
+  #plot.id <- plot.df[plot.df$id == idname, ]
   info.id <- infos[infos$id == idname, ]
   # get info about temperature, species and medium
   info.id$temp <- data$Temp[1]
@@ -123,18 +226,7 @@ for (i in 1:length(IDs)){
   # }
 }
 
-# delete the non-positive parameters
-info_0 <- subset(info, info$rmax > 0 & info$tlag > 0)
-# devide the temperature into 4 groups ((-5:10, 10:20, 20:30, 30:40))
-df1 <- subset(info_0, info_0$temp >= -5 & info_0$temp < 10)
-df2 <- subset(info_0, info_0$temp >= 10 & info_0$temp < 20)
-df3 <- subset(info_0, info_0$temp >= 20 & info_0$temp < 30)
-df4 <- subset(info_0, info_0$temp >= 30 & info_0$temp < 40)
-df1$temp_group <- "-5~10 °C"
-df2$temp_group <- "10~20 °C"
-df3$temp_group <- "20~30 °C"
-df4$temp_group <- "30~40 °C"
-info_0 <- rbind(df1,df2,df3,df4)
+
 
 
 
@@ -181,32 +273,7 @@ ggarrange(plotk_temp(df1), plotk_temp(df2), plotk_temp(df3), plotk_temp(df4),
           ncol = 4, nrow = 1)
 graphics.off()
 
-# 5. plot temperature V.S. rmax
-pdf("../results/rt_plot/rmax_temp_log")
-p <- ggplot(data = info, aes(x = temp, y = log(rmax), colour = temp_group)) +
-  geom_point(size = 1) +
-  stat_smooth(formula = y~x, method = lm, se = TRUE)
-print(p)
-graphics.off()
 
-# 5. plot temperature V.S. tlag
-pdf("../results/rt_plot/tlag_temp_log")
-p <- ggplot(data = info, aes(x = temp, y = log(tlag), colour = temp_group)) +
-  geom_point(size = 1) +
-  stat_smooth(formula = y~x, method = lm, se = TRUE) 
-  # stat_regline_equation(label.y = -7, size = 2) 
-  # annotate(label = paste0("temperature = ", info$temp_group[1]), geom = "text",
-  #          x = min(info$Nmax,na.rm = TRUE), y = max(info$tlag, na.rm = TRUE),
-  #          hjust = 0, vjust = 0,
-  #          size = 2.5)
-print(p)
-graphics.off()
-
-
-# p <- 
-ggplot(data = info, aes(x = log(1/tlag), y = log(rmax), colour = temp_group)) +
-geom_point(size = 1) +
-stat_smooth(formula = y~x, method = lm, se = TRUE) 
 
 ##################################
 

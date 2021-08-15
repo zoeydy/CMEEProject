@@ -116,47 +116,7 @@ p <- ggplot(info.spe, aes(x = temp_c, y = log(1/tlag), color = species, fill = s
   facet_wrap(~species)
 save.plot("../results/arrhenius/spe_log_tlag_temp",p)
 
-##########################################################################################
-# log of 1/tlag VS temperature(°C) less than 30°C in mean value with confidence interval #
-########################################################################################## 
-mean_df <- data.frame()
-temp.c.s <- unique(info0$temp_c)
-for (i in 1:length(temp.c.s)) {
-  df1 <- subset(info0, info0$temp_c == temp.c.s[i])
-  mean1 <- data.frame(temp.c = df1$temp_c[1],
-                      mean.rmax = mean(log(df1$rmax)),
-                      mean.1tlag = mean(log(1/df1$tlag)),
-                      ci.rmax = ci.calc(log(df1$rmax)),
-                      ci.1tlag = ci.calc(log(1/df1$tlag)))
-  mean_df <- rbind(mean_df, mean1)
-}
-# rmax
-r.temp <- mean_df[mean_df$mean.rmax == max(mean_df$mean.rmax),]$temp.c
 
-p <- ggplot(data = mean_df, aes(x = temp.c, y =mean.rmax )) +
-  geom_point() +
-  stat_smooth(data = mean_df[mean_df$temp.c <= r.temp,], 
-              formula = y~x, method = lm) +
-  geom_errorbar(aes(ymin=mean.rmax - ci.rmax, 
-                    ymax=mean.rmax + ci.rmax,
-                    width = 0.1)) +
-  geom_ribbon(data = mean_df[mean_df$temp.c >= r.temp,], aes(ymin=-Inf, ymax=Inf, alpha = .5 )) +
-  theme(legend.position = 'none') +
-  labs(title = "Mean of log(rmax) VS temperature(°C) less than T_opt", x = "Temperature(°C)", y = "Mean of log(rmax) +/- CI")
-save.plot("../results/arrhenius/mean_log_r_temp",p)
-
-# tlag
-t.temp <- 15
-p <- ggplot(data = mean_df, aes(x = temp.c, y =mean.1tlag )) +
-  geom_point() +
-  stat_smooth(data = mean_df[mean_df$temp.c <= t.temp,],formula = y~x, method = lm) +
-  geom_errorbar(aes(ymin=mean.1tlag - ci.1tlag, 
-                    ymax=mean.1tlag + ci.1tlag,
-                    width = 0.1)) +
-  geom_ribbon(data = mean_df[mean_df$temp.c >= t.temp, ], aes(ymin = -Inf, ymax = Inf, alpha = 0.1)) +
-  theme(legend.position = 'none') +
-  labs(title = "Mean of log(1/tlag) VS temperature(°C) less than T_opt", x = "Temperature(°C)",y = "Mean of log(1/tlag) +/- CI")
-save.plot("../results/arrhenius/mean_log_tlag_temp",p)
 
 
 
@@ -226,46 +186,8 @@ group_temp <- function(dat, param){
   return(temp.df)
 }
 
-# function to plot grouped data frame with CI
-group_plot <- function(dat, param, lab){
-  temp.max <- dat[dat$MEAN == max(dat$MEAN), ]$MEAN.TEMP
-  ggplot(data = dat, aes(x = MEAN.TEMP, y = MEAN)) +
-    geom_point() +
-    stat_smooth(data = dat[dat$MEAN.TEMP <= temp.max, ],formula = y~x, method = lm, se = TRUE)+
-    geom_errorbar(aes(ymin = MEAN - CI, ymax = MEAN + CI, width = .1)) +
-    # labs(x="Temperature Range", y="MEAN (1/h) +/- CI ") +
-    labs(y="MEAN (1/h) +/- CI ") +
-    geom_ribbon(data = dat[dat$MEAN.TEMP >= temp.max,],
-                aes(ymin = -Inf, ymax = Inf, alpha = .3)) +
-    theme(legend.position = 'none') +
-    scale_x_continuous(name = "Temperature Range", labels = dat$GROUP, breaks=dat$MEAN.TEMP) +
-    labs(tag = lab)
-}
 
-# group plot rate VS temp_group
-g1 <- group_plot(group_temp(info_4,"tlag"), "tlag", "A")
-g2 <- group_plot(group_temp(info_4,"rmax"), "rmax", "B")
-g3 <- group_plot(group_temp(info_5,"tlag"), "tlag", "C")
-g4 <- group_plot(group_temp(info_5,"rmax"), "rmax", "D")
-g5 <- group_plot(group_temp(info_6,"tlag"), "tlag", "E")
-g6 <- group_plot(group_temp(info_6,"rmax"), "rmax", "F")
 # left is tlag, right is rmax
-pdf("../results/arrhenius/mean_rate_temp_group.pdf")
-p <- grid.arrange(
-  g1,g2,g3,g4,g5,g6,
-  #labels = LETTERS[1:6],
-  nrow = 3,
-  top = "Across species fitness value VS Temperature(Grouped)",
-  bottom = textGrob(
-    "CI is calculated from normal distribution",
-    gp = gpar(fontface = 6, fontsize = 9),
-    hjust = 1,
-    x = 1
-  )
-)
-print(p)
-graphics.off()
-
 
 ######################################
 # Arrhenius plot of everything above #
@@ -300,7 +222,9 @@ for (i in 1:length(temp.c.s)) {
                       mean.rmax = mean(log(df1$rmax)),
                       mean.1tlag = mean(log(1/df1$tlag)),
                       ci.rmax = ci.calc(log(df1$rmax)),
-                      ci.1tlag = ci.calc(log(1/df1$tlag)))
+                      ci.1tlag = ci.calc(log(1/df1$tlag)),
+                      temp.k = df1$temp_k[1],
+                      one.over.KT = 1/(K*df1$temp_k))
   mean_df <- rbind(mean_df, mean1)
 }
 # rmax
@@ -314,20 +238,35 @@ p <- ggplot(data = mean_df, aes(x = one.over.KT, y =mean.rmax )) +
                     width = 0.1)) +
   geom_ribbon(data = mean_df[mean_df$temp.c >= r.temp,], aes(ymin=-Inf, ymax=Inf, alpha = .5 )) +
   theme(legend.position = 'none') +
-  labs(title = "Mean of log(rmax) VS temperature(°C) less than T_opt", x = "Temperature(°C)", y = "Mean of log(rmax) +/- CI")
+  labs(title = "Mean of log(rmax) VS 1/KT", x = "1/KT", y = "Mean of log(rmax) +/- CI")
 save.plot("../results/arrhenius/mean_log_r_KT", p)
 
 # tlag
 t.temp <- mean_df[mean_df$mean.1tlag == max(mean_df$mean.1tlag),]$temp.c
+sec.ax <- seq(min(mean_df$one.over.KT), max(mean_df$one.over.KT), length.out = length(unique(mean_df$temp.c)))
 p <- ggplot(data = mean_df, aes(x = one.over.KT, y =mean.1tlag )) +
   geom_point() +
   stat_smooth(data = mean_df[mean_df$temp.c <= t.temp,],formula = y~x, method = lm) +
   geom_errorbar(aes(ymin=mean.1tlag - ci.1tlag,
                     ymax=mean.1tlag + ci.1tlag,
                     width = 0.1)) +
+  scale_x_continuous(sec_axis(name = "temperature(°C)",trans = ~.*1,breaks = sec.ax, labels = unique(mean_df$temp.c)))
   geom_ribbon(data = mean_df[mean_df$temp.c >= t.temp, ], aes(ymin = -Inf, ymax = Inf, alpha = 0.1)) +
   theme(legend.position = 'none') +
   labs(title = "Mean of log(1/tlag) VS 1/KT", x = "1/KT",y = "Mean of log(1/tlag) +/- CI")
 save.plot("../results/arrhenius/mean_log_tlag_KT",p)
 
 
+
+#################################################
+ggplot(data = mean_df, aes(x = temp.c, y =mean.1tlag )) +
+  geom_point() +
+  stat_smooth(data = mean_df[mean_df$temp.c <= t.temp,],formula = y~x, method = lm) +
+  geom_errorbar(aes(ymin=mean.1tlag - ci.1tlag,
+                    ymax=mean.1tlag + ci.1tlag,
+                    width = 0.1)) +
+  scale_x_continuous(sec.axis = sec_axis(trans=~.*1, name="Second Axis"), breaks = mean_df$one.over.KT)
+geom_ribbon(data = mean_df[mean_df$temp.c >= t.temp, ], aes(ymin = -Inf, ymax = Inf, alpha = 0.1)) +
+  theme(legend.position = 'none') +
+  labs(title = "Mean of log(1/tlag) VS 1/KT", x = "1/KT",y = "Mean of log(1/tlag) +/- CI")
+# seq(min(mean_df$one.over.KT), max(mean_df$one.over.KT), length.out = length(unique(mean_df$one.over.KT)))
