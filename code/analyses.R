@@ -7,10 +7,33 @@ setwd("~/Documents/CMEEProject/code")
 require(ggplot2)
 library(ggpubr)
 
+
+#################
+# read the data #
+#################
+Data <- read.csv('../data/pop.csv')
+Data <- Data[order(Data[,'id'], Data[,'Time']),]
+IDs <- unique(Data$id)
+
+# plot data
+plot.df <- read.csv("../data/gomp.plot.csv")
+
+# info
+infos <- read.csv("../data/gomp.info.csv")
+
+info0 <- subset(infos, infos$rmax > 0 & infos$tlag > 0) 
+info0[, "temp_c"] <- round(info0[, "temp_c"], digits = 2)
+
+info0$log.one.t <- log(1/info0$tlag)
+info0$log.r <- log(info0$rmax)
+
+
+
+
 # set boltzmann constant 8.617*10^(-5)
 K = 8.617*10^(-5)
 
-save.plot <- function(filepath, plo){
+save_plot <- function(filepath, plo){
   pdf(paste0(filepath,".pdf"))
   print(plo)
   graphics.off()
@@ -23,12 +46,6 @@ library(RColorBrewer)
 # }
 
 
-infos <- read.csv("../data/gomp.info.csv")
-info0 <- subset(infos, infos$rmax > 0 & infos$tlag > 0) 
-info0[, "temp_c"] <- round(info0[, "temp_c"], digits = 2)
-
-info0$log.one.t <- log(1/info0$tlag)
-info0$log.r <- log(info0$rmax)
 
 # devide the temperature into 4 groups ((-5:10, 10:20, 20:30, 30:40))
 df1 <- subset(info0, info0$temp_c >= -5 & info0$temp_c < 10)
@@ -62,7 +79,13 @@ info5$temp_c_group <- factor(info5$temp_c_group, levels = unique(info5$temp_c_gr
 # correlation between rmax and 1/tlag
 p <- ggplot(data = info0, aes(x = log.one.t, y = log.r, colour = temp_c)) +
   geom_point(size = 1) +
-  stat_smooth(formula = y~x, method = lm, fullrange= TRUE,se = TRUE)
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x')
+  # stat_smooth(formula = y~x, method = lm, fullrange= TRUE,se = TRUE)
 save.plot("../results/rt_plot/log_rt_col_temp",p)
 p <- ggplot(data = info4, aes(x = log.one.t, y = log.r)) +
   geom_point(size = 1) +
@@ -171,15 +194,6 @@ plotk_temp <- function(dat){
 # }
 
 
-# read the data, starting value and compare models
-infos <- read.csv("../data/gomp.info.csv")
-plot.df <- read.csv("../data/gomp.plot.csv")
-
-Data <- read.csv('../data/mini_pop.csv')
-Data <- Data[order(Data[,'id'], Data[,'Time']),]
-
-IDs <- unique(Data$id)
-
 #############################################
 # get complete information and plot fitting #
 #############################################
@@ -189,7 +203,7 @@ for (i in 1:length(IDs)){
   # subset info and data by idname
   idname <- IDs[i]
   data <- Data[Data$id == idname,]
-  #plot.id <- plot.df[plot.df$id == idname, ]
+  plot.id <- plot.df[plot.df$id == idname, ]
   info.id <- infos[infos$id == idname, ]
   # get info about temperature, species and medium
   info.id$temp <- data$Temp[1]
@@ -201,33 +215,46 @@ for (i in 1:length(IDs)){
   info <- rbind(info, info.id)
   
   
-  # # plot the fitting
-  # if (is.na(unique(plot.id$plot.point)[1])){
-  #   print(paste("Fit was not successful for ID:",idname))
-  # }else{
-  #   
-  #   legend <- paste0('AICc = ', info.id$AICc, '\nAIC = ', info.id$AIC,
-  #                 '\nBIC = ', info.id$BIC, '\nRsquare = ', info.id$rsq)
-  #   
-  #   # plot fit plot
-  #   FileName <- paste0("../results/fit_gomp/plot_", idname,".png")
-  #   png(file = FileName)
-  #   p <- ggplot(data, aes(x = Time, y = logN)) +
-  #     geom_point(size = 1) +
-  #     labs(x = "Time (h)", y = "Logarithm of the population size (logN)") +
-  #     ggtitle("Gompertz model comparison plot") +
-  #     geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
-  #     # theme(legend.position = 'bottom') +
-  #     annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0) 
-  #   # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
-  #   # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))
-  #   print(p)
-  #   graphics.off()
-  # }
+  # plot the fitting
+  if (is.na(unique(plot.id$plot.point)[1])){
+    print(paste("Fit was not successful for ID:",idname))
+  }else{
+
+    legend <- paste0('AICc = ', info.id$AICc, '\nAIC = ', info.id$AIC,
+                  '\nBIC = ', info.id$BIC, '\nRsquare = ', info.id$rsq)
+
+    # plot fit plot
+    FileName <- paste0("../results/fit_gomp/plot_", idname,".png")
+    png(file = FileName)
+    p <- ggplot(data, aes(x = Time, y = logN)) +
+      geom_point(size = 1) +
+      labs(x = "Time (h)", y = "Logarithm of the population size (logN)") +
+      ggtitle("Gompertz model comparison plot") +
+      geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
+      # theme(legend.position = 'bottom') +
+      annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0)
+    # stat_smooth(method = lm, level = 0.95, aes(colour="Cubic")) +
+    # scale_colour_manual(name="Model", values=c("darkblue", "darkred", "darkgreen"))
+    print(p)
+    graphics.off()
+  }
 }
 
-
-
+# ###############################
+# # Plot Typical Growth Pattern #
+# ###############################
+# # 128 765 813
+# pdf(file = "../results/typ_growth_pattern.pdf")
+# typ.data <- subset(Data, Data$id == 813)
+# plot.id <- plot.df[plot.df$id == 813, ]
+# p <- ggplot(typ.data[-1,], aes(x = Time, y = logN)) +
+#   geom_point(size = 1) +
+#   labs(x = "Time (h)", y = "Logarithmic Growth (logN)") +
+#   ggtitle("Gompertz model comparison plot") +
+#   geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
+#   annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0)
+# print(p)
+# graphics.off()
 
 
 

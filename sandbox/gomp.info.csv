@@ -1,0 +1,810 @@
+"","N0","Nmax","tlag","rmax","AIC","AICc","BIC","rsq","id","model","temp_c","species","medium","temp_k"
+"1",NA,NA,NA,NA,NA,NA,NA,NA,1,"gompertz_model",5,"Chryseobacterium.balustinum","TSB",278
+"2",NA,NA,NA,NA,NA,NA,NA,NA,2,"gompertz_model",5,"Enterobacter.sp.","TSB",278
+"3",NA,NA,NA,NA,NA,NA,NA,NA,3,"gompertz_model",5,"Pantoea.agglomerans.1","TSB",278
+"4",NA,NA,NA,NA,NA,NA,NA,NA,4,"gompertz_model",5,"Pantoea.agglomerans.2","TSB",278
+"5",NA,NA,NA,NA,NA,NA,NA,NA,6,"gompertz_model",5,"Clavibacter.michiganensis","TSB",278
+"6",-8.92785675762387,-1.8955484770257,56.7440767111309,0.0349696922090955,-48.0177187084657,-46.351052041799,-41.1812395585333,-0.109006515998697,7,"gompertz_model",5,"Pseudomonas.fluorescens.1","TSB",278
+"7",NA,NA,NA,NA,NA,NA,NA,NA,8,"gompertz_model",5,"Pseudomonas.fluorescens.2","TSB",278
+"8",-3.65787272848572,-2.59271900077658,174.566508511092,0.00293029990811411,-68.6346226691246,-66.9679560024579,-61.7981435191922,-2.4571862652748,9,"gompertz_model",5,"Acinetobacter.clacoaceticus.1","TSB",278
+"9",NA,NA,NA,NA,NA,NA,NA,NA,10,"gompertz_model",5,"Acinetobacter.clacoaceticus.2","TSB",278
+"10",-1.99175684242589,-2.21801048214902,33.69048037797,0.0260313303821623,-71.9430805675623,-70.2764139008957,-65.10660141763,0.325524158427687,11,"gompertz_model",5,"Stenotrophomonas.maltophilia.1","TSB",278
+"11",NA,NA,NA,NA,NA,NA,NA,NA,12,"gompertz_model",5,"Stenotrophomonas.maltophilia.2","TSB",278
+"12",-3.74905954953015,-1.5339577634008,57.9922899075297,0.0298951453620039,-101.238141417868,-99.5714747512014,-94.4016622679356,0.89792111705835,13,"gompertz_model",5,"Klebsiella.pneumonia","TSB",278
+"13",NA,NA,NA,NA,NA,NA,NA,NA,14,"gompertz_model",5,"Dickeya.zeae","TSB",278
+"14",NA,NA,NA,NA,NA,NA,NA,NA,15,"gompertz_model",5,"Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2","TSB",278
+"15",-4.48479072168722,-1.52594979770358,77.9201561871101,0.0292201006088532,-53.3793570837947,-51.7126904171281,-46.5428779338624,0.71190505688345,16,"gompertz_model",5,"Pantoea.agglomerans..RDA.R.","TSB",278
+"16",-7.23922556683662,-1.86049647257453,51.7035524173978,0.00254183114283605,-53.496833641433,-51.8301669747664,-46.6603544915007,-64.4210562353102,18,"gompertz_model",5,"Acinetobacter.clacoaceticus..RDA.R.","TSB",278
+"17",NA,NA,NA,NA,NA,NA,NA,NA,19,"gompertz_model",5,"Stenotrophomonas.maltophilia..RDA.R.","TSB",278
+"18",NA,NA,NA,NA,NA,NA,NA,NA,20,"gompertz_model",5,"Klebsiella.pneumonia..RDA.R.","TSB",278
+"19",NA,NA,NA,NA,NA,NA,NA,NA,22,"gompertz_model",5,"Clavibacter.michiganensis..RDA.R.","TSB",278
+"20",-4.07784963776845,-1.44492238116013,4.24714498307908,0.062668106049363,-9.6236103662928,-7.27066918982221,-4.16839809950122,-1.38453171852295,23,"gompertz_model",15,"Chryseobacterium.balustinum","TSB",288
+"21",NA,NA,NA,NA,NA,NA,NA,NA,24,"gompertz_model",15,"Enterobacter.sp.","TSB",288
+"22",NA,NA,NA,NA,NA,NA,NA,NA,25,"gompertz_model",15,"Pantoea.agglomerans.1","TSB",288
+"23",NA,NA,NA,NA,NA,NA,NA,NA,26,"gompertz_model",15,"Pantoea.agglomerans.2","TSB",288
+"24",-9.31615811712,-2.20410836096968,28.5564511480976,0.0391285017776079,11.4195619953106,13.7725031717812,16.8747742621022,-23.8732400516754,27,"gompertz_model",15,"Bacillus.pumilus","TSB",288
+"25",NA,NA,NA,NA,NA,NA,NA,NA,28,"gompertz_model",15,"Clavibacter.michiganensis","TSB",288
+"26",-8.07106236532977,-1.99464340440625,1.09282636683753,0.0232986227848495,5.6838010936111,7.90602331583332,11.3612721732568,-5.73496376542328,29,"gompertz_model",15,"Pseudomonas.fluorescens.1","TSB",288
+"27",-1.61191890605567,-0.365245235956391,13.9832684490614,0.0841184197193102,-29.224584579533,-27.0023623573108,-23.5471134998872,-0.473347950788041,30,"gompertz_model",15,"Pseudomonas.fluorescens.2","TSB",288
+"28",NA,NA,NA,NA,NA,NA,NA,NA,31,"gompertz_model",15,"Acinetobacter.clacoaceticus.1","TSB",288
+"29",NA,NA,NA,NA,NA,NA,NA,NA,32,"gompertz_model",15,"Acinetobacter.clacoaceticus.2","TSB",288
+"30",NA,NA,NA,NA,NA,NA,NA,NA,33,"gompertz_model",15,"Stenotrophomonas.maltophilia.1","TSB",288
+"31",NA,NA,NA,NA,NA,NA,NA,NA,34,"gompertz_model",15,"Stenotrophomonas.maltophilia.2","TSB",288
+"32",NA,NA,NA,NA,NA,NA,NA,NA,35,"gompertz_model",15,"Klebsiella.pneumonia","TSB",288
+"33",NA,NA,NA,NA,NA,NA,NA,NA,36,"gompertz_model",15,"Dickeya.zeae","TSB",288
+"34",NA,NA,NA,NA,NA,NA,NA,NA,37,"gompertz_model",15,"Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2","TSB",288
+"35",NA,NA,NA,NA,NA,NA,NA,NA,38,"gompertz_model",15,"Pantoea.agglomerans..RDA.R.","TSB",288
+"36",NA,NA,NA,NA,NA,NA,NA,NA,39,"gompertz_model",15,"Dickeya.zeae..RDA.R.","TSB",288
+"37",NA,NA,NA,NA,NA,NA,NA,NA,40,"gompertz_model",15,"Acinetobacter.clacoaceticus..RDA.R.","TSB",288
+"38",-6.0441727042742,-2.07792280364027,33.6379323296643,0.05202284382631,-22.5637987424108,-20.3415765201886,-16.886327662765,-1.58791993272988,41,"gompertz_model",15,"Stenotrophomonas.maltophilia..RDA.R.","TSB",288
+"39",-5.88537026721103,-0.289125682322192,2.68215993268716,0.384833536734978,5.09028308538088,6.62874462384242,12.2602191078066,0.361282073496893,42,"gompertz_model",15,"Klebsiella.pneumonia..RDA.R.","TSB",288
+"40",NA,NA,NA,NA,NA,NA,NA,NA,43,"gompertz_model",15,"Bacillus.pumilus..RDA.R.","TSB",288
+"41",NA,NA,NA,NA,NA,NA,NA,NA,44,"gompertz_model",15,"Clavibacter.michiganensis..RDA.R.","TSB",288
+"42",NA,NA,NA,NA,NA,NA,NA,NA,45,"gompertz_model",25,"Chryseobacterium.balustinum","TSB",298
+"43",NA,NA,NA,NA,NA,NA,NA,NA,46,"gompertz_model",25,"Enterobacter.sp.","TSB",298
+"44",NA,NA,NA,NA,NA,NA,NA,NA,47,"gompertz_model",25,"Pantoea.agglomerans.1","TSB",298
+"45",NA,NA,NA,NA,NA,NA,NA,NA,48,"gompertz_model",25,"Pantoea.agglomerans.2","TSB",298
+"46",NA,NA,NA,NA,NA,NA,NA,NA,49,"gompertz_model",25,"Bacillus.pumilus","TSB",298
+"47",NA,NA,NA,NA,NA,NA,NA,NA,50,"gompertz_model",25,"Clavibacter.michiganensis","TSB",298
+"48",NA,NA,NA,NA,NA,NA,NA,NA,51,"gompertz_model",25,"Pseudomonas.fluorescens.1","TSB",298
+"49",NA,NA,NA,NA,NA,NA,NA,NA,52,"gompertz_model",25,"Pseudomonas.fluorescens.2","TSB",298
+"50",NA,NA,NA,NA,NA,NA,NA,NA,53,"gompertz_model",25,"Acinetobacter.clacoaceticus.1","TSB",298
+"51",NA,NA,NA,NA,NA,NA,NA,NA,54,"gompertz_model",25,"Acinetobacter.clacoaceticus.2","TSB",298
+"52",NA,NA,NA,NA,NA,NA,NA,NA,55,"gompertz_model",25,"Stenotrophomonas.maltophilia.1","TSB",298
+"53",NA,NA,NA,NA,NA,NA,NA,NA,56,"gompertz_model",25,"Stenotrophomonas.maltophilia.2","TSB",298
+"54",-6.24660955882001,-0.0613280625641749,2.31869127032328,0.848285105633653,-43.3761903699289,-40.0428570365956,-39.2101236496478,0.978583967784584,57,"gompertz_model",25,"Klebsiella.pneumonia","TSB",298
+"55",NA,NA,NA,NA,NA,NA,NA,NA,58,"gompertz_model",25,"Dickeya.zeae","TSB",298
+"56",NA,NA,NA,NA,NA,NA,NA,NA,59,"gompertz_model",25,"Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2","TSB",298
+"57",NA,NA,NA,NA,NA,NA,NA,NA,60,"gompertz_model",25,"Pantoea.agglomerans..RDA.R.","TSB",298
+"58",NA,NA,NA,NA,NA,NA,NA,NA,61,"gompertz_model",25,"Dickeya.zeae..RDA.R.","TSB",298
+"59",NA,NA,NA,NA,NA,NA,NA,NA,62,"gompertz_model",25,"Acinetobacter.clacoaceticus..RDA.R.","TSB",298
+"60",NA,NA,NA,NA,NA,NA,NA,NA,63,"gompertz_model",25,"Stenotrophomonas.maltophilia..RDA.R.","TSB",298
+"61",-0.90601813935103,-0.237053989241222,3.52041908900624,0.5452383374764,-36.061421466027,-32.7280881326937,-31.895354745746,0.960947638654199,64,"gompertz_model",25,"Klebsiella.pneumonia..RDA.R.","TSB",298
+"62",NA,NA,NA,NA,NA,NA,NA,NA,65,"gompertz_model",25,"Bacillus.pumilus..RDA.R.","TSB",298
+"63",-6.74050406594412,-0.10115455766042,3.63111258204804,0.0129205882884091,39.1220646608172,42.4553979941505,43.2881313810983,-8.04821496533371,66,"gompertz_model",25,"Clavibacter.michiganensis..RDA.R.","TSB",298
+"64",NA,NA,NA,NA,NA,NA,NA,NA,67,"gompertz_model",35,"Chryseobacterium.balustinum","TSB",308
+"65",-3.27931778535391,-0.0695378440708447,1.54610944272695,0.276710215067622,-33.9922342277328,-30.6589008943994,-29.8261675074517,0.964065798614346,68,"gompertz_model",35,"Enterobacter.sp.","TSB",308
+"66",-1.64582663733466,-0.378082481497223,2.69175150354996,0.805488985416335,3.59925402036957,7.2356176567332,7.46219763156847,0.385360143936214,69,"gompertz_model",35,"Pantoea.agglomerans.1","TSB",308
+"67",-7.04605442037628,-0.281690074958866,6.17400986911254,0.963173795583904,19.2584815810007,23.2584815810007,22.7987325865117,-0.870410810340561,70,"gompertz_model",35,"Pantoea.agglomerans.2","TSB",308
+"68",-10.6933285716795,-1.25442191076329,2.51359071564295,1.07709986610452,21.496863814504,25.496863814504,25.0371148200151,-10.825876933627,71,"gompertz_model",35,"Bacillus.pumilus","TSB",308
+"69",NA,NA,NA,NA,NA,NA,NA,NA,72,"gompertz_model",35,"Clavibacter.michiganensis","TSB",308
+"70",NA,NA,NA,NA,NA,NA,NA,NA,73,"gompertz_model",35,"Pseudomonas.fluorescens.1","TSB",308
+"71",NA,NA,NA,NA,NA,NA,NA,NA,74,"gompertz_model",35,"Pseudomonas.fluorescens.2","TSB",308
+"72",NA,NA,NA,NA,NA,NA,NA,NA,75,"gompertz_model",35,"Acinetobacter.clacoaceticus.1","TSB",308
+"73",NA,NA,NA,NA,NA,NA,NA,NA,76,"gompertz_model",35,"Acinetobacter.clacoaceticus.2","TSB",308
+"74",NA,NA,NA,NA,NA,NA,NA,NA,77,"gompertz_model",35,"Stenotrophomonas.maltophilia.1","TSB",308
+"75",NA,NA,NA,NA,NA,NA,NA,NA,78,"gompertz_model",35,"Stenotrophomonas.maltophilia.2","TSB",308
+"76",NA,NA,NA,NA,NA,NA,NA,NA,79,"gompertz_model",35,"Klebsiella.pneumonia","TSB",308
+"77",NA,NA,NA,NA,NA,NA,NA,NA,80,"gompertz_model",35,"Dickeya.zeae","TSB",308
+"78",NA,NA,NA,NA,NA,NA,NA,NA,81,"gompertz_model",35,"Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2","TSB",308
+"79",-6.2214258227504,-0.190944792254158,5.45752408051936,0.866085214324302,14.020948523988,17.3542818573213,18.1870152442691,-0.381592032511028,82,"gompertz_model",35,"Pantoea.agglomerans..RDA.R.","TSB",308
+"80",NA,NA,NA,NA,NA,NA,NA,NA,83,"gompertz_model",35,"Dickeya.zeae..RDA.R.","TSB",308
+"81",NA,NA,NA,NA,NA,NA,NA,NA,84,"gompertz_model",35,"Acinetobacter.clacoaceticus..RDA.R.","TSB",308
+"82",NA,NA,NA,NA,NA,NA,NA,NA,85,"gompertz_model",35,"Stenotrophomonas.maltophilia..RDA.R.","TSB",308
+"83",NA,NA,NA,NA,NA,NA,NA,NA,86,"gompertz_model",35,"Klebsiella.pneumonia..RDA.R.","TSB",308
+"84",NA,NA,NA,NA,NA,NA,NA,NA,87,"gompertz_model",35,"Bacillus.pumilus..RDA.R.","TSB",308
+"85",NA,NA,NA,NA,NA,NA,NA,NA,88,"gompertz_model",35,"Clavibacter.michiganensis..RDA.R.","TSB",308
+"86",NA,NA,NA,NA,NA,NA,NA,NA,89,"gompertz_model",5,"Tetraselmis tetrahele","ESAW",278
+"87",7.04169927045181,8.96801501125544,243.265358773275,0.0258738780936168,25.9628667033653,32.629533370032,27.9523430673571,0.999999996003808,90,"gompertz_model",5,"Tetraselmis tetrahele","ESAW",278
+"88",NA,NA,NA,NA,NA,NA,NA,NA,91,"gompertz_model",5,"Tetraselmis tetrahele","ESAW",278
+"89",5.27608810139197,4.0414917685483,23.8258033857156,0,34.5537325567315,41.2203992233981,36.5432089207233,0.999999993591188,92,"gompertz_model",5,"Tetraselmis tetrahele","ESAW",278
+"90",NA,NA,NA,NA,NA,NA,NA,NA,94,"gompertz_model",8,"Tetraselmis tetrahele","ESAW",281
+"91",NA,NA,NA,NA,NA,NA,NA,NA,95,"gompertz_model",8,"Tetraselmis tetrahele","ESAW",281
+"92",NA,NA,NA,NA,NA,NA,NA,NA,96,"gompertz_model",8,"Tetraselmis tetrahele","ESAW",281
+"93",8.13474784122192,3.71388955494754,73.0240556445405,0.0268510065803784,20.0756276580516,26.7422943247182,22.0651040220434,0.999999997638076,97,"gompertz_model",8,"Tetraselmis tetrahele","ESAW",281
+"94",NA,NA,NA,NA,NA,NA,NA,NA,98,"gompertz_model",8,"Tetraselmis tetrahele","ESAW",281
+"95",NA,NA,NA,NA,NA,NA,NA,NA,99,"gompertz_model",16,"Tetraselmis tetrahele","ESAW",289
+"96",NA,NA,NA,NA,NA,NA,NA,NA,100,"gompertz_model",16,"Tetraselmis tetrahele","ESAW",289
+"97",NA,NA,NA,NA,NA,NA,NA,NA,101,"gompertz_model",16,"Tetraselmis tetrahele","ESAW",289
+"98",NA,NA,NA,NA,NA,NA,NA,NA,102,"gompertz_model",16,"Tetraselmis tetrahele","ESAW",289
+"99",NA,NA,NA,NA,NA,NA,NA,NA,103,"gompertz_model",16,"Tetraselmis tetrahele","ESAW",289
+"100",NA,NA,NA,NA,NA,NA,NA,NA,104,"gompertz_model",25,"Tetraselmis tetrahele","ESAW",298
+"101",NA,NA,NA,NA,NA,NA,NA,NA,105,"gompertz_model",25,"Tetraselmis tetrahele","ESAW",298
+"102",NA,NA,NA,NA,NA,NA,NA,NA,106,"gompertz_model",25,"Tetraselmis tetrahele","ESAW",298
+"103",NA,NA,NA,NA,NA,NA,NA,NA,107,"gompertz_model",25,"Tetraselmis tetrahele","ESAW",298
+"104",1.60413473960547,13.7182142742792,459.008285936138,0.000165078644185898,22.6677502748672,28.3820359891529,25.0922835238072,0.999999986284774,108,"gompertz_model",25,"Tetraselmis tetrahele","ESAW",298
+"105",5.20526997454984,14.4264884625339,242.849623149306,0.00766151714375622,33.4207831583077,40.0874498249744,35.4102595222995,0.999999716860669,109,"gompertz_model",32,"Tetraselmis tetrahele","ESAW",305
+"106",0.615924553148305,12.4998971363999,489.778772842545,0,40.291688059051,46.9583547257176,42.2811644230428,0.999999725621126,110,"gompertz_model",32,"Tetraselmis tetrahele","ESAW",305
+"107",NA,NA,NA,NA,NA,NA,NA,NA,111,"gompertz_model",32,"Tetraselmis tetrahele","ESAW",305
+"108",5.22159851354457,3.14126606205166,594.186379209817,0.00260830784324912,39.3460841751753,45.0603698894611,41.7706174241153,0.999999778110548,112,"gompertz_model",32,"Tetraselmis tetrahele","ESAW",305
+"109",NA,NA,NA,NA,NA,NA,NA,NA,113,"gompertz_model",32,"Tetraselmis tetrahele","ESAW",305
+"110",NA,NA,NA,NA,NA,NA,NA,NA,114,"gompertz_model",22,"Soil Microbial Community","GH",295
+"111",NA,NA,NA,NA,NA,NA,NA,NA,115,"gompertz_model",22,"Soil Microbial Community","GHN",295
+"112",NA,NA,NA,NA,NA,NA,NA,NA,116,"gompertz_model",22,"Soil Microbial Community","GL",295
+"113",NA,NA,NA,NA,NA,NA,NA,NA,117,"gompertz_model",22,"Soil Microbial Community","GLN",295
+"114",NA,NA,NA,NA,NA,NA,NA,NA,118,"gompertz_model",22,"Soil Microbial Community","H2O",295
+"115",NA,NA,NA,NA,NA,NA,NA,NA,119,"gompertz_model",22,"Soil Microbial Community","N",295
+"116",NA,NA,NA,NA,NA,NA,NA,NA,120,"gompertz_model",22,"Soil Microbial Community","GHB",295
+"117",NA,NA,NA,NA,NA,NA,NA,NA,121,"gompertz_model",22,"Soil Microbial Community","GHNB",295
+"118",NA,NA,NA,NA,NA,NA,NA,NA,122,"gompertz_model",22,"Soil Microbial Community","GLB",295
+"119",NA,NA,NA,NA,NA,NA,NA,NA,123,"gompertz_model",22,"Soil Microbial Community","GLNB",295
+"120",NA,NA,NA,NA,NA,NA,NA,NA,124,"gompertz_model",22,"Soil Microbial Community","H2OB",295
+"121",NA,NA,NA,NA,NA,NA,NA,NA,125,"gompertz_model",22,"Soil Microbial Community","NB",295
+"122",NA,NA,NA,NA,NA,NA,NA,NA,126,"gompertz_model",2,"Staphylococcus spp.","Raw Chicken Breast",275
+"123",NA,NA,NA,NA,NA,NA,NA,NA,127,"gompertz_model",4,"Staphylococcus spp.","Raw Chicken Breast",277
+"124",0.0123548349824394,5.87162537191102,30.8812880943661,0.0194580742533268,17.0071471125076,21.451591556952,20.2024337605839,0.999999725391695,128,"gompertz_model",7,"Staphylococcus spp.","Raw Chicken Breast",280
+"125",NA,NA,NA,NA,NA,NA,NA,NA,129,"gompertz_model",10,"Staphylococcus spp.","Raw Chicken Breast",283
+"126",2.19791626472791,6.9914127011556,53.1499889208585,0.0894032410661715,14.4603126764907,24.4603126764907,15.4464355631718,0.999999312513037,130,"gompertz_model",15,"Staphylococcus spp.","Raw Chicken Breast",288
+"127",2.27288520302009,8.75621030577553,43.8986438351573,0.157535996712301,14.9061587523836,24.9061587523836,15.8922816390647,0.999999107812141,131,"gompertz_model",20,"Staphylococcus spp.","Raw Chicken Breast",293
+"128",-0.00270250501513481,7.10201734526547,35.0061910797137,0.0054012637141032,28.6216558624326,36.6216558624326,30.1345813274028,0.999990888906191,132,"gompertz_model",2,"Staphylococcus spp.","Salted Chicken Breast",275
+"129",NA,NA,NA,NA,NA,NA,NA,NA,133,"gompertz_model",4,"Staphylococcus spp.","Salted Chicken Breast",277
+"130",0.0192361900084492,9.64090659753135,199.462312607881,0.0515906681433657,3.6507129699258,8.09515741437025,6.8459996180021,0.999999876257255,134,"gompertz_model",7,"Staphylococcus spp.","Salted Chicken Breast",280
+"131",0.0168666894604515,14.1226174755573,97.3252962972287,0.0962277715141768,33.4658613619445,38.4658613619445,36.2906081492522,0.999999153337949,135,"gompertz_model",10,"Staphylococcus spp.","Salted Chicken Breast",283
+"132",NA,NA,NA,NA,NA,NA,NA,NA,136,"gompertz_model",15,"Staphylococcus spp.","Salted Chicken Breast",288
+"133",NA,NA,NA,NA,NA,NA,NA,NA,137,"gompertz_model",20,"Staphylococcus spp.","Salted Chicken Breast",293
+"134",NA,NA,NA,NA,NA,NA,NA,NA,138,"gompertz_model",2,"Staphylococcus spp.","Cooked Chicken Breast",275
+"135",NA,NA,NA,NA,NA,NA,NA,NA,139,"gompertz_model",4,"Staphylococcus spp.","Cooked Chicken Breast",277
+"136",-0.00714964106013256,7.38437316025009,82.202863917579,0.057963663380471,37.2406780956454,41.6851225400899,40.4359647437217,0.999974178397691,140,"gompertz_model",7,"Staphylococcus spp.","Cooked Chicken Breast",280
+"137",NA,NA,NA,NA,NA,NA,NA,NA,141,"gompertz_model",10,"Staphylococcus spp.","Cooked Chicken Breast",283
+"138",NA,NA,NA,NA,NA,NA,NA,NA,142,"gompertz_model",15,"Staphylococcus spp.","Cooked Chicken Breast",288
+"139",NA,NA,NA,NA,NA,NA,NA,NA,143,"gompertz_model",20,"Staphylococcus spp.","Cooked Chicken Breast",293
+"140",0.0271551050838798,10.2647683441279,33.4144794543973,0.00962863460675096,15.3824501250678,22.0491167917345,17.3719264890597,0.999997486309836,144,"gompertz_model",2,"Pseudomonas spp.","Raw Chicken Breast",275
+"141",NA,NA,NA,NA,NA,NA,NA,NA,145,"gompertz_model",4,"Pseudomonas spp.","Raw Chicken Breast",277
+"142",-0.0258641878028084,5.34522553069772,68.928080096274,0.00325782544513176,10.1512461506001,16.8179128172668,12.1407225145919,0.999998953832044,146,"gompertz_model",7,"Pseudomonas spp.","Raw Chicken Breast",280
+"143",NA,NA,NA,NA,NA,NA,NA,NA,147,"gompertz_model",10,"Pseudomonas spp.","Raw Chicken Breast",283
+"144",0.487229451749281,9.35396766383907,59.4517190503918,0.244454326407916,10.2078638768957,15.9221495911814,12.6323971258357,0.999999985491094,148,"gompertz_model",15,"Pseudomonas spp.","Raw Chicken Breast",288
+"145",0.368668095264848,2.60210101465437,35.6768626842833,0.117438915659999,1.6479939003255,11.6479939003255,2.6341167870066,0.99999998969019,149,"gompertz_model",20,"Pseudomonas spp.","Raw Chicken Breast",293
+"146",NA,NA,NA,NA,NA,NA,NA,NA,150,"gompertz_model",2,"Pseudomonas spp.","Salted Chicken Breast",275
+"147",NA,NA,NA,NA,NA,NA,NA,NA,151,"gompertz_model",4,"Pseudomonas spp.","Salted Chicken Breast",277
+"148",0.0185723531091616,9.74997018228064,179.071904061811,0.0133808536055949,-10.054015440796,-4.33972972651031,-7.62948219185602,0.999998732730245,152,"gompertz_model",7,"Pseudomonas spp.","Salted Chicken Breast",280
+"149",0.0744813478752948,0.870963296505393,94.4721796584041,0.0535991796948359,7.48720325049328,12.4872032504933,10.311950037801,0.999998437967097,153,"gompertz_model",10,"Pseudomonas spp.","Salted Chicken Breast",283
+"150",NA,NA,NA,NA,NA,NA,NA,NA,154,"gompertz_model",15,"Pseudomonas spp.","Salted Chicken Breast",288
+"151",NA,NA,NA,NA,NA,NA,NA,NA,155,"gompertz_model",20,"Pseudomonas spp.","Salted Chicken Breast",293
+"152",0.174465967406341,9.29107161385469,290.656846638761,0.0102869088101479,10.4203400041659,18.4203400041659,11.9332654691361,0.999999915749056,156,"gompertz_model",2,"Pseudomonas spp.","Cooked Chicken Breast",275
+"153",NA,NA,NA,NA,NA,NA,NA,NA,157,"gompertz_model",4,"Pseudomonas spp.","Cooked Chicken Breast",277
+"154",NA,NA,NA,NA,NA,NA,NA,NA,158,"gompertz_model",7,"Pseudomonas spp.","Cooked Chicken Breast",280
+"155",-0.00257689379490545,11.6708538575703,115.383962317555,0.106381760804427,14.2688869021261,20.9355535687928,16.258363266118,0.999999942928289,159,"gompertz_model",10,"Pseudomonas spp.","Cooked Chicken Breast",283
+"156",0.0386901760091735,15.7248532695713,14.0244841834155,0.123856473822191,12.2440618777411,17.9583475920268,14.6685951266811,0.999999985987415,160,"gompertz_model",15,"Pseudomonas spp.","Cooked Chicken Breast",288
+"157",0.020548731383557,9.03717239073168,41.3967663843285,0.231419850876984,15.9582960463083,25.9582960463083,16.9444189329894,0.999999865529209,161,"gompertz_model",20,"Pseudomonas spp.","Cooked Chicken Breast",293
+"158",NA,NA,NA,NA,NA,NA,NA,NA,162,"gompertz_model",2,"Aerobic Psychotropic.","Raw Chicken Breast",275
+"159",NA,NA,NA,NA,NA,NA,NA,NA,163,"gompertz_model",4,"Aerobic Psychotropic.","Raw Chicken Breast",277
+"160",NA,NA,NA,NA,NA,NA,NA,NA,164,"gompertz_model",7,"Aerobic Psychotropic.","Raw Chicken Breast",280
+"161",NA,NA,NA,NA,NA,NA,NA,NA,165,"gompertz_model",10,"Aerobic Psychotropic.","Raw Chicken Breast",283
+"162",NA,NA,NA,NA,NA,NA,NA,NA,166,"gompertz_model",15,"Aerobic Psychotropic.","Raw Chicken Breast",288
+"163",0.331672157024646,7.18926249973749,49.1075404293527,0.450707861240427,5.08997377453905,18.4233071078724,5.48718148293823,0.999999350180466,167,"gompertz_model",20,"Aerobic Psychotropic.","Raw Chicken Breast",293
+"164",0.121656581190879,9.53693660225583,447.890705698469,0.0160981457110975,5.3752824750403,13.3752824750403,6.88820794001053,0.999997942890824,168,"gompertz_model",2,"Aerobic Psychotropic.","Salted Chicken Breast",275
+"165",NA,NA,NA,NA,NA,NA,NA,NA,169,"gompertz_model",4,"Aerobic Psychotropic.","Salted Chicken Breast",277
+"166",0.000203157360324493,12.8972291654632,7.54100300518896,0.0408182996612641,26.7216088740058,30.7216088740058,30.2618598795169,0.999998310602045,170,"gompertz_model",7,"Aerobic Psychotropic.","Salted Chicken Breast",280
+"167",NA,NA,NA,NA,NA,NA,NA,NA,171,"gompertz_model",10,"Aerobic Psychotropic.","Salted Chicken Breast",283
+"168",NA,NA,NA,NA,NA,NA,NA,NA,172,"gompertz_model",15,"Aerobic Psychotropic.","Salted Chicken Breast",288
+"169",NA,NA,NA,NA,NA,NA,NA,NA,173,"gompertz_model",20,"Aerobic Psychotropic.","Salted Chicken Breast",293
+"170",NA,NA,NA,NA,NA,NA,NA,NA,174,"gompertz_model",2,"Aerobic Psychotropic.","Cooked Chicken Breast",275
+"171",NA,NA,NA,NA,NA,NA,NA,NA,175,"gompertz_model",4,"Aerobic Psychotropic.","Cooked Chicken Breast",277
+"172",0.00886938725922107,4.30273325732094,151.19492460861,0.0487761943238461,10.3518862658619,14.7963307103063,13.5471729139382,0.999999776707419,176,"gompertz_model",7,"Aerobic Psychotropic.","Cooked Chicken Breast",280
+"173",NA,NA,NA,NA,NA,NA,NA,NA,177,"gompertz_model",10,"Aerobic Psychotropic.","Cooked Chicken Breast",283
+"174",0.688924224651645,11.1312031163875,44.1658704335389,0.107221454474794,6.12977007453444,16.1297700745344,7.11589296121553,0.999999855023036,178,"gompertz_model",15,"Aerobic Psychotropic.","Cooked Chicken Breast",288
+"175",NA,NA,NA,NA,NA,NA,NA,NA,179,"gompertz_model",20,"Aerobic Psychotropic.","Cooked Chicken Breast",293
+"176",NA,NA,NA,NA,NA,NA,NA,NA,180,"gompertz_model",2,"Aerobic Mesophilic.","Raw Chicken Breast",275
+"177",-0.0190690638458668,12.8866937009152,84.9945115695858,0.0927969388264131,20.2789832158661,24.7234276603106,23.4742698639424,0.999999818000199,181,"gompertz_model",7,"Aerobic Mesophilic.","Raw Chicken Breast",280
+"178",NA,NA,NA,NA,NA,NA,NA,NA,182,"gompertz_model",4,"Aerobic Mesophilic.","Raw Chicken Breast",277
+"179",NA,NA,NA,NA,NA,NA,NA,NA,183,"gompertz_model",10,"Aerobic Mesophilic.","Raw Chicken Breast",283
+"180",NA,NA,NA,NA,NA,NA,NA,NA,184,"gompertz_model",15,"Aerobic Mesophilic.","Raw Chicken Breast",288
+"181",NA,NA,NA,NA,NA,NA,NA,NA,185,"gompertz_model",20,"Aerobic Mesophilic.","Raw Chicken Breast",293
+"182",NA,NA,NA,NA,NA,NA,NA,NA,186,"gompertz_model",2,"Aerobic Mesophilic.","Salted Chicken Breast",275
+"183",NA,NA,NA,NA,NA,NA,NA,NA,187,"gompertz_model",4,"Aerobic Mesophilic.","Salted Chicken Breast",277
+"184",NA,NA,NA,NA,NA,NA,NA,NA,188,"gompertz_model",7,"Aerobic Mesophilic.","Salted Chicken Breast",280
+"185",0.00569703530247173,2.29062364942207,134.909016790205,0.0364430321609021,7.5540744260909,13.2683601403766,9.9786076750309,0.999998045221135,189,"gompertz_model",10,"Aerobic Mesophilic.","Salted Chicken Breast",283
+"186",0.695358274915605,1.142899620877,38.2852170006718,0.165099825772483,9.1505708558511,22.4839041891844,9.54777856425028,0.999998250525611,190,"gompertz_model",15,"Aerobic Mesophilic.","Salted Chicken Breast",288
+"187",0.158232520010594,9.98977284222252,9.23195691428673,0.200833682076576,11.3603896287575,24.6937229620909,11.7575973371567,0.999996856449423,191,"gompertz_model",20,"Aerobic Mesophilic.","Salted Chicken Breast",293
+"188",NA,NA,NA,NA,NA,NA,NA,NA,192,"gompertz_model",2,"Aerobic Mesophilic.","Cooked Chicken Breast",275
+"189",NA,NA,NA,NA,NA,NA,NA,NA,193,"gompertz_model",4,"Aerobic Mesophilic.","Cooked Chicken Breast",277
+"190",-0.0330144491076478,7.51627123362728,317.508562649333,0.0116659413437299,20.2655323837815,25.9798180980672,22.6900656327215,0.999999981574231,194,"gompertz_model",7,"Aerobic Mesophilic.","Cooked Chicken Breast",280
+"191",NA,NA,NA,NA,NA,NA,NA,NA,195,"gompertz_model",10,"Aerobic Mesophilic.","Cooked Chicken Breast",283
+"192",0.041226070602012,6.05598457924022,29.677177301774,0.229249221491773,10.1338934013622,20.1338934013622,11.1200162880433,0.99999996479048,196,"gompertz_model",15,"Aerobic Mesophilic.","Cooked Chicken Breast",288
+"193",0.383436786800678,7.11994875705171,42.1418402664703,0.277888679406963,-2.55225922018324,5.44774077981676,-1.03933375521301,0.999999942533093,197,"gompertz_model",20,"Aerobic Mesophilic.","Cooked Chicken Breast",293
+"194",NA,NA,NA,NA,NA,NA,NA,NA,198,"gompertz_model",8,"Spoilage","Vacuum Beef Striploins",281
+"195",5.29175842721847,3.70335433215872,1.0693966782276,0.105365201414889,-2.87890359853098,17.121096401469,-3.14935285325442,0.999999694114358,199,"gompertz_model",8,"Escherichia coli","Vacuum Beef Striploins",281
+"196",NA,NA,NA,NA,NA,NA,NA,NA,200,"gompertz_model",8,"Salmonella Typhimurium","Vacuum Beef Striploins",281
+"197",NA,NA,NA,NA,NA,NA,NA,NA,201,"gompertz_model",10,"Spoilage","Vacuum Beef Striploins",283
+"198",NA,NA,NA,NA,NA,NA,NA,NA,202,"gompertz_model",10,"Escherichia coli","Vacuum Beef Striploins",283
+"199",NA,NA,NA,NA,NA,NA,NA,NA,203,"gompertz_model",10,"Salmonella Typhimurium","Vacuum Beef Striploins",283
+"200",NA,NA,NA,NA,NA,NA,NA,NA,204,"gompertz_model",10,"Spoilage","C02 Beef Striploins",283
+"201",NA,NA,NA,NA,NA,NA,NA,NA,205,"gompertz_model",10,"Escherichia coli","C02 Beef Striploins",283
+"202",7.34258483611681,15.5397535146511,0.601109292465123,1.2538731501438,-3.8257544655085,16.1742455344915,-4.09620372023193,0.999999999743596,206,"gompertz_model",12,"Spoilage","Vacuum Beef Striploins",285
+"203",5.15360857954341,12.9142860536511,1.87691340560587,0.107986466479153,30.2898213937057,50.2898213937057,30.0193721389823,0.999999849152019,207,"gompertz_model",12,"Escherichia coli","Vacuum Beef Striploins",285
+"204",2.13311014704653,2.5018343552803,3.48438775994471,0.0553145948596298,-9.29557536294411,10.7044246370559,-9.56602461766754,0.999999981668442,208,"gompertz_model",12,"Salmonella Typhimurium","Vacuum Beef Striploins",285
+"205",NA,NA,NA,NA,NA,NA,NA,NA,209,"gompertz_model",12,"Spoilage","C02 Beef Striploins",285
+"206",NA,NA,NA,NA,NA,NA,NA,NA,210,"gompertz_model",12,"Escherichia coli","C02 Beef Striploins",285
+"207",0.470787654657642,7.06775361938335,3.62055249407503,0.193833038026682,-16.8990802810788,-3.56574694774546,-16.5018725726796,0.999999823295756,211,"gompertz_model",12,"Salmonella Typhimurium","C02 Beef Striploins",285
+"208",NA,NA,NA,NA,NA,NA,NA,NA,212,"gompertz_model",15,"Spoilage","Vacuum Beef Striploins",288
+"209",NA,NA,NA,NA,NA,NA,NA,NA,213,"gompertz_model",15,"Escherichia coli","Vacuum Beef Striploins",288
+"210",NA,NA,NA,NA,NA,NA,NA,NA,214,"gompertz_model",15,"Salmonella Typhimurium","Vacuum Beef Striploins",288
+"211",5.52203447515091,14.2763860211571,4.48370922009189,0.562505080950823,15.8525476119659,35.8525476119659,15.5820983572424,0.999999974309299,215,"gompertz_model",15,"Spoilage","C02 Beef Striploins",288
+"212",NA,NA,NA,NA,NA,NA,NA,NA,216,"gompertz_model",15,"Escherichia coli","C02 Beef Striploins",288
+"213",NA,NA,NA,NA,NA,NA,NA,NA,217,"gompertz_model",15,"Salmonella Typhimurium","C02 Beef Striploins",288
+"214",0.883211202158831,13.0593274615584,0.470104813592794,5.06734059062184,11.5670010546386,51.5670010546386,10.5257984007789,0.999999996383515,218,"gompertz_model",20,"Spoilage","Vacuum Beef Striploins",293
+"215",NA,NA,NA,NA,NA,NA,NA,NA,219,"gompertz_model",20,"Escherichia coli","Vacuum Beef Striploins",293
+"216",NA,NA,NA,NA,NA,NA,NA,NA,220,"gompertz_model",20,"Salmonella Typhimurium","Vacuum Beef Striploins",293
+"217",NA,NA,NA,NA,NA,NA,NA,NA,221,"gompertz_model",20,"Spoilage","C02 Beef Striploins",293
+"218",NA,NA,NA,NA,NA,NA,NA,NA,222,"gompertz_model",20,"Escherichia coli","C02 Beef Striploins",293
+"219",NA,NA,NA,NA,NA,NA,NA,NA,223,"gompertz_model",20,"Salmonella Typhimurium","C02 Beef Striploins",293
+"220",NA,NA,NA,NA,NA,NA,NA,NA,224,"gompertz_model",30,"Spoilage","Vacuum Beef Striploins",303
+"221",NA,NA,NA,NA,NA,NA,NA,NA,225,"gompertz_model",30,"Escherichia coli","Vacuum Beef Striploins",303
+"222",NA,NA,NA,NA,NA,NA,NA,NA,226,"gompertz_model",30,"Salmonella Typhimurium","Vacuum Beef Striploins",303
+"223",1.11594349462049,6.10798257716371,0.0193264455093706,4.64195057524476,-13.9028097442743,6.09719025572572,-14.1732589989977,0.999999999445679,227,"gompertz_model",30,"Spoilage","C02 Beef Striploins",303
+"224",NA,NA,NA,NA,NA,NA,NA,NA,228,"gompertz_model",30,"Escherichia coli","C02 Beef Striploins",303
+"225",NA,NA,NA,NA,NA,NA,NA,NA,229,"gompertz_model",30,"Salmonella Typhimurium","C02 Beef Striploins",303
+"226",NA,NA,NA,NA,NA,NA,NA,NA,231,"gompertz_model",5,"Pseudomonas_spp","frankfurters",278
+"227",NA,NA,NA,NA,NA,NA,NA,NA,232,"gompertz_model",5,"lactic_acid_bacteria","frankfurters",278
+"228",NA,NA,NA,NA,NA,NA,NA,NA,234,"gompertz_model",15,"Pseudomonas_spp","frankfurters",288
+"229",NA,NA,NA,NA,NA,NA,NA,NA,235,"gompertz_model",15,"lactic_acid_bacteria","frankfurters",288
+"230",NA,NA,NA,NA,NA,NA,NA,NA,237,"gompertz_model",25,"Pseudomonas_spp","frankfurters",298
+"231",NA,NA,NA,NA,NA,NA,NA,NA,238,"gompertz_model",25,"lactic_acid_bacteria","frankfurters",298
+"232",NA,NA,NA,NA,NA,NA,NA,NA,239,"gompertz_model",9,"Curtobacterium_psychrophilum","Peptone",282
+"233",NA,NA,NA,NA,NA,NA,NA,NA,240,"gompertz_model",18,"Curtobacterium_psychrophilum","Peptone",291
+"234",NA,NA,NA,NA,NA,NA,NA,NA,241,"gompertz_model",15,"Curtobacterium_psychrophilum","Peptone",288
+"235",-2.9543314658822,1.1741003472229,14.3909621122115,0.0118077938966323,-20.8803038390892,-0.880303839089173,-21.1507530938126,0.998587705709602,242,"gompertz_model",12.5,"Curtobacterium_psychrophilum","Peptone",285.5
+"236",-4.06102474729688,0.407920232453162,153.910281625635,0.0535437150005986,-26.0980883263171,-6.09808832631709,-26.3685375810405,0.999250721228884,243,"gompertz_model",7.5,"Curtobacterium_psychrophilum","Peptone",280.5
+"237",NA,NA,NA,NA,NA,NA,NA,NA,244,"gompertz_model",3,"Curtobacterium_psychrophilum","Peptone",276
+"238",NA,NA,NA,NA,NA,NA,NA,NA,245,"gompertz_model",-0.4,"Curtobacterium_psychrophilum","Peptone",272.6
+"239",NA,NA,NA,NA,NA,NA,NA,NA,246,"gompertz_model",-0.2,"Curtobacterium_psychrophilum","Peptone",272.8
+"240",-3.57823441752968,0.787090097794474,23.9301025176739,0.0188315840367019,17.1652167632314,37.1652167632314,16.894767508508,0.480316608289513,247,"gompertz_model",15,"Cytophaga_antarctica","Peptone",288
+"241",NA,NA,NA,NA,NA,NA,NA,NA,248,"gompertz_model",12.5,"Cytophaga_antarctica","Peptone",285.5
+"242",NA,NA,NA,NA,NA,NA,NA,NA,249,"gompertz_model",9,"Cytophaga_antarctica","Peptone",282
+"243",NA,NA,NA,NA,NA,NA,NA,NA,250,"gompertz_model",5,"Cytophaga_antarctica","Peptone",278
+"244",NA,NA,NA,NA,NA,NA,NA,NA,251,"gompertz_model",3,"Cytophaga_antarctica","Peptone",276
+"245",-1.01831336161092,0.46130306837438,189.97500746451,0.028765062350595,-53.2166008956136,-33.2166008956136,-53.4870501503371,0.999978273161973,252,"gompertz_model",-0.4,"Cytophaga_antarctica","Peptone",272.6
+"246",NA,NA,NA,NA,NA,NA,NA,NA,255,"gompertz_model",20,"Cytophaga_xantha","Peptone",293
+"247",NA,NA,NA,NA,NA,NA,NA,NA,256,"gompertz_model",15,"Cytophaga_xantha","Peptone",288
+"248",NA,NA,NA,NA,NA,NA,NA,NA,257,"gompertz_model",9,"Cytophaga_xantha","Peptone",282
+"249",NA,NA,NA,NA,NA,NA,NA,NA,258,"gompertz_model",5,"Cytophaga_xantha","Peptone",278
+"250",-2.00170960923676,0.987239994510007,122.991473894833,0.022562181849295,-19.39543148138,0.60456851862002,-19.6658807361034,0.997398323749731,259,"gompertz_model",0,"Cytophaga_xantha","Peptone",273
+"251",NA,NA,NA,NA,NA,NA,NA,NA,262,"gompertz_model",15,"Spirillum_pleomorphum","Peptone",288
+"252",NA,NA,NA,NA,NA,NA,NA,NA,263,"gompertz_model",9,"Spirillum_pleomorphum","Peptone",282
+"253",-2.1026510479321,0.0389569207528258,178.283805072186,0.0390611465499763,-49.5281365581527,-36.1948032248194,-49.1309288497535,0.99973225028442,264,"gompertz_model",5,"Spirillum_pleomorphum","Peptone",278
+"254",-3.69464779762769,0.0221952005560673,331.248821178651,0.0120298032517567,-21.7528043158404,-1.75280431584041,-22.0232535705638,0.996020745645805,265,"gompertz_model",0,"Spirillum_pleomorphum","Peptone",273
+"255",NA,NA,NA,NA,NA,NA,NA,NA,267,"gompertz_model",20,"Micrococcus_cryophilus","Peptone",293
+"256",NA,NA,NA,NA,NA,NA,NA,NA,268,"gompertz_model",15,"Micrococcus_cryophilus","Peptone",288
+"257",NA,NA,NA,NA,NA,NA,NA,NA,269,"gompertz_model",9,"Micrococcus_cryophilus","Peptone",282
+"258",NA,NA,NA,NA,NA,NA,NA,NA,270,"gompertz_model",5,"Micrococcus_cryophilus","Peptone",278
+"259",NA,NA,NA,NA,NA,NA,NA,NA,271,"gompertz_model",0,"Micrococcus_cryophilus","Peptone",273
+"260",NA,NA,NA,NA,NA,NA,NA,NA,272,"gompertz_model",27,"Pseudomonas_flourescens","Peptone",300
+"261",NA,NA,NA,NA,NA,NA,NA,NA,273,"gompertz_model",24,"Pseudomonas_flourescens","Peptone",297
+"262",NA,NA,NA,NA,NA,NA,NA,NA,274,"gompertz_model",18,"Pseudomonas_flourescens","Peptone",291
+"263",NA,NA,NA,NA,NA,NA,NA,NA,275,"gompertz_model",15,"Pseudomonas_flourescens","Peptone",288
+"264",NA,NA,NA,NA,NA,NA,NA,NA,276,"gompertz_model",12,"Pseudomonas_flourescens","Peptone",285
+"265",NA,NA,NA,NA,NA,NA,NA,NA,277,"gompertz_model",9,"Pseudomonas_flourescens","Peptone",282
+"266",NA,NA,NA,NA,NA,NA,NA,NA,278,"gompertz_model",3,"Pseudomonas_flourescens","Peptone",276
+"267",NA,NA,NA,NA,NA,NA,NA,NA,281,"gompertz_model",15,"pseudomonas_sp_15._O2","Eruca_satica L.",288
+"268",NA,NA,NA,NA,NA,NA,NA,NA,282,"gompertz_model",15,"yeasts_and_moulds_15._O2","Eruca_satica L.",288
+"269",NA,NA,NA,NA,NA,NA,NA,NA,283,"gompertz_model",15,"enterobacteriaceae_15._O2","Eruca_satica L.",288
+"270",NA,NA,NA,NA,NA,NA,NA,NA,284,"gompertz_model",15,"lactic_acid_bacteria_15._O2","Eruca_satica L.",288
+"271",NA,NA,NA,NA,NA,NA,NA,NA,286,"gompertz_model",15,"pseudomonas_sp_20._O2","Eruca_satica L.",288
+"272",NA,NA,NA,NA,NA,NA,NA,NA,287,"gompertz_model",15,"yeasts_and_moulds_20._O2","Eruca_satica L.",288
+"273",NA,NA,NA,NA,NA,NA,NA,NA,288,"gompertz_model",15,"enterobacteriaceae_20._O2","Eruca_satica L.",288
+"274",NA,NA,NA,NA,NA,NA,NA,NA,289,"gompertz_model",15,"lactic_acid_bacteria_20._O2","Eruca_satica L.",288
+"275",NA,NA,NA,NA,NA,NA,NA,NA,291,"gompertz_model",15,"pseudomonas_sp","Eruca_satica L.",288
+"276",NA,NA,NA,NA,NA,NA,NA,NA,292,"gompertz_model",15,"yeasts_and_moulds","Eruca_satica L.",288
+"277",NA,NA,NA,NA,NA,NA,NA,NA,293,"gompertz_model",15,"enterobacteriaceae","Eruca_satica L.",288
+"278",NA,NA,NA,NA,NA,NA,NA,NA,294,"gompertz_model",15,"lactic_acid_bacteria","Eruca_satica L.",288
+"279",NA,NA,NA,NA,NA,NA,NA,NA,296,"gompertz_model",15,"pseudomonas_sp_5._O2","Eruca_satica L.",288
+"280",NA,NA,NA,NA,NA,NA,NA,NA,297,"gompertz_model",15,"yeasts_and_moulds_5._O2","Eruca_satica L.",288
+"281",NA,NA,NA,NA,NA,NA,NA,NA,298,"gompertz_model",15,"enterobacteriaceae_5._O2","Eruca_satica L.",288
+"282",NA,NA,NA,NA,NA,NA,NA,NA,299,"gompertz_model",15,"lactic_acid_bacteria_5._O2","Eruca_satica L.",288
+"283",0.477907646511815,3.58980110823141,127.570372510461,0.00112593583272332,-10.6447646597635,9.35523534023648,-10.915213914487,0.996165229366851,301,"gompertz_model",10,"pseudomonas_sp_15._O2","Eruca_satica L.",283
+"284",NA,NA,NA,NA,NA,NA,NA,NA,302,"gompertz_model",10,"yeasts_and_moulds_15._O2","Eruca_satica L.",283
+"285",NA,NA,NA,NA,NA,NA,NA,NA,303,"gompertz_model",10,"enterobacteriaceae_15._O2","Eruca_satica L.",283
+"286",NA,NA,NA,NA,NA,NA,NA,NA,304,"gompertz_model",10,"lactic_acid_bacteria_15._O2","Eruca_satica L.",283
+"287",NA,NA,NA,NA,NA,NA,NA,NA,306,"gompertz_model",10,"pseudomonas_sp_20._O2","Eruca_satica L.",283
+"288",NA,NA,NA,NA,NA,NA,NA,NA,307,"gompertz_model",10,"yeasts_and_moulds_20._O2","Eruca_satica L.",283
+"289",2.86939620035343,1.81895718859398,12.2349287196994,0.00125554183540685,-13.4980453798727,Inf,-15.4508558177022,0.999265209801124,308,"gompertz_model",10,"enterobacteriaceae_20._O2","Eruca_satica L.",283
+"290",NA,NA,NA,NA,NA,NA,NA,NA,309,"gompertz_model",10,"lactic_acid_bacteria_20._O2","Eruca_satica L.",283
+"291",NA,NA,NA,NA,NA,NA,NA,NA,311,"gompertz_model",10,"pseudomonas_sp","Eruca_satica L.",283
+"292",NA,NA,NA,NA,NA,NA,NA,NA,312,"gompertz_model",10,"yeasts_and_moulds","Eruca_satica L.",283
+"293",NA,NA,NA,NA,NA,NA,NA,NA,313,"gompertz_model",10,"enterobacteriaceae","Eruca_satica L.",283
+"294",NA,NA,NA,NA,NA,NA,NA,NA,314,"gompertz_model",10,"lactic_acid_bacteria","Eruca_satica L.",283
+"295",3.15289662679012,1.64964305975928,1.65935174188299,0.000435100501512419,-19.7781825966416,20.2218174033584,-20.8193852505013,0.9986802250234,316,"gompertz_model",10,"pseudomonas_sp_5._O2","Eruca_satica L.",283
+"296",NA,NA,NA,NA,NA,NA,NA,NA,317,"gompertz_model",10,"yeasts_and_moulds_5._O2","Eruca_satica L.",283
+"297",NA,NA,NA,NA,NA,NA,NA,NA,318,"gompertz_model",10,"enterobacteriaceae_5._O2","Eruca_satica L.",283
+"298",NA,NA,NA,NA,NA,NA,NA,NA,319,"gompertz_model",10,"lactic_acid_bacteria_5._O2","Eruca_satica L.",283
+"299",NA,NA,NA,NA,NA,NA,NA,NA,321,"gompertz_model",5,"pseudomonas_sp_15._O2","Eruca_satica L.",278
+"300",NA,NA,NA,NA,NA,NA,NA,NA,322,"gompertz_model",5,"yeasts_and_moulds_15._O2","Eruca_satica L.",278
+"301",NA,NA,NA,NA,NA,NA,NA,NA,323,"gompertz_model",5,"enterobacteriaceae_15._O2","Eruca_satica L.",278
+"302",NA,NA,NA,NA,NA,NA,NA,NA,324,"gompertz_model",5,"lactic_acid_bacteria_15._O2","Eruca_satica L.",278
+"303",NA,NA,NA,NA,NA,NA,NA,NA,326,"gompertz_model",5,"pseudomonas_sp_20._O2","Eruca_satica L.",278
+"304",NA,NA,NA,NA,NA,NA,NA,NA,327,"gompertz_model",5,"yeasts_and_moulds_20._O2","Eruca_satica L.",278
+"305",NA,NA,NA,NA,NA,NA,NA,NA,328,"gompertz_model",5,"enterobacteriaceae_20._O2","Eruca_satica L.",278
+"306",NA,NA,NA,NA,NA,NA,NA,NA,329,"gompertz_model",5,"lactic_acid_bacteria_20._O2","Eruca_satica L.",278
+"307",NA,NA,NA,NA,NA,NA,NA,NA,331,"gompertz_model",5,"pseudomonas_sp","Eruca_satica L.",278
+"308",NA,NA,NA,NA,NA,NA,NA,NA,332,"gompertz_model",5,"yeasts_and_moulds","Eruca_satica L.",278
+"309",NA,NA,NA,NA,NA,NA,NA,NA,333,"gompertz_model",5,"enterobacteriaceae","Eruca_satica L.",278
+"310",NA,NA,NA,NA,NA,NA,NA,NA,334,"gompertz_model",5,"lactic_acid_bacteria","Eruca_satica L.",278
+"311",NA,NA,NA,NA,NA,NA,NA,NA,336,"gompertz_model",5,"pseudomonas_sp_5._O2","Eruca_satica L.",278
+"312",NA,NA,NA,NA,NA,NA,NA,NA,337,"gompertz_model",5,"yeasts_and_moulds_5._O2","Eruca_satica L.",278
+"313",NA,NA,NA,NA,NA,NA,NA,NA,338,"gompertz_model",5,"enterobacteriaceae_5._O2","Eruca_satica L.",278
+"314",NA,NA,NA,NA,NA,NA,NA,NA,339,"gompertz_model",5,"lactic_acid_bacteria_5._O2","Eruca_satica L.",278
+"315",NA,NA,NA,NA,NA,NA,NA,NA,341,"gompertz_model",0,"pseudomonas_sp_15._O2","Eruca_satica L.",273
+"316",0.0757138529766032,1.32632866438368,8.50144555502051,0,6.019328603419,19.3526619367523,6.41653631181818,0.981110781986174,342,"gompertz_model",0,"yeasts_and_moulds_15._O2","Eruca_satica L.",273
+"317",NA,NA,NA,NA,NA,NA,NA,NA,343,"gompertz_model",0,"enterobacteriaceae_15._O2","Eruca_satica L.",273
+"318",NA,NA,NA,NA,NA,NA,NA,NA,344,"gompertz_model",0,"lactic_acid_bacteria_15._O2","Eruca_satica L.",273
+"319",NA,NA,NA,NA,NA,NA,NA,NA,346,"gompertz_model",0,"pseudomonas_sp_20._O2","Eruca_satica L.",273
+"320",NA,NA,NA,NA,NA,NA,NA,NA,347,"gompertz_model",0,"yeasts_and_moulds_20._O2","Eruca_satica L.",273
+"321",NA,NA,NA,NA,NA,NA,NA,NA,348,"gompertz_model",0,"enterobacteriaceae_20._O2","Eruca_satica L.",273
+"322",NA,NA,NA,NA,NA,NA,NA,NA,349,"gompertz_model",0,"lactic_acid_bacteria_20._O2","Eruca_satica L.",273
+"323",NA,NA,NA,NA,NA,NA,NA,NA,351,"gompertz_model",0,"pseudomonas_sp","Eruca_satica L.",273
+"324",NA,NA,NA,NA,NA,NA,NA,NA,352,"gompertz_model",0,"yeasts_and_moulds","Eruca_satica L.",273
+"325",NA,NA,NA,NA,NA,NA,NA,NA,353,"gompertz_model",0,"enterobacteriaceae","Eruca_satica L.",273
+"326",NA,NA,NA,NA,NA,NA,NA,NA,354,"gompertz_model",0,"lactic_acid_bacteria","Eruca_satica L.",273
+"327",NA,NA,NA,NA,NA,NA,NA,NA,356,"gompertz_model",0,"pseudomonas_sp_5._O2","Eruca_satica L.",273
+"328",NA,NA,NA,NA,NA,NA,NA,NA,357,"gompertz_model",0,"yeasts_and_moulds_5._O2","Eruca_satica L.",273
+"329",NA,NA,NA,NA,NA,NA,NA,NA,358,"gompertz_model",0,"enterobacteriaceae_5._O2","Eruca_satica L.",273
+"330",NA,NA,NA,NA,NA,NA,NA,NA,359,"gompertz_model",0,"lactic_acid_bacteria_5._O2","Eruca_satica L.",273
+"331",2.70081734858068,0.656598520589791,73.4782517423753,0.000613970466213373,-82.3400959738605,-79.0067626405272,-78.1740292535794,0.999859551561988,369,"gompertz_model",0,"pseudonomads","beef",273
+"332",NA,NA,NA,NA,NA,NA,NA,NA,370,"gompertz_model",0,"brochothrix_thermosphacta","beef",273
+"333",NA,NA,NA,NA,NA,NA,NA,NA,371,"gompertz_model",0,"lactic_acid_bacteria","beef",273
+"334",0.940220361159198,0.0858084484887939,192.147375900103,0.00239569330866157,-32.5384025784009,-27.5384025784009,-29.7136557910933,0.994749468997226,372,"gompertz_model",0,"enterobacteriaceae","beef",273
+"335",NA,NA,NA,NA,NA,NA,NA,NA,374,"gompertz_model",10,"pseudonomads","beef",283
+"336",2.19125596142842,2.83831072409117,37.5269203170779,0.00705821692597302,-70.7833545334222,-66.7833545334222,-67.2431035279111,0.999587889545787,375,"gompertz_model",10,"brochothrix_thermosphacta","beef",283
+"337",1.61029284797214,1.4193942015908,7.86289829023492,0.0009075358021814,-54.8009010396138,-51.4675677062805,-50.6348343193327,0.998398469229664,376,"gompertz_model",10,"lactic_acid_bacteria","beef",283
+"338",NA,NA,NA,NA,NA,NA,NA,NA,377,"gompertz_model",10,"enterobacteriaceae","beef",283
+"339",NA,NA,NA,NA,NA,NA,NA,NA,379,"gompertz_model",0,"pseudonomads","pork",273
+"340",1.0134463238983,2.11015971833371,11.2880810567473,0.000957413947533366,-65.0223910483193,-61.0223910483193,-61.4821400428082,0.999885929441628,380,"gompertz_model",0,"brochothrix_thermosphacta","pork",273
+"341",NA,NA,NA,NA,NA,NA,NA,NA,381,"gompertz_model",0,"lactic_acid_bacteria","pork",273
+"342",0.661527002884288,1.62039547413889,83.4245783430763,0.00103299394571069,-38.8636642435996,-33.1493785293139,-36.4391309946596,0.998930691432397,382,"gompertz_model",0,"enterobacteriaceae","pork",273
+"343",1.58733050969052,0.319381237420578,22.9308478615567,0.00262686147753742,-69.9239731502519,-67.5710319737813,-64.4687608834603,0.999541787251794,384,"gompertz_model",10,"pseudonomads","pork",283
+"344",NA,NA,NA,NA,NA,NA,NA,NA,385,"gompertz_model",10,"brochothrix_thermosphacta","pork",283
+"345",NA,NA,NA,NA,NA,NA,NA,NA,386,"gompertz_model",10,"lactic_acid_bacteria","pork",283
+"346",NA,NA,NA,NA,NA,NA,NA,NA,387,"gompertz_model",10,"enterobacteriaceae","pork",283
+"347",NA,NA,NA,NA,NA,NA,NA,NA,388,"gompertz_model",0,"aerobic bacteria","soybeans",273
+"348",NA,NA,NA,NA,NA,NA,NA,NA,389,"gompertz_model",5,"aerobic bacteria","soybeans",278
+"349",NA,NA,NA,NA,NA,NA,NA,NA,390,"gompertz_model",10,"aerobic bacteria","soybeans",283
+"350",NA,NA,NA,NA,NA,NA,NA,NA,391,"gompertz_model",15,"aerobic bacteria","soybeans",288
+"351",NA,NA,NA,NA,NA,NA,NA,NA,392,"gompertz_model",6,"Serratia marcescens","Pasteurised Skim Milk",279
+"352",NA,NA,NA,NA,NA,NA,NA,NA,393,"gompertz_model",6,"Serratia marcescens","UHT Skim Milk",279
+"353",NA,NA,NA,NA,NA,NA,NA,NA,397,"gompertz_model",15,"Serratia marcescens","UHT Skim Milk",288
+"354",NA,NA,NA,NA,NA,NA,NA,NA,398,"gompertz_model",6,"Serratia marcescens","Pasteurised Full-fat Milk",279
+"355",NA,NA,NA,NA,NA,NA,NA,NA,399,"gompertz_model",6,"Serratia marcescens","UHT Full-fat Milk",279
+"356",NA,NA,NA,NA,NA,NA,NA,NA,400,"gompertz_model",10,"Serratia marcescens","Pasteurised Full-fat Milk",283
+"357",NA,NA,NA,NA,NA,NA,NA,NA,402,"gompertz_model",15,"Serratia marcescens","Pasteurised Full-fat Milk",288
+"358",NA,NA,NA,NA,NA,NA,NA,NA,403,"gompertz_model",15,"Serratia marcescens","UHT Full-fat Milk",288
+"359",NA,NA,NA,NA,NA,NA,NA,NA,404,"gompertz_model",6,"Serratia marcescens","Pasteurised Double Cream",279
+"360",NA,NA,NA,NA,NA,NA,NA,NA,405,"gompertz_model",6,"Serratia marcescens","UHT Double Cream",279
+"361",NA,NA,NA,NA,NA,NA,NA,NA,408,"gompertz_model",15,"Serratia marcescens","Pasteurised Double Cream",288
+"362",NA,NA,NA,NA,NA,NA,NA,NA,409,"gompertz_model",15,"Serratia marcescens","UHT Double Cream",288
+"363",NA,NA,NA,NA,NA,NA,NA,NA,410,"gompertz_model",0,"Arthrobacter sp. 77","TGE agar",273
+"364",1.47893057848269,3.4575821913465,22.4429585667017,0.0100031713489016,9.04825951175864,14.0482595117586,11.8730062990663,0.999998817931602,411,"gompertz_model",7,"Arthrobacter sp. 77","TGE agar",280
+"365",NA,NA,NA,NA,NA,NA,NA,NA,412,"gompertz_model",20,"Arthrobacter sp. 77","TGE agar",293
+"366",0.939298931574689,3.10461647532918,2.77836476886503,0.14349812986726,-2.59000551623775,5.40999448376225,-1.07708005126752,0.999998225515747,413,"gompertz_model",30,"Arthrobacter sp. 77","TGE agar",303
+"367",NA,NA,NA,NA,NA,NA,NA,NA,414,"gompertz_model",37,"Arthrobacter sp. 77","TGE agar",310
+"368",NA,NA,NA,NA,NA,NA,NA,NA,415,"gompertz_model",0,"Arthrobacter sp. 88","TGE agar",273
+"369",NA,NA,NA,NA,NA,NA,NA,NA,416,"gompertz_model",7,"Arthrobacter sp. 88","TGE agar",280
+"370",NA,NA,NA,NA,NA,NA,NA,NA,417,"gompertz_model",20,"Arthrobacter sp. 88","TGE agar",293
+"371",NA,NA,NA,NA,NA,NA,NA,NA,418,"gompertz_model",30,"Arthrobacter sp. 88","TGE agar",303
+"372",NA,NA,NA,NA,NA,NA,NA,NA,419,"gompertz_model",37,"Arthrobacter sp. 88","TGE agar",310
+"373",NA,NA,NA,NA,NA,NA,NA,NA,420,"gompertz_model",0,"Arthrobacter sp. 62","TGE agar",273
+"374",NA,NA,NA,NA,NA,NA,NA,NA,421,"gompertz_model",7,"Arthrobacter sp. 62","TGE agar",280
+"375",NA,NA,NA,NA,NA,NA,NA,NA,422,"gompertz_model",20,"Arthrobacter sp. 62","TGE agar",293
+"376",NA,NA,NA,NA,NA,NA,NA,NA,423,"gompertz_model",30,"Arthrobacter sp. 62","TGE agar",303
+"377",NA,NA,NA,NA,NA,NA,NA,NA,424,"gompertz_model",37,"Arthrobacter sp. 62","TGE agar",310
+"378",NA,NA,NA,NA,NA,NA,NA,NA,425,"gompertz_model",0,"Arthrobacter aurescens","TGE agar",273
+"379",NA,NA,NA,NA,NA,NA,NA,NA,426,"gompertz_model",7,"Arthrobacter aurescens","TGE agar",280
+"380",NA,NA,NA,NA,NA,NA,NA,NA,427,"gompertz_model",20,"Arthrobacter aurescens","TGE agar",293
+"381",NA,NA,NA,NA,NA,NA,NA,NA,428,"gompertz_model",30,"Arthrobacter aurescens","TGE agar",303
+"382",NA,NA,NA,NA,NA,NA,NA,NA,429,"gompertz_model",37,"Arthrobacter aurescens","TGE agar",310
+"383",NA,NA,NA,NA,NA,NA,NA,NA,430,"gompertz_model",0,"Arthrobacter citreus","TGE agar",273
+"384",NA,NA,NA,NA,NA,NA,NA,NA,431,"gompertz_model",7,"Arthrobacter citreus","TGE agar",280
+"385",NA,NA,NA,NA,NA,NA,NA,NA,432,"gompertz_model",20,"Arthrobacter citreus","TGE agar",293
+"386",NA,NA,NA,NA,NA,NA,NA,NA,433,"gompertz_model",30,"Arthrobacter citreus","TGE agar",303
+"387",NA,NA,NA,NA,NA,NA,NA,NA,434,"gompertz_model",37,"Arthrobacter citreus","TGE agar",310
+"388",NA,NA,NA,NA,NA,NA,NA,NA,435,"gompertz_model",0,"Arthrobacter globiformis","TGE agar",273
+"389",NA,NA,NA,NA,NA,NA,NA,NA,436,"gompertz_model",7,"Arthrobacter globiformis","TGE agar",280
+"390",NA,NA,NA,NA,NA,NA,NA,NA,437,"gompertz_model",20,"Arthrobacter globiformis","TGE agar",293
+"391",NA,NA,NA,NA,NA,NA,NA,NA,438,"gompertz_model",30,"Arthrobacter globiformis","TGE agar",303
+"392",NA,NA,NA,NA,NA,NA,NA,NA,439,"gompertz_model",37,"Arthrobacter globiformis","TGE agar",310
+"393",NA,NA,NA,NA,NA,NA,NA,NA,440,"gompertz_model",0,"Arthrobacter simplex","TGE agar",273
+"394",0.713404556995486,6.73427858473895,276.463258579789,0.0135256160246497,-9.14112488065565,-4.6966804362112,-5.94583823257935,0.999998934364397,441,"gompertz_model",7,"Arthrobacter simplex","TGE agar",280
+"395",NA,NA,NA,NA,NA,NA,NA,NA,442,"gompertz_model",20,"Arthrobacter simplex","TGE agar",293
+"396",NA,NA,NA,NA,NA,NA,NA,NA,443,"gompertz_model",30,"Arthrobacter simplex","TGE agar",303
+"397",NA,NA,NA,NA,NA,NA,NA,NA,444,"gompertz_model",37,"Arthrobacter simplex","TGE agar",310
+"398",NA,NA,NA,NA,NA,NA,NA,NA,448,"gompertz_model",8,"Lactobacillus plantarum","MRS broth",281
+"399",7.2073369390844,39.8082276656789,99.4857788695572,0.0532721467588963,54.8689107443874,58.5052743807511,58.7318543555863,1,449,"gompertz_model",12,"Lactobacillus plantarum","MRS broth",285
+"400",NA,NA,NA,NA,NA,NA,NA,NA,450,"gompertz_model",16,"Lactobacillus plantarum","MRS broth",289
+"401",NA,NA,NA,NA,NA,NA,NA,NA,451,"gompertz_model",20,"Lactobacillus plantarum","MRS broth",293
+"402",NA,NA,NA,NA,NA,NA,NA,NA,452,"gompertz_model",30,"Lactobacillus plantarum","MRS broth",303
+"403",NA,NA,NA,NA,NA,NA,NA,NA,453,"gompertz_model",4,"Weissella viridescens","MRS broth",277
+"404",NA,NA,NA,NA,NA,NA,NA,NA,454,"gompertz_model",8,"Weissella viridescens","MRS broth",281
+"405",NA,NA,NA,NA,NA,NA,NA,NA,455,"gompertz_model",12,"Weissella viridescens","MRS broth",285
+"406",NA,NA,NA,NA,NA,NA,NA,NA,456,"gompertz_model",16,"Weissella viridescens","MRS broth",289
+"407",NA,NA,NA,NA,NA,NA,NA,NA,457,"gompertz_model",20,"Weissella viridescens","MRS broth",293
+"408",NA,NA,NA,NA,NA,NA,NA,NA,458,"gompertz_model",30,"Weissella viridescens","MRS broth",303
+"409",NA,NA,NA,NA,NA,NA,NA,NA,459,"gompertz_model",4,"Lactobacillus sakei","MRS broth",277
+"410",NA,NA,NA,NA,NA,NA,NA,NA,460,"gompertz_model",8,"Lactobacillus sakei","MRS broth",281
+"411",NA,NA,NA,NA,NA,NA,NA,NA,461,"gompertz_model",12,"Lactobacillus sakei","MRS broth",285
+"412",NA,NA,NA,NA,NA,NA,NA,NA,462,"gompertz_model",16,"Lactobacillus sakei","MRS broth",289
+"413",7.50404221210424,1.868926053048,21.1262306820857,0.38424995061298,26.5815508804196,31.5815508804196,29.4062976677272,1,463,"gompertz_model",20,"Lactobacillus sakei","MRS broth",293
+"414",4.79462638745535,22.6492302878606,7.28961067730327,1.82438438532164,1.52490673614967,8.19157340281634,3.51438310014153,1,464,"gompertz_model",30,"Lactobacillus sakei","MRS broth",303
+"415",NA,NA,NA,NA,NA,NA,NA,NA,465,"gompertz_model",15,"Oscillatoria agardhii Strain 97","Z8",288
+"416",NA,NA,NA,NA,NA,NA,NA,NA,466,"gompertz_model",20,"Oscillatoria agardhii Strain 97","Z8",293
+"417",NA,NA,NA,NA,NA,NA,NA,NA,467,"gompertz_model",25,"Oscillatoria agardhii Strain 97","Z8",298
+"418",NA,NA,NA,NA,NA,NA,NA,NA,468,"gompertz_model",30,"Oscillatoria agardhii Strain 97","Z8",303
+"419",NA,NA,NA,NA,NA,NA,NA,NA,469,"gompertz_model",15,"Oscillatoria agardhii StrainCYA 128","Z8",288
+"420",NA,NA,NA,NA,NA,NA,NA,NA,470,"gompertz_model",20,"Oscillatoria agardhii StrainCYA 128","Z8",293
+"421",1.03642050876391,1.14778623590136,121.295571871386,0.000470224778773741,-11.6719260180267,8.32807398197334,-11.9423752727501,0.998671440136972,471,"gompertz_model",25,"Oscillatoria agardhii StrainCYA 128","Z8",298
+"422",1.01190171715872,0.532497548126566,128.69944754111,0.00209280171437991,-9.06737091479079,10.9326290852092,-9.33782016951422,0.997568129595399,472,"gompertz_model",30,"Oscillatoria agardhii StrainCYA 128","Z8",303
+"423",NA,NA,NA,NA,NA,NA,NA,NA,473,"gompertz_model",15,"Pseudomonas sp.","APT Broth",288
+"424",NA,NA,NA,NA,NA,NA,NA,NA,474,"gompertz_model",12,"Pseudomonas sp.","APT Broth",285
+"425",NA,NA,NA,NA,NA,NA,NA,NA,475,"gompertz_model",8,"Pseudomonas sp.","APT Broth",281
+"426",NA,NA,NA,NA,NA,NA,NA,NA,476,"gompertz_model",6,"Pseudomonas sp.","APT Broth",279
+"427",NA,NA,NA,NA,NA,NA,NA,NA,477,"gompertz_model",4,"Pseudomonas sp.","APT Broth",277
+"428",NA,NA,NA,NA,NA,NA,NA,NA,478,"gompertz_model",2,"Pseudomonas sp.","APT Broth",275
+"429",NA,NA,NA,NA,NA,NA,NA,NA,479,"gompertz_model",3,"pseudonomads","agar",276
+"430",0.755832787477477,0.687706768995694,62.4150302077886,0.00205601223814915,-69.7315434483857,-66.6546203714627,-65.2796846589049,0.999615472889441,480,"gompertz_model",1,"pseudonomads","agar",274
+"431",NA,NA,NA,NA,NA,NA,NA,NA,481,"gompertz_model",2,"pseudonomads","agar",275
+"432",NA,NA,NA,NA,NA,NA,NA,NA,482,"gompertz_model",4.60000000000002,"P. flourescens","tryptone soya agar/broth",277.6
+"433",NA,NA,NA,NA,NA,NA,NA,NA,483,"gompertz_model",5.90000000000003,"P. flourescens","tryptone soya agar/broth",278.9
+"434",NA,NA,NA,NA,NA,NA,NA,NA,484,"gompertz_model",6.20000000000005,"P. flourescens","tryptone soya agar/broth",279.2
+"435",NA,NA,NA,NA,NA,NA,NA,NA,485,"gompertz_model",7.20000000000005,"P. flourescens","tryptone soya agar/broth",280.2
+"436",NA,NA,NA,NA,NA,NA,NA,NA,486,"gompertz_model",7.60000000000002,"P. flourescens","tryptone soya agar/broth",280.6
+"437",0.247217837761671,4.13795879979676,19.1987360541124,0.015715063228078,-62.8683281294776,-58.4238836850331,-59.6730414814013,0.999895954189153,487,"gompertz_model",11.5,"P. flourescens","tryptone soya agar/broth",284.5
+"438",0.125788052620224,5.80102432797924,172.637634126153,0.0683908892636308,246.098000825775,246.371973428515,261.18440000985,0.999999822692884,488,"gompertz_model",10,"Lactobaciulus plantarum","MRS",283
+"439",1.29696183845726,17.2051862774063,42.1862665282465,0.0515614869577394,87.1729540079111,87.6607588859599,99.502494601184,0.999999992833629,489,"gompertz_model",15,"Lactobaciulus plantarum","MRS",288
+"440",0.143507143640592,19.7904157362606,28.0592558022984,0.313352339830728,56.8371940324857,57.2255435470488,70.2478501681068,0.999999995539157,490,"gompertz_model",20,"Lactobaciulus plantarum","MRS",293
+"441",0.781824221056722,13.4634590844561,3.1245805089154,0.515467414918821,50.2068002254443,50.6946051034931,62.5363408187172,0.999999997420759,491,"gompertz_model",25,"Lactobaciulus plantarum","MRS",298
+"442",NA,NA,NA,NA,NA,NA,NA,NA,492,"gompertz_model",22,"Flavobacterium","10% LB broth",295
+"443",NA,NA,NA,NA,NA,NA,NA,NA,493,"gompertz_model",22,"Flavobacterium","10% LB broth",295
+"444",NA,NA,NA,NA,NA,NA,NA,NA,494,"gompertz_model",22,"Flavobacterium","10% LB broth",295
+"445",-2.56576442165296,-1.90429961775663,3.52394636720419,0.0380629594801898,-178.204638074898,-176.992516862777,-170.016707276266,0.562888804574481,495,"gompertz_model",22,"Flavobacterium","10% LB broth",295
+"446",NA,NA,NA,NA,NA,NA,NA,NA,496,"gompertz_model",22,"Pseudomonas(1)","10% LB broth",295
+"447",NA,NA,NA,NA,NA,NA,NA,NA,497,"gompertz_model",22,"Pseudomonas(1)","10% LB broth",295
+"448",NA,NA,NA,NA,NA,NA,NA,NA,498,"gompertz_model",22,"Pseudomonas(1)","10% LB broth",295
+"449",NA,NA,NA,NA,NA,NA,NA,NA,499,"gompertz_model",22,"Pseudomonas(1)","10% LB broth",295
+"450",NA,NA,NA,NA,NA,NA,NA,NA,500,"gompertz_model",22,"Rahnella","10% LB broth",295
+"451",NA,NA,NA,NA,NA,NA,NA,NA,501,"gompertz_model",22,"Rahnella","10% LB broth",295
+"452",NA,NA,NA,NA,NA,NA,NA,NA,502,"gompertz_model",22,"Rahnella","10% LB broth",295
+"453",NA,NA,NA,NA,NA,NA,NA,NA,503,"gompertz_model",22,"Rahnella","10% LB broth",295
+"454",NA,NA,NA,NA,NA,NA,NA,NA,504,"gompertz_model",22,"Raoultella(1)","10% LB broth",295
+"455",NA,NA,NA,NA,NA,NA,NA,NA,505,"gompertz_model",22,"Raoultella(1)","10% LB broth",295
+"456",NA,NA,NA,NA,NA,NA,NA,NA,506,"gompertz_model",22,"Raoultella(1)","10% LB broth",295
+"457",-2.48784297721124,-0.930265562441494,3.35858164471574,0.0332050901507059,-147.149264154961,-145.937142942839,-138.961333356329,0.723936340665942,507,"gompertz_model",22,"Raoultella(1)","10% LB broth",295
+"458",-3.85527805723805,-2.5892798091295,15.1523660542443,0.0425683493625976,-201.158020368472,-199.945899156351,-192.97008956984,0.739906265161818,508,"gompertz_model",22,"Sphingobacterium","10% LB broth",295
+"459",-4.15978739220147,-1.6878610962269,1.85274875350296,0.0265445198738602,-191.916001535494,-190.703880323372,-183.728070736862,0.661635921327795,509,"gompertz_model",22,"Sphingobacterium","10% LB broth",295
+"460",NA,NA,NA,NA,NA,NA,NA,NA,510,"gompertz_model",22,"Sphingobacterium","10% LB broth",295
+"461",-2.3742222436448,-2.01067336417545,4.45124656078406,0.0204296571746287,-192.205117577469,-190.992996365348,-184.017186778837,0.874909455221492,511,"gompertz_model",22,"Sphingobacterium","10% LB broth",295
+"462",NA,NA,NA,NA,NA,NA,NA,NA,512,"gompertz_model",22,"Rhizobium(1)","10% LB broth",295
+"463",NA,NA,NA,NA,NA,NA,NA,NA,513,"gompertz_model",22,"Rhizobium(1)","10% LB broth",295
+"464",NA,NA,NA,NA,NA,NA,NA,NA,514,"gompertz_model",22,"Rhizobium(1)","10% LB broth",295
+"465",NA,NA,NA,NA,NA,NA,NA,NA,515,"gompertz_model",22,"Rhizobium(1)","10% LB broth",295
+"466",-4.62357471690378,-0.918118044205457,18.9562757243402,0.107602083842299,-74.1997127196127,-72.9875915074915,-66.0117819209808,-27.1943589446179,516,"gompertz_model",22,"Arthrobacter","10% LB broth",295
+"467",-2.1660824905373,-3.01804542382029,6.13278675405309,0.0457075035365724,-200.52368861702,-199.311567404899,-192.335757818388,0.430447513493029,517,"gompertz_model",22,"Arthrobacter","10% LB broth",295
+"468",NA,NA,NA,NA,NA,NA,NA,NA,518,"gompertz_model",22,"Arthrobacter","10% LB broth",295
+"469",NA,NA,NA,NA,NA,NA,NA,NA,519,"gompertz_model",22,"Arthrobacter","10% LB broth",295
+"470",NA,NA,NA,NA,NA,NA,NA,NA,520,"gompertz_model",22,"Citrobacter","10% LB broth",295
+"471",-4.25067931225496,-1.55634698174124,17.8616011117119,0.121830770204436,-245.318289903308,-244.106168691187,-237.130359104676,0.931283993662682,521,"gompertz_model",22,"Citrobacter","10% LB broth",295
+"472",-1.81876436481897,-3.56228680128207,5.29927454842255,0.1070729612329,-156.031085316813,-154.818964104692,-147.843154518181,0.268141724402208,522,"gompertz_model",22,"Citrobacter","10% LB broth",295
+"473",-2.02355313814546,-1.5448163394046,0.780363332480192,0.00471050739926933,17.5431418433818,18.755263055503,25.7310726420137,-34.3491066511593,523,"gompertz_model",22,"Citrobacter","10% LB broth",295
+"474",-0.351798667451208,-3.34843211598994,2.67228905670345,0.188368156890379,-69.2609154850782,-68.048794272957,-61.0729846864463,-10.6326485713796,524,"gompertz_model",22,"Pseudomonas(2)","10% LB broth",295
+"475",NA,NA,NA,NA,NA,NA,NA,NA,525,"gompertz_model",22,"Pseudomonas(2)","10% LB broth",295
+"476",-1.97619509970425,-3.20391343755279,1.76757277175784,0.117216845607247,-208.679640939001,-207.46751972688,-200.491710140369,0.727297567787637,526,"gompertz_model",22,"Pseudomonas(2)","10% LB broth",295
+"477",NA,NA,NA,NA,NA,NA,NA,NA,527,"gompertz_model",22,"Pseudomonas(2)","10% LB broth",295
+"478",-4.47259628004889,-3.98530024654484,0.27312394301407,0.00020852514504555,-179.613620759552,-178.401499547431,-171.42568996092,-134.856472477835,528,"gompertz_model",22,"Curtobacterium","10% LB broth",295
+"479",NA,NA,NA,NA,NA,NA,NA,NA,529,"gompertz_model",22,"Curtobacterium","10% LB broth",295
+"480",NA,NA,NA,NA,NA,NA,NA,NA,530,"gompertz_model",22,"Curtobacterium","10% LB broth",295
+"481",NA,NA,NA,NA,NA,NA,NA,NA,531,"gompertz_model",22,"Curtobacterium","10% LB broth",295
+"482",NA,NA,NA,NA,NA,NA,NA,NA,532,"gompertz_model",22,"Microbacterium","10% LB broth",295
+"483",-1.75139055262499,-4.19542885935765,0,0.00352108785984134,-168.303876783634,-167.091755571512,-160.115945985002,-46.7884115306912,533,"gompertz_model",22,"Microbacterium","10% LB broth",295
+"484",-0.14864291824107,-2.54141566401386,8.71480191824958,0.00403281365385733,-228.123046681277,-226.910925469155,-219.935115882645,-21.8324645357263,534,"gompertz_model",22,"Microbacterium","10% LB broth",295
+"485",NA,NA,NA,NA,NA,NA,NA,NA,535,"gompertz_model",22,"Microbacterium","10% LB broth",295
+"486",NA,NA,NA,NA,NA,NA,NA,NA,536,"gompertz_model",22,"IsoMix","10% LB broth",295
+"487",-3.77322694382966,-0.128802683684746,8.42513951752335,0.288377811975044,-219.752313793711,-218.54019258159,-211.564382995079,0.811747251028209,537,"gompertz_model",22,"IsoMix","10% LB broth",295
+"488",-3.12081442926157,-3.3683202398174,4.29345772089437,0.104991195279187,-213.256140015875,-212.044018803754,-205.068209217243,0.781966771747349,538,"gompertz_model",22,"IsoMix","10% LB broth",295
+"489",-0.926295074060188,-1.14234465097836,6.10268335603178,0.0778807129910747,-172.320290709444,-171.108169497323,-164.132359910812,0.378562503048689,539,"gompertz_model",22,"IsoMix","10% LB broth",295
+"490",-2.24703180201546,-2.47829189672723,0.550855655223131,0.157635757187687,-137.241262589734,-136.029141377613,-129.053331791102,-0.353272891869816,540,"gompertz_model",22,"Rhizobium(2)","10% LB broth",295
+"491",NA,NA,NA,NA,NA,NA,NA,NA,541,"gompertz_model",22,"Rhizobium(2)","10% LB broth",295
+"492",NA,NA,NA,NA,NA,NA,NA,NA,542,"gompertz_model",22,"Rhizobium(2)","10% LB broth",295
+"493",NA,NA,NA,NA,NA,NA,NA,NA,543,"gompertz_model",22,"Rhizobium(2)","10% LB broth",295
+"494",NA,NA,NA,NA,NA,NA,NA,NA,544,"gompertz_model",22,"Roseomonas","10% LB broth",295
+"495",NA,NA,NA,NA,NA,NA,NA,NA,545,"gompertz_model",22,"Roseomonas","10% LB broth",295
+"496",NA,NA,NA,NA,NA,NA,NA,NA,546,"gompertz_model",22,"Roseomonas","10% LB broth",295
+"497",NA,NA,NA,NA,NA,NA,NA,NA,547,"gompertz_model",22,"Roseomonas","10% LB broth",295
+"498",NA,NA,NA,NA,NA,NA,NA,NA,548,"gompertz_model",22,"Novosphingobium(1)","10% LB broth",295
+"499",NA,NA,NA,NA,NA,NA,NA,NA,549,"gompertz_model",22,"Novosphingobium(1)","10% LB broth",295
+"500",-4.54491826665767,-1.4060130640929,16.7011708365753,0.10448608682494,-170.411584385324,-169.199463173203,-162.223653586692,0.55947471813083,550,"gompertz_model",22,"Novosphingobium(1)","10% LB broth",295
+"501",NA,NA,NA,NA,NA,NA,NA,NA,551,"gompertz_model",22,"Novosphingobium(1)","10% LB broth",295
+"502",NA,NA,NA,NA,NA,NA,NA,NA,552,"gompertz_model",22,"Novosphingobium(2)","10% LB broth",295
+"503",NA,NA,NA,NA,NA,NA,NA,NA,553,"gompertz_model",22,"Novosphingobium(2)","10% LB broth",295
+"504",NA,NA,NA,NA,NA,NA,NA,NA,554,"gompertz_model",22,"Novosphingobium(2)","10% LB broth",295
+"505",-0.783665037053594,-2.58626217789577,4.00940204272047,0.0461199658717193,-216.783328600137,-215.571207388016,-208.595397801505,0.742305998648241,555,"gompertz_model",22,"Novosphingobium(2)","10% LB broth",295
+"506",NA,NA,NA,NA,NA,NA,NA,NA,556,"gompertz_model",22,"Raoultella(2)","10% LB broth",295
+"507",NA,NA,NA,NA,NA,NA,NA,NA,557,"gompertz_model",22,"Raoultella(2)","10% LB broth",295
+"508",NA,NA,NA,NA,NA,NA,NA,NA,558,"gompertz_model",22,"Raoultella(2)","10% LB broth",295
+"509",-4.32757956265635,-2.67436273695238,8.4616605383344,0.185370477566108,-80.6732731908413,-79.4611519787201,-72.4853423922094,-8.03159507752789,559,"gompertz_model",22,"Raoultella(2)","10% LB broth",295
+"510",NA,NA,NA,NA,NA,NA,NA,NA,560,"gompertz_model",22,"Serratia","10% LB broth",295
+"511",-2.1811883504621,-3.01868115346327,14.0310448356904,0.0734667907101884,-139.917255674399,-138.705134462278,-131.729324875767,0.104169716930882,561,"gompertz_model",22,"Serratia","10% LB broth",295
+"512",NA,NA,NA,NA,NA,NA,NA,NA,562,"gompertz_model",22,"Serratia","10% LB broth",295
+"513",-4.12027390732042,-0.163737143350934,20.446680651512,0.0977535958658807,-230.085738477233,-228.873617265112,-221.897807678601,0.785108787001903,563,"gompertz_model",22,"Serratia","10% LB broth",295
+"514",NA,NA,NA,NA,NA,NA,NA,NA,564,"gompertz_model",22,"Chryseobacterium(1)","10% LB broth",295
+"515",NA,NA,NA,NA,NA,NA,NA,NA,565,"gompertz_model",22,"Chryseobacterium(1)","10% LB broth",295
+"516",NA,NA,NA,NA,NA,NA,NA,NA,566,"gompertz_model",22,"Chryseobacterium(1)","10% LB broth",295
+"517",-1.13967793196386,-2.26090322819459,18.4808995909989,0.0912028434838213,-155.743319870434,-154.531198658312,-147.555389071802,0.233984351534482,567,"gompertz_model",22,"Chryseobacterium(1)","10% LB broth",295
+"518",-3.73872541215253,-2.27440249641428,2.10608366969973,0.0301155838012458,-206.763826496511,-205.551705284389,-198.575895697879,-0.453440128672169,568,"gompertz_model",22,"Chryseobacterium(2)","10% LB broth",295
+"519",-2.23707304742914,-1.89623058979522,10.2458209341858,0.212907110508899,-233.665233477712,-232.453112265591,-225.47730267908,0.934615207179368,569,"gompertz_model",22,"Chryseobacterium(2)","10% LB broth",295
+"520",NA,NA,NA,NA,NA,NA,NA,NA,570,"gompertz_model",22,"Chryseobacterium(2)","10% LB broth",295
+"521",NA,NA,NA,NA,NA,NA,NA,NA,571,"gompertz_model",22,"Chryseobacterium(2)","10% LB broth",295
+"522",NA,NA,NA,NA,NA,NA,NA,NA,572,"gompertz_model",22,"Paenibacillus(1)","10% LB broth",295
+"523",-2.93157097346172,-1.68087073707035,8.97623054985888,0.0419291621024686,-236.289639297368,-235.077518085247,-228.101708498736,0.828682880287499,573,"gompertz_model",22,"Paenibacillus(1)","10% LB broth",295
+"524",NA,NA,NA,NA,NA,NA,NA,NA,574,"gompertz_model",22,"Paenibacillus(1)","10% LB broth",295
+"525",-2.65743742787845,-2.01256353290609,9.90590377338231,0.059727737027223,-183.45545337388,-182.243332161759,-175.267522575248,0.156975770244925,575,"gompertz_model",22,"Paenibacillus(1)","10% LB broth",295
+"526",-0.633640806929553,-0.915189673208281,7.18796316836961,0.053429043657728,-261.947426146084,-260.735304933963,-253.759495347452,0.406736350651244,576,"gompertz_model",22,"Paenibacillus(2)","10% LB broth",295
+"527",-1.98380922900934,-3.61967628703791,11.6593501763418,0.0141151592088092,-263.202198869815,-261.990077657694,-255.014268071183,0.225420662199296,577,"gompertz_model",22,"Paenibacillus(2)","10% LB broth",295
+"528",-0.0776522221399194,-1.96938957467823,4.57828200119548,0.0775173823931735,-281.213905162805,-280.001783950683,-273.025974364173,0.211866201054826,578,"gompertz_model",22,"Paenibacillus(2)","10% LB broth",295
+"529",NA,NA,NA,NA,NA,NA,NA,NA,579,"gompertz_model",22,"Paenibacillus(2)","10% LB broth",295
+"530",NA,NA,NA,NA,NA,NA,NA,NA,580,"gompertz_model",22,"Bacillus","10% LB broth",295
+"531",NA,NA,NA,NA,NA,NA,NA,NA,581,"gompertz_model",22,"Bacillus","10% LB broth",295
+"532",NA,NA,NA,NA,NA,NA,NA,NA,582,"gompertz_model",22,"Bacillus","10% LB broth",295
+"533",NA,NA,NA,NA,NA,NA,NA,NA,583,"gompertz_model",22,"Bacillus","10% LB broth",295
+"534",-1.86887026438445,-2.42617840002526,7.94297764264047,0.223730991942908,-176.569330633703,-175.660239724612,-167.11022914315,-0.127288335746999,588,"gompertz_model",25,"Flavobacterium","10% LB broth",298
+"535",NA,NA,NA,NA,NA,NA,NA,NA,589,"gompertz_model",25,"Flavobacterium","10% LB broth",298
+"536",-3.07734437071047,-2.9354656248303,4.76138112600893,0.223916344613305,-151.216844455319,-150.307753546228,-141.757742964766,-0.807725889435564,590,"gompertz_model",25,"Flavobacterium","10% LB broth",298
+"537",-4.31826141110862,-2.97063824507701,9.29645778611302,0.234751923719339,-147.998113412426,-147.089022503335,-138.539011921873,-0.848631143351557,591,"gompertz_model",25,"Flavobacterium","10% LB broth",298
+"538",NA,NA,NA,NA,NA,NA,NA,NA,592,"gompertz_model",25,"Pseudomonas(1)","10% LB broth",298
+"539",NA,NA,NA,NA,NA,NA,NA,NA,593,"gompertz_model",25,"Pseudomonas(1)","10% LB broth",298
+"540",NA,NA,NA,NA,NA,NA,NA,NA,594,"gompertz_model",25,"Pseudomonas(1)","10% LB broth",298
+"541",NA,NA,NA,NA,NA,NA,NA,NA,595,"gompertz_model",25,"Pseudomonas(1)","10% LB broth",298
+"542",NA,NA,NA,NA,NA,NA,NA,NA,596,"gompertz_model",25,"Rahnella","10% LB broth",298
+"543",NA,NA,NA,NA,NA,NA,NA,NA,597,"gompertz_model",25,"Rahnella","10% LB broth",298
+"544",-1.73590060446945,-2.10783248023141,4.05193102033809,0.0599287147269762,-251.621372397349,-250.712281488258,-242.162270906795,0.519240119735228,598,"gompertz_model",25,"Rahnella","10% LB broth",298
+"545",NA,NA,NA,NA,NA,NA,NA,NA,599,"gompertz_model",25,"Rahnella","10% LB broth",298
+"546",NA,NA,NA,NA,NA,NA,NA,NA,600,"gompertz_model",25,"Raoultella(1)","10% LB broth",298
+"547",NA,NA,NA,NA,NA,NA,NA,NA,601,"gompertz_model",25,"Raoultella(1)","10% LB broth",298
+"548",-1.8830394970672,-2.09703949543166,2.96157650486566,0.0627245516499851,-216.681308620012,-215.772217710921,-207.222207129459,0.643406393608893,602,"gompertz_model",25,"Raoultella(1)","10% LB broth",298
+"549",NA,NA,NA,NA,NA,NA,NA,NA,603,"gompertz_model",25,"Raoultella(1)","10% LB broth",298
+"550",NA,NA,NA,NA,NA,NA,NA,NA,604,"gompertz_model",25,"Sphingobacterium","10% LB broth",298
+"551",-2.98663695586306,-1.58983890046768,13.5582440132275,0.0200019658114364,-147.240338093013,-146.331247183922,-137.78123660246,-0.190077771039521,605,"gompertz_model",25,"Sphingobacterium","10% LB broth",298
+"552",NA,NA,NA,NA,NA,NA,NA,NA,606,"gompertz_model",25,"Sphingobacterium","10% LB broth",298
+"553",NA,NA,NA,NA,NA,NA,NA,NA,607,"gompertz_model",25,"Sphingobacterium","10% LB broth",298
+"554",NA,NA,NA,NA,NA,NA,NA,NA,608,"gompertz_model",25,"Rhizobium(1)","10% LB broth",298
+"555",NA,NA,NA,NA,NA,NA,NA,NA,609,"gompertz_model",25,"Rhizobium(1)","10% LB broth",298
+"556",NA,NA,NA,NA,NA,NA,NA,NA,610,"gompertz_model",25,"Rhizobium(1)","10% LB broth",298
+"557",-1.90553261278399,-0.854801761334972,16.607328531798,0.000506876706118352,-410.312237976106,-409.403147067015,-400.853136485553,-11.858221296315,611,"gompertz_model",25,"Rhizobium(1)","10% LB broth",298
+"558",NA,NA,NA,NA,NA,NA,NA,NA,612,"gompertz_model",25,"Arthrobacter","10% LB broth",298
+"559",-0.865636509943776,-2.71255555312433,5.9791754425969,0.0395150914791169,-208.045688845051,-207.13659793596,-198.586587354498,0.464979777808505,613,"gompertz_model",25,"Arthrobacter","10% LB broth",298
+"560",-2.94791051083024,-1.42997341243605,4.37884086510167,0.0285764097621825,-163.263241047183,-162.354150138092,-153.80413955663,-0.338830165939868,614,"gompertz_model",25,"Arthrobacter","10% LB broth",298
+"561",-3.20996856908062,-1.60817656358373,21.1720035644248,0.00473391779005169,-155.498372894608,-154.589281985517,-146.039271404055,-0.023861249134989,615,"gompertz_model",25,"Arthrobacter","10% LB broth",298
+"562",NA,NA,NA,NA,NA,NA,NA,NA,616,"gompertz_model",25,"Citrobacter","10% LB broth",298
+"563",NA,NA,NA,NA,NA,NA,NA,NA,617,"gompertz_model",25,"Citrobacter","10% LB broth",298
+"564",NA,NA,NA,NA,NA,NA,NA,NA,618,"gompertz_model",25,"Citrobacter","10% LB broth",298
+"565",NA,NA,NA,NA,NA,NA,NA,NA,619,"gompertz_model",25,"Citrobacter","10% LB broth",298
+"566",NA,NA,NA,NA,NA,NA,NA,NA,620,"gompertz_model",25,"Pseudomonas(2)","10% LB broth",298
+"567",NA,NA,NA,NA,NA,NA,NA,NA,621,"gompertz_model",25,"Pseudomonas(2)","10% LB broth",298
+"568",NA,NA,NA,NA,NA,NA,NA,NA,622,"gompertz_model",25,"Pseudomonas(2)","10% LB broth",298
+"569",NA,NA,NA,NA,NA,NA,NA,NA,623,"gompertz_model",25,"Pseudomonas(2)","10% LB broth",298
+"570",-0.911538564894131,-1.52741228750759,4.50821917038411,0.0313374794755609,-257.178452482986,-256.269361573895,-247.719350992432,-0.211233810782636,624,"gompertz_model",25,"Curtobacterium","10% LB broth",298
+"571",NA,NA,NA,NA,NA,NA,NA,NA,625,"gompertz_model",25,"Curtobacterium","10% LB broth",298
+"572",-3.10103364549651,-0.425363889390625,4.55726091004908,0.02616300443411,-162.782077972052,-161.872987062961,-153.322976481499,-4.97692806549934,626,"gompertz_model",25,"Curtobacterium","10% LB broth",298
+"573",NA,NA,NA,NA,NA,NA,NA,NA,627,"gompertz_model",25,"Curtobacterium","10% LB broth",298
+"574",-1.3007126806986,-3.50967726994656,15.0118831370492,0.00404113948614451,-384.226410903621,-383.31731999453,-374.767309413068,0.230281887216964,628,"gompertz_model",25,"Microbacterium","10% LB broth",298
+"575",-4.76984243814367,-0.602906866632861,10.9596404656768,0.008980835474611,-341.17185669023,-340.262765781139,-331.712755199677,-0.0898783696786341,629,"gompertz_model",25,"Microbacterium","10% LB broth",298
+"576",-1.70113686921222,-1.93413336336639,0.947360718389973,0.0208351743278687,-382.529787008407,-381.620696099316,-373.070685517854,0.300219279049996,630,"gompertz_model",25,"Microbacterium","10% LB broth",298
+"577",NA,NA,NA,NA,NA,NA,NA,NA,631,"gompertz_model",25,"Microbacterium","10% LB broth",298
+"578",NA,NA,NA,NA,NA,NA,NA,NA,632,"gompertz_model",25,"IsoMix","10% LB broth",298
+"579",NA,NA,NA,NA,NA,NA,NA,NA,633,"gompertz_model",25,"IsoMix","10% LB broth",298
+"580",NA,NA,NA,NA,NA,NA,NA,NA,634,"gompertz_model",25,"IsoMix","10% LB broth",298
+"581",NA,NA,NA,NA,NA,NA,NA,NA,635,"gompertz_model",25,"IsoMix","10% LB broth",298
+"582",-2.74397161856624,-4.57039843016512,2.08889250969514,0.00235579691679544,-389.871537925265,-388.962447016174,-380.412436434712,-11.0096138408939,636,"gompertz_model",25,"Rhizobium(2)","10% LB broth",298
+"583",NA,NA,NA,NA,NA,NA,NA,NA,637,"gompertz_model",25,"Rhizobium(2)","10% LB broth",298
+"584",NA,NA,NA,NA,NA,NA,NA,NA,638,"gompertz_model",25,"Rhizobium(2)","10% LB broth",298
+"585",-3.60760985523927,-1.42769655390411,0.0364078120328486,0.000236373803558832,-347.592594034492,-346.683503125401,-338.133492543939,-16.4120706245711,639,"gompertz_model",25,"Rhizobium(2)","10% LB broth",298
+"586",-1.65177173536446,-4.4509617782111,4.47190050780773,0.00105632838588748,-360.327530633951,-359.41843972486,-350.868429143398,-14.8513906378849,640,"gompertz_model",25,"Roseomonas","10% LB broth",298
+"587",-1.07227205810533,-4.32035822224862,1.43199024163187,0.00303412515198212,-402.684070196772,-401.774979287682,-393.224968706219,-1.9776332312724,641,"gompertz_model",25,"Roseomonas","10% LB broth",298
+"588",NA,NA,NA,NA,NA,NA,NA,NA,642,"gompertz_model",25,"Roseomonas","10% LB broth",298
+"589",-0.146099067750138,-3.89866136024002,22.3443522434682,0.00233836203048946,-383.457739615392,-382.548648706301,-373.998638124838,-2.82043196880027,643,"gompertz_model",25,"Roseomonas","10% LB broth",298
+"590",-1.11500587190688,-1.52102372826686,25.6015354245901,0.0152543289969667,-284.20258593376,-283.293495024669,-274.743484443206,-0.346293798351874,644,"gompertz_model",25,"Novosphingobium(1)","10% LB broth",298
+"591",NA,NA,NA,NA,NA,NA,NA,NA,645,"gompertz_model",25,"Novosphingobium(1)","10% LB broth",298
+"592",NA,NA,NA,NA,NA,NA,NA,NA,646,"gompertz_model",25,"Novosphingobium(1)","10% LB broth",298
+"593",-4.54933709782464,-1.70540367111719,19.94119275501,0.00229567891572765,-226.953250624102,-226.044159715011,-217.494149133549,-0.887402629676167,647,"gompertz_model",25,"Novosphingobium(1)","10% LB broth",298
+"594",NA,NA,NA,NA,NA,NA,NA,NA,648,"gompertz_model",25,"Novosphingobium(2)","10% LB broth",298
+"595",-3.97430674919405,-3.70380738313485,5.49643645249307,0.0323905746972289,-258.515741944558,-257.606651035467,-249.056640454005,0.248092455516572,649,"gompertz_model",25,"Novosphingobium(2)","10% LB broth",298
+"596",-4.73083424561324,-1.45723522937452,23.2681189477444,0.0108249755339597,-277.152564909453,-276.243474000362,-267.6934634189,0.229802720803918,650,"gompertz_model",25,"Novosphingobium(2)","10% LB broth",298
+"597",-3.61534458629753,-2.66271838018136,9.26120914821513,0.0588212550224945,-200.235935549868,-199.326844640778,-190.776834059315,-1.22385209746848,651,"gompertz_model",25,"Novosphingobium(2)","10% LB broth",298
+"598",NA,NA,NA,NA,NA,NA,NA,NA,652,"gompertz_model",25,"Raoultella(2)","10% LB broth",298
+"599",NA,NA,NA,NA,NA,NA,NA,NA,653,"gompertz_model",25,"Raoultella(2)","10% LB broth",298
+"600",NA,NA,NA,NA,NA,NA,NA,NA,654,"gompertz_model",25,"Raoultella(2)","10% LB broth",298
+"601",NA,NA,NA,NA,NA,NA,NA,NA,655,"gompertz_model",25,"Raoultella(2)","10% LB broth",298
+"602",-1.55690651024686,-3.21197083461796,21.7937866039574,0.0197237013419542,-54.2690310581706,-53.3599401490796,-44.8099295676174,-50.9491377854522,656,"gompertz_model",25,"Serratia","10% LB broth",298
+"603",NA,NA,NA,NA,NA,NA,NA,NA,657,"gompertz_model",25,"Serratia","10% LB broth",298
+"604",-1.97065985061026,-1.75490281887935,1.3437204901129,0.200583780486304,-134.316477860389,-133.407386951298,-124.857376369836,-7.22347306263483,658,"gompertz_model",25,"Serratia","10% LB broth",298
+"605",-3.55495134093574,-3.3081978692628,2.53406857419759,0.251128425223263,-214.54394571563,-213.634854806539,-205.084844225077,0.33531893659353,659,"gompertz_model",25,"Serratia","10% LB broth",298
+"606",NA,NA,NA,NA,NA,NA,NA,NA,660,"gompertz_model",25,"Chryseobacterium(1)","10% LB broth",298
+"607",NA,NA,NA,NA,NA,NA,NA,NA,661,"gompertz_model",25,"Chryseobacterium(1)","10% LB broth",298
+"608",NA,NA,NA,NA,NA,NA,NA,NA,662,"gompertz_model",25,"Chryseobacterium(1)","10% LB broth",298
+"609",-3.47696663578768,-1.67020631788348,5.44358500465751,0.0421545508415316,-105.063775591812,-104.154684682721,-95.6046741012585,-0.491206546821118,663,"gompertz_model",25,"Chryseobacterium(1)","10% LB broth",298
+"610",NA,NA,NA,NA,NA,NA,NA,NA,664,"gompertz_model",25,"Chryseobacterium(2)","10% LB broth",298
+"611",NA,NA,NA,NA,NA,NA,NA,NA,665,"gompertz_model",25,"Chryseobacterium(2)","10% LB broth",298
+"612",NA,NA,NA,NA,NA,NA,NA,NA,666,"gompertz_model",25,"Chryseobacterium(2)","10% LB broth",298
+"613",-4.59965877006807,-3.36731280248042,11.2389723882079,0.12836811023758,-90.7365917976159,-89.827500888525,-81.2774903070627,-7.90071226111045,667,"gompertz_model",25,"Chryseobacterium(2)","10% LB broth",298
+"614",-4.77149194264998,-1.48197836840471,5.25924827903509,0.038091032421674,-256.815075336263,-255.905984427172,-247.355973845709,0.668624509341919,668,"gompertz_model",25,"Paenibacillus(1)","10% LB broth",298
+"615",-3.63159396232849,-1.41754505273448,8.30870515387505,0.146562209059984,-241.919276815557,-241.010185906466,-232.460175325003,0.604878850259783,669,"gompertz_model",25,"Paenibacillus(1)","10% LB broth",298
+"616",NA,NA,NA,NA,NA,NA,NA,NA,670,"gompertz_model",25,"Paenibacillus(1)","10% LB broth",298
+"617",NA,NA,NA,NA,NA,NA,NA,NA,671,"gompertz_model",25,"Paenibacillus(1)","10% LB broth",298
+"618",NA,NA,NA,NA,NA,NA,NA,NA,672,"gompertz_model",25,"Paenibacillus(2)","10% LB broth",298
+"619",-3.69859014169207,-0.889598634291909,9.83417213661596,0.00402321554147333,-289.732789778269,-288.823698869178,-280.273688287716,0.784026399642589,673,"gompertz_model",25,"Paenibacillus(2)","10% LB broth",298
+"620",-3.73866102835636,-0.901001525342275,12.5751045327634,0.0246361804925494,-283.961565282386,-283.052474373295,-274.502463791833,0.746852226706119,674,"gompertz_model",25,"Paenibacillus(2)","10% LB broth",298
+"621",-4.36166053602531,-0.428561990614032,1.6733660439495,0.192792298266945,-218.245135418083,-217.336044508992,-208.78603392753,0.635591562347072,675,"gompertz_model",25,"Paenibacillus(2)","10% LB broth",298
+"622",-2.86989396401938,-1.43791186195749,10.8051794569474,0.308772283904524,-166.265040095542,-165.355949186451,-156.805938604989,0.131036422040012,676,"gompertz_model",25,"Bacillus","10% LB broth",298
+"623",NA,NA,NA,NA,NA,NA,NA,NA,677,"gompertz_model",25,"Bacillus","10% LB broth",298
+"624",-3.30002445786703,-0.841249939591506,1.77765548950993,0.00879707791220429,-86.3405274136334,-85.4314365045425,-76.8814259230803,-4.00216290451013,678,"gompertz_model",25,"Bacillus","10% LB broth",298
+"625",NA,NA,NA,NA,NA,NA,NA,NA,679,"gompertz_model",25,"Bacillus","10% LB broth",298
+"626",NA,NA,NA,NA,NA,NA,NA,NA,684,"gompertz_model",30,"Flavobacterium","10% LB broth",303
+"627",NA,NA,NA,NA,NA,NA,NA,NA,685,"gompertz_model",30,"Flavobacterium","10% LB broth",303
+"628",NA,NA,NA,NA,NA,NA,NA,NA,686,"gompertz_model",30,"Flavobacterium","10% LB broth",303
+"629",NA,NA,NA,NA,NA,NA,NA,NA,687,"gompertz_model",30,"Flavobacterium","10% LB broth",303
+"630",-0.571697706571532,-2.27585039485825,9.48681996064261,0.146017947598977,-106.14110511871,-105.060024037629,-97.4527570272934,-13.3083479634987,688,"gompertz_model",30,"Pseudomonas(1)","10% LB broth",303
+"631",NA,NA,NA,NA,NA,NA,NA,NA,689,"gompertz_model",30,"Pseudomonas(1)","10% LB broth",303
+"632",-0.573275117761589,-0.489186528665776,8.8562921024859,0.154762055817443,-211.479617265271,-210.39853618419,-202.791269173854,0.378400760220302,690,"gompertz_model",30,"Pseudomonas(1)","10% LB broth",303
+"633",-4.46407994890317,-3.60311546861085,20.1719313918147,0.128645517745079,-232.313589082229,-231.232508001148,-223.625240990812,0.567761940318961,691,"gompertz_model",30,"Pseudomonas(1)","10% LB broth",303
+"634",NA,NA,NA,NA,NA,NA,NA,NA,692,"gompertz_model",30,"Rahnella","10% LB broth",303
+"635",-2.80836853951066,-2.25092375626451,7.57706337212585,0.181215261800119,-166.233373540136,-165.152292459055,-157.545025448719,-0.688133933382047,693,"gompertz_model",30,"Rahnella","10% LB broth",303
+"636",NA,NA,NA,NA,NA,NA,NA,NA,694,"gompertz_model",30,"Rahnella","10% LB broth",303
+"637",NA,NA,NA,NA,NA,NA,NA,NA,695,"gompertz_model",30,"Rahnella","10% LB broth",303
+"638",NA,NA,NA,NA,NA,NA,NA,NA,696,"gompertz_model",30,"Raoultella(1)","10% LB broth",303
+"639",-2.17967910872734,-1.09569971493179,1.8587436019443,0.0163063340267096,-56.33681120605,-55.2557301249689,-47.6484631146331,-6.12555892119975,697,"gompertz_model",30,"Raoultella(1)","10% LB broth",303
+"640",NA,NA,NA,NA,NA,NA,NA,NA,698,"gompertz_model",30,"Raoultella(1)","10% LB broth",303
+"641",NA,NA,NA,NA,NA,NA,NA,NA,699,"gompertz_model",30,"Raoultella(1)","10% LB broth",303
+"642",NA,NA,NA,NA,NA,NA,NA,NA,700,"gompertz_model",30,"Sphingobacterium","10% LB broth",303
+"643",NA,NA,NA,NA,NA,NA,NA,NA,701,"gompertz_model",30,"Sphingobacterium","10% LB broth",303
+"644",NA,NA,NA,NA,NA,NA,NA,NA,702,"gompertz_model",30,"Sphingobacterium","10% LB broth",303
+"645",NA,NA,NA,NA,NA,NA,NA,NA,703,"gompertz_model",30,"Sphingobacterium","10% LB broth",303
+"646",NA,NA,NA,NA,NA,NA,NA,NA,704,"gompertz_model",30,"Rhizobium(1)","10% LB broth",303
+"647",NA,NA,NA,NA,NA,NA,NA,NA,705,"gompertz_model",30,"Rhizobium(1)","10% LB broth",303
+"648",NA,NA,NA,NA,NA,NA,NA,NA,706,"gompertz_model",30,"Rhizobium(1)","10% LB broth",303
+"649",NA,NA,NA,NA,NA,NA,NA,NA,707,"gompertz_model",30,"Rhizobium(1)","10% LB broth",303
+"650",-3.36592172618084,-1.35138359657914,17.3582171620801,0.0330880934438757,-71.9043947843567,-70.8233137032756,-63.2160466929399,-2.13251985750546,708,"gompertz_model",30,"Arthrobacter","10% LB broth",303
+"651",NA,NA,NA,NA,NA,NA,NA,NA,709,"gompertz_model",30,"Arthrobacter","10% LB broth",303
+"652",NA,NA,NA,NA,NA,NA,NA,NA,710,"gompertz_model",30,"Arthrobacter","10% LB broth",303
+"653",NA,NA,NA,NA,NA,NA,NA,NA,711,"gompertz_model",30,"Arthrobacter","10% LB broth",303
+"654",NA,NA,NA,NA,NA,NA,NA,NA,712,"gompertz_model",30,"Citrobacter","10% LB broth",303
+"655",NA,NA,NA,NA,NA,NA,NA,NA,713,"gompertz_model",30,"Citrobacter","10% LB broth",303
+"656",NA,NA,NA,NA,NA,NA,NA,NA,714,"gompertz_model",30,"Citrobacter","10% LB broth",303
+"657",-0.426134922761658,-1.80774801807578,3.14393331296742,0.0703735128510181,-151.187556582125,-150.106475501044,-142.499208490708,0.0734374812659206,715,"gompertz_model",30,"Citrobacter","10% LB broth",303
+"658",NA,NA,NA,NA,NA,NA,NA,NA,716,"gompertz_model",30,"Pseudomonas(2)","10% LB broth",303
+"659",NA,NA,NA,NA,NA,NA,NA,NA,717,"gompertz_model",30,"Pseudomonas(2)","10% LB broth",303
+"660",NA,NA,NA,NA,NA,NA,NA,NA,718,"gompertz_model",30,"Pseudomonas(2)","10% LB broth",303
+"661",NA,NA,NA,NA,NA,NA,NA,NA,719,"gompertz_model",30,"Pseudomonas(2)","10% LB broth",303
+"662",NA,NA,NA,NA,NA,NA,NA,NA,720,"gompertz_model",30,"Curtobacterium","10% LB broth",303
+"663",NA,NA,NA,NA,NA,NA,NA,NA,721,"gompertz_model",30,"Curtobacterium","10% LB broth",303
+"664",NA,NA,NA,NA,NA,NA,NA,NA,722,"gompertz_model",30,"Curtobacterium","10% LB broth",303
+"665",NA,NA,NA,NA,NA,NA,NA,NA,723,"gompertz_model",30,"Curtobacterium","10% LB broth",303
+"666",NA,NA,NA,NA,NA,NA,NA,NA,724,"gompertz_model",30,"Microbacterium","10% LB broth",303
+"667",NA,NA,NA,NA,NA,NA,NA,NA,725,"gompertz_model",30,"Microbacterium","10% LB broth",303
+"668",-3.01582843097135,-2.4043601653561,7.95390843925998,0.00973632716872943,-311.228510957101,-310.14742987602,-302.540162865684,0.350154345926895,726,"gompertz_model",30,"Microbacterium","10% LB broth",303
+"669",-1.98639619733636,-2.3621633722945,0.733139326795936,0.0215918372421658,-292.226128501378,-291.145047420297,-283.537780409961,-0.165234682094708,727,"gompertz_model",30,"Microbacterium","10% LB broth",303
+"670",NA,NA,NA,NA,NA,NA,NA,NA,728,"gompertz_model",30,"IsoMix","10% LB broth",303
+"671",-4.1096882821995,-3.01479728459321,9.92729038372636,0.0424235606373079,-219.094473878441,-218.01339279736,-210.406125787025,0.807901540548837,729,"gompertz_model",30,"IsoMix","10% LB broth",303
+"672",NA,NA,NA,NA,NA,NA,NA,NA,730,"gompertz_model",30,"IsoMix","10% LB broth",303
+"673",NA,NA,NA,NA,NA,NA,NA,NA,731,"gompertz_model",30,"IsoMix","10% LB broth",303
+"674",-2.83810608266916,-2.93508446486231,1.99639624124393,0.00365453920293466,-348.77002366476,-347.688942583679,-340.081675573343,-5.30196291370392,732,"gompertz_model",30,"Rhizobium(2)","10% LB broth",303
+"675",-3.52331515249143,-1.66835956226367,11.8059483310208,0.00114201605019447,-283.073587313424,-281.992506232342,-274.385239222007,-41.7537189157549,733,"gompertz_model",30,"Rhizobium(2)","10% LB broth",303
+"676",-2.90528298330075,-2.76569659991797,4.33913208567537,0.114495205401478,-151.729218448568,-150.648137367487,-143.040870357151,0.185107332477344,734,"gompertz_model",30,"Rhizobium(2)","10% LB broth",303
+"677",NA,NA,NA,NA,NA,NA,NA,NA,735,"gompertz_model",30,"Rhizobium(2)","10% LB broth",303
+"678",-1.18360451830694,-1.64451795195122,0.543362973257899,0.0040684291730693,-247.966511202605,-246.885430121524,-239.278163111188,-30.8341188249739,736,"gompertz_model",30,"Roseomonas","10% LB broth",303
+"679",NA,NA,NA,NA,NA,NA,NA,NA,737,"gompertz_model",30,"Roseomonas","10% LB broth",303
+"680",-0.659863556313424,-0.346854135639403,10.4318287870847,0.00106826493868303,-325.376313797132,-324.295232716051,-316.687965705715,-17.7850199788924,738,"gompertz_model",30,"Roseomonas","10% LB broth",303
+"681",NA,NA,NA,NA,NA,NA,NA,NA,739,"gompertz_model",30,"Roseomonas","10% LB broth",303
+"682",NA,NA,NA,NA,NA,NA,NA,NA,740,"gompertz_model",30,"Novosphingobium(1)","10% LB broth",303
+"683",NA,NA,NA,NA,NA,NA,NA,NA,741,"gompertz_model",30,"Novosphingobium(1)","10% LB broth",303
+"684",NA,NA,NA,NA,NA,NA,NA,NA,742,"gompertz_model",30,"Novosphingobium(1)","10% LB broth",303
+"685",NA,NA,NA,NA,NA,NA,NA,NA,743,"gompertz_model",30,"Novosphingobium(1)","10% LB broth",303
+"686",-4.37853231185196,-1.92627552126266,17.1085212025791,0.25680783763127,-67.5421366427514,-66.4610555616703,-58.8537885513345,-4.06955261318836,744,"gompertz_model",30,"Novosphingobium(2)","10% LB broth",303
+"687",NA,NA,NA,NA,NA,NA,NA,NA,745,"gompertz_model",30,"Novosphingobium(2)","10% LB broth",303
+"688",-0.853404987799352,-1.02381595891072,12.4031087635085,0.085858723552148,-252.184564451107,-251.103483370026,-243.49621635969,0.912713307288803,746,"gompertz_model",30,"Novosphingobium(2)","10% LB broth",303
+"689",-3.605269986907,-2.34112848487608,1.35995907592587,0.000350315068277972,-314.197615009003,-313.116533927922,-305.509266917586,-103.293304744711,747,"gompertz_model",30,"Novosphingobium(2)","10% LB broth",303
+"690",NA,NA,NA,NA,NA,NA,NA,NA,748,"gompertz_model",30,"Raoultella(2)","10% LB broth",303
+"691",NA,NA,NA,NA,NA,NA,NA,NA,749,"gompertz_model",30,"Raoultella(2)","10% LB broth",303
+"692",NA,NA,NA,NA,NA,NA,NA,NA,750,"gompertz_model",30,"Raoultella(2)","10% LB broth",303
+"693",NA,NA,NA,NA,NA,NA,NA,NA,751,"gompertz_model",30,"Raoultella(2)","10% LB broth",303
+"694",NA,NA,NA,NA,NA,NA,NA,NA,752,"gompertz_model",30,"Serratia","10% LB broth",303
+"695",-3.93595499420786,-2.65709021656441,15.3052024305798,0.216700605032629,-258.838365767038,-257.757284685957,-250.150017675621,0.828769976563267,753,"gompertz_model",30,"Serratia","10% LB broth",303
+"696",-3.70864627123181,-0.671574491662009,4.59436663426459,0.0433049553359335,-242.961380240197,-241.880299159116,-234.27303214878,0.78738688134312,754,"gompertz_model",30,"Serratia","10% LB broth",303
+"697",NA,NA,NA,NA,NA,NA,NA,NA,755,"gompertz_model",30,"Serratia","10% LB broth",303
+"698",NA,NA,NA,NA,NA,NA,NA,NA,756,"gompertz_model",30,"Chryseobacterium(1)","10% LB broth",303
+"699",NA,NA,NA,NA,NA,NA,NA,NA,757,"gompertz_model",30,"Chryseobacterium(1)","10% LB broth",303
+"700",NA,NA,NA,NA,NA,NA,NA,NA,758,"gompertz_model",30,"Chryseobacterium(1)","10% LB broth",303
+"701",-4.28146091853166,-1.48485112201639,1.25077135628089,0.0446929421345744,-133.270872127928,-132.189791046847,-124.582524036511,-0.165213676926955,759,"gompertz_model",30,"Chryseobacterium(1)","10% LB broth",303
+"702",NA,NA,NA,NA,NA,NA,NA,NA,760,"gompertz_model",30,"Chryseobacterium(2)","10% LB broth",303
+"703",-3.84560070984398,-0.112143047009207,6.71345290448517,0.00622658541729024,-236.647249337232,-235.566168256151,-227.958901245815,0.740825604511106,761,"gompertz_model",30,"Chryseobacterium(2)","10% LB broth",303
+"704",NA,NA,NA,NA,NA,NA,NA,NA,762,"gompertz_model",30,"Chryseobacterium(2)","10% LB broth",303
+"705",NA,NA,NA,NA,NA,NA,NA,NA,763,"gompertz_model",30,"Chryseobacterium(2)","10% LB broth",303
+"706",NA,NA,NA,NA,NA,NA,NA,NA,764,"gompertz_model",30,"Paenibacillus(1)","10% LB broth",303
+"707",-4.45810550834112,-1.95723170291429,8.61317819659598,0.0754048184382124,-193.158637736685,-192.077556655604,-184.470289645269,0.452671329978288,765,"gompertz_model",30,"Paenibacillus(1)","10% LB broth",303
+"708",-0.148818683049263,-2.69902695849082,6.59109534136951,0.0358548509779691,-269.060931683867,-267.979850602786,-260.37258359245,0.890946901574072,766,"gompertz_model",30,"Paenibacillus(1)","10% LB broth",303
+"709",NA,NA,NA,NA,NA,NA,NA,NA,767,"gompertz_model",30,"Paenibacillus(1)","10% LB broth",303
+"710",-1.28454032562231,-0.767878726860265,22.1212152098306,0.109974891277277,-207.37324192374,-206.292160842659,-198.684893832323,0.451628917182005,768,"gompertz_model",30,"Paenibacillus(2)","10% LB broth",303
+"711",-3.86549762492186,-3.1547662443802,6.530383692123,0.0121122052181833,-207.988385732508,-206.907304651427,-199.300037641092,0.356953895196488,769,"gompertz_model",30,"Paenibacillus(2)","10% LB broth",303
+"712",-2.2984144903858,-0.484796581268052,12.10371676879,0.058423827614255,-201.727783418929,-200.646702337847,-193.039435327512,0.466213556917708,770,"gompertz_model",30,"Paenibacillus(2)","10% LB broth",303
+"713",NA,NA,NA,NA,NA,NA,NA,NA,771,"gompertz_model",30,"Paenibacillus(2)","10% LB broth",303
+"714",NA,NA,NA,NA,NA,NA,NA,NA,772,"gompertz_model",30,"Bacillus","10% LB broth",303
+"715",NA,NA,NA,NA,NA,NA,NA,NA,773,"gompertz_model",30,"Bacillus","10% LB broth",303
+"716",NA,NA,NA,NA,NA,NA,NA,NA,774,"gompertz_model",30,"Bacillus","10% LB broth",303
+"717",NA,NA,NA,NA,NA,NA,NA,NA,775,"gompertz_model",30,"Bacillus","10% LB broth",303
+"718",NA,NA,NA,NA,NA,NA,NA,NA,780,"gompertz_model",35,"Flavobacterium","10% LB broth",308
+"719",NA,NA,NA,NA,NA,NA,NA,NA,781,"gompertz_model",35,"Flavobacterium","10% LB broth",308
+"720",-0.347666064221919,-1.15843722954615,1.62720045167953,0.0974621024255848,-22.4730091561328,-21.1826865754876,-14.5554144638523,-4.45710897221764,782,"gompertz_model",35,"Flavobacterium","10% LB broth",308
+"721",NA,NA,NA,NA,NA,NA,NA,NA,783,"gompertz_model",35,"Flavobacterium","10% LB broth",308
+"722",NA,NA,NA,NA,NA,NA,NA,NA,784,"gompertz_model",35,"Pseudomonas(1)","10% LB broth",308
+"723",-1.95683059039031,-0.850669231726226,1.10327643109486,0.0554660810565394,-218.460019610987,-217.169697030342,-210.542424918706,0.468565502810624,785,"gompertz_model",35,"Pseudomonas(1)","10% LB broth",308
+"724",NA,NA,NA,NA,NA,NA,NA,NA,786,"gompertz_model",35,"Pseudomonas(1)","10% LB broth",308
+"725",NA,NA,NA,NA,NA,NA,NA,NA,787,"gompertz_model",35,"Pseudomonas(1)","10% LB broth",308
+"726",NA,NA,NA,NA,NA,NA,NA,NA,788,"gompertz_model",35,"Rahnella","10% LB broth",308
+"727",-1.52270047326058,-3.75311241134337,10.5138758211397,0.0371693377309978,-189.002479287915,-187.71215670727,-181.084884595634,-2.84465721516036,789,"gompertz_model",35,"Rahnella","10% LB broth",308
+"728",-4.70239120650623,-0.215532119243219,1.27682413090952,0.0739575167202961,-58.3791624648676,-57.0888398842225,-50.4615677725871,-0.793075135231314,790,"gompertz_model",35,"Rahnella","10% LB broth",308
+"729",NA,NA,NA,NA,NA,NA,NA,NA,791,"gompertz_model",35,"Rahnella","10% LB broth",308
+"730",NA,NA,NA,NA,NA,NA,NA,NA,792,"gompertz_model",35,"Raoultella(1)","10% LB broth",308
+"731",-4.13249757102256,-1.84501191432832,10.7623074073344,0.238162739469148,-167.204774730335,-165.91445214969,-159.287180038054,0.726018375825236,793,"gompertz_model",35,"Raoultella(1)","10% LB broth",308
+"732",NA,NA,NA,NA,NA,NA,NA,NA,794,"gompertz_model",35,"Raoultella(1)","10% LB broth",308
+"733",-4.4109958555853,-1.27442102031251,4.60645564645529,0.0751539561157264,-169.880484163291,-168.590161582646,-161.96288947101,0.949779653466373,795,"gompertz_model",35,"Raoultella(1)","10% LB broth",308
+"734",-4.64757166732802,-0.0955812707861146,17.3318228251301,0.0232224374212068,-162.776589360563,-161.486266779918,-154.858994668283,-17.1779212322727,796,"gompertz_model",35,"Sphingobacterium","10% LB broth",308
+"735",NA,NA,NA,NA,NA,NA,NA,NA,797,"gompertz_model",35,"Sphingobacterium","10% LB broth",308
+"736",-4.14584940219572,-1.91974456706502,8.17577966116369,0.00319265959185103,-203.257020049587,-201.966697468942,-195.339425357307,-3.05352995547153,798,"gompertz_model",35,"Sphingobacterium","10% LB broth",308
+"737",-1.38643785548932,-0.012323616763473,5.57056331424974,0.0689530553242343,-194.125847053865,-192.83552447322,-186.208252361584,0.832004117151611,799,"gompertz_model",35,"Sphingobacterium","10% LB broth",308
+"738",-4.28873204313867,-4.33930898142234,3.2443420747295,0.00505899003980488,-284.473064224719,-283.182741644074,-276.555469532439,-7.11988656610005,800,"gompertz_model",35,"Rhizobium(1)","10% LB broth",308
+"739",NA,NA,NA,NA,NA,NA,NA,NA,801,"gompertz_model",35,"Rhizobium(1)","10% LB broth",308
+"740",-1.12014512423554,-2.86628258760897,1.51172413607128,0.00837979215467783,-255.240810478395,-253.950487897749,-247.323215786114,-12.973166301832,802,"gompertz_model",35,"Rhizobium(1)","10% LB broth",308
+"741",NA,NA,NA,NA,NA,NA,NA,NA,803,"gompertz_model",35,"Rhizobium(1)","10% LB broth",308
+"742",NA,NA,NA,NA,NA,NA,NA,NA,804,"gompertz_model",35,"Arthrobacter","10% LB broth",308
+"743",-4.73759402694995,-1.72033494898017,0.465867170831189,0,-261.118363634673,-259.828041054028,-253.200768942392,-74.4816923212631,805,"gompertz_model",35,"Arthrobacter","10% LB broth",308
+"744",-1.44529790472428,-2.50315487655809,3.60926272347569,0.00242699527861091,-234.008126303165,-232.71780372252,-226.090531610884,-53.9926874968384,806,"gompertz_model",35,"Arthrobacter","10% LB broth",308
+"745",NA,NA,NA,NA,NA,NA,NA,NA,807,"gompertz_model",35,"Arthrobacter","10% LB broth",308
+"746",-2.22390884799144,-3.26507183457637,3.00837833504193,0.0739545591729496,-272.102507608202,-270.812185027557,-264.184912915921,0.929580076441313,808,"gompertz_model",35,"Citrobacter","10% LB broth",308
+"747",NA,NA,NA,NA,NA,NA,NA,NA,809,"gompertz_model",35,"Citrobacter","10% LB broth",308
+"748",-4.08907648315037,-0.15008598181858,0,0.0160423760452979,-277.006787892123,-275.716465311478,-269.089193199843,-21.1006446601763,810,"gompertz_model",35,"Citrobacter","10% LB broth",308
+"749",NA,NA,NA,NA,NA,NA,NA,NA,811,"gompertz_model",35,"Citrobacter","10% LB broth",308
+"750",NA,NA,NA,NA,NA,NA,NA,NA,812,"gompertz_model",35,"Pseudomonas(2)","10% LB broth",308
+"751",-0.605618686730738,-3.06737937194481,2.94446771848015,0.0697598537849539,-118.42117121607,-117.130848635425,-110.50357652379,-2.09013826606788,813,"gompertz_model",35,"Pseudomonas(2)","10% LB broth",308
+"752",NA,NA,NA,NA,NA,NA,NA,NA,814,"gompertz_model",35,"Pseudomonas(2)","10% LB broth",308
+"753",NA,NA,NA,NA,NA,NA,NA,NA,815,"gompertz_model",35,"Pseudomonas(2)","10% LB broth",308
+"754",NA,NA,NA,NA,NA,NA,NA,NA,816,"gompertz_model",35,"Curtobacterium","10% LB broth",308
+"755",NA,NA,NA,NA,NA,NA,NA,NA,817,"gompertz_model",35,"Curtobacterium","10% LB broth",308
+"756",NA,NA,NA,NA,NA,NA,NA,NA,818,"gompertz_model",35,"Curtobacterium","10% LB broth",308
+"757",NA,NA,NA,NA,NA,NA,NA,NA,819,"gompertz_model",35,"Curtobacterium","10% LB broth",308
+"758",NA,NA,NA,NA,NA,NA,NA,NA,820,"gompertz_model",35,"Microbacterium","10% LB broth",308
+"759",NA,NA,NA,NA,NA,NA,NA,NA,821,"gompertz_model",35,"Microbacterium","10% LB broth",308
+"760",NA,NA,NA,NA,NA,NA,NA,NA,822,"gompertz_model",35,"Microbacterium","10% LB broth",308
+"761",NA,NA,NA,NA,NA,NA,NA,NA,823,"gompertz_model",35,"Microbacterium","10% LB broth",308
+"762",-1.16645622874514,-2.92563711484252,2.84542704699561,0.174217465389092,-207.26921330807,-205.978890727425,-199.351618615789,0.821678263350583,824,"gompertz_model",35,"IsoMix","10% LB broth",308
+"763",NA,NA,NA,NA,NA,NA,NA,NA,825,"gompertz_model",35,"IsoMix","10% LB broth",308
+"764",NA,NA,NA,NA,NA,NA,NA,NA,826,"gompertz_model",35,"IsoMix","10% LB broth",308
+"765",NA,NA,NA,NA,NA,NA,NA,NA,827,"gompertz_model",35,"IsoMix","10% LB broth",308
+"766",-2.02625335857052,-0.0196624209520024,1.67312582721934,0,-300.637835811229,-299.347513230584,-292.720241118949,-11.2059937383257,828,"gompertz_model",35,"Rhizobium(2)","10% LB broth",308
+"767",NA,NA,NA,NA,NA,NA,NA,NA,829,"gompertz_model",35,"Rhizobium(2)","10% LB broth",308
+"768",-1.58031691876595,-0.236004239883612,11.2202542349696,0.0742461362641202,-219.329414421776,-218.03909184113,-211.411819729495,0.8723351901743,830,"gompertz_model",35,"Rhizobium(2)","10% LB broth",308
+"769",-4.30336171702639,-1.99448050341283,2.96725607989356,0.000769401441015077,-305.268219819288,-303.977897238643,-297.350625127007,-3.48006155492487,831,"gompertz_model",35,"Rhizobium(2)","10% LB broth",308
+"770",NA,NA,NA,NA,NA,NA,NA,NA,832,"gompertz_model",35,"Roseomonas","10% LB broth",308
+"771",NA,NA,NA,NA,NA,NA,NA,NA,833,"gompertz_model",35,"Roseomonas","10% LB broth",308
+"772",-1.67159777022952,-3.48057353612484,1.06236452050507,0.00945496381224258,-235.912346398214,-234.622023817569,-227.994751705934,-10.8209006543917,834,"gompertz_model",35,"Roseomonas","10% LB broth",308
+"773",-1.72735975317866,-3.97961595792909,0.97369656804949,0.00342313988900854,-295.326457396397,-294.036134815751,-287.408862704116,-5.7485539087919,835,"gompertz_model",35,"Roseomonas","10% LB broth",308
+"774",-0.0728285577890242,-2.50994115652426,2.2451503071934,0.0139086822485574,-181.111718196465,-179.82139561582,-173.194123504184,0.787864392529414,836,"gompertz_model",35,"Novosphingobium(1)","10% LB broth",308
+"775",NA,NA,NA,NA,NA,NA,NA,NA,837,"gompertz_model",35,"Novosphingobium(1)","10% LB broth",308
+"776",NA,NA,NA,NA,NA,NA,NA,NA,838,"gompertz_model",35,"Novosphingobium(1)","10% LB broth",308
+"777",NA,NA,NA,NA,NA,NA,NA,NA,839,"gompertz_model",35,"Novosphingobium(1)","10% LB broth",308
+"778",NA,NA,NA,NA,NA,NA,NA,NA,840,"gompertz_model",35,"Novosphingobium(2)","10% LB broth",308
+"779",NA,NA,NA,NA,NA,NA,NA,NA,841,"gompertz_model",35,"Novosphingobium(2)","10% LB broth",308
+"780",NA,NA,NA,NA,NA,NA,NA,NA,842,"gompertz_model",35,"Novosphingobium(2)","10% LB broth",308
+"781",-2.51681737091273,-0.633785704841442,1.00108919432387,0,-297.55503738284,-296.264714802195,-289.63744269056,-7.78585192082724,843,"gompertz_model",35,"Novosphingobium(2)","10% LB broth",308
+"782",NA,NA,NA,NA,NA,NA,NA,NA,844,"gompertz_model",35,"Raoultella(2)","10% LB broth",308
+"783",NA,NA,NA,NA,NA,NA,NA,NA,845,"gompertz_model",35,"Raoultella(2)","10% LB broth",308
+"784",NA,NA,NA,NA,NA,NA,NA,NA,846,"gompertz_model",35,"Raoultella(2)","10% LB broth",308
+"785",NA,NA,NA,NA,NA,NA,NA,NA,847,"gompertz_model",35,"Raoultella(2)","10% LB broth",308
+"786",NA,NA,NA,NA,NA,NA,NA,NA,848,"gompertz_model",35,"Serratia","10% LB broth",308
+"787",NA,NA,NA,NA,NA,NA,NA,NA,849,"gompertz_model",35,"Serratia","10% LB broth",308
+"788",NA,NA,NA,NA,NA,NA,NA,NA,850,"gompertz_model",35,"Serratia","10% LB broth",308
+"789",NA,NA,NA,NA,NA,NA,NA,NA,851,"gompertz_model",35,"Serratia","10% LB broth",308
+"790",-1.114904264964,-3.0803455245826,0.0695476834662259,0.00503639114870654,-243.657879281602,-242.367556700957,-235.740284589321,-6.75312118375852,852,"gompertz_model",35,"Chryseobacterium(1)","10% LB broth",308
+"791",NA,NA,NA,NA,NA,NA,NA,NA,853,"gompertz_model",35,"Chryseobacterium(1)","10% LB broth",308
+"792",NA,NA,NA,NA,NA,NA,NA,NA,854,"gompertz_model",35,"Chryseobacterium(1)","10% LB broth",308
+"793",NA,NA,NA,NA,NA,NA,NA,NA,855,"gompertz_model",35,"Chryseobacterium(1)","10% LB broth",308
+"794",NA,NA,NA,NA,NA,NA,NA,NA,856,"gompertz_model",35,"Chryseobacterium(2)","10% LB broth",308
+"795",NA,NA,NA,NA,NA,NA,NA,NA,857,"gompertz_model",35,"Chryseobacterium(2)","10% LB broth",308
+"796",NA,NA,NA,NA,NA,NA,NA,NA,858,"gompertz_model",35,"Chryseobacterium(2)","10% LB broth",308
+"797",NA,NA,NA,NA,NA,NA,NA,NA,859,"gompertz_model",35,"Chryseobacterium(2)","10% LB broth",308
+"798",NA,NA,NA,NA,NA,NA,NA,NA,860,"gompertz_model",35,"Paenibacillus(1)","10% LB broth",308
+"799",NA,NA,NA,NA,NA,NA,NA,NA,861,"gompertz_model",35,"Paenibacillus(1)","10% LB broth",308
+"800",NA,NA,NA,NA,NA,NA,NA,NA,862,"gompertz_model",35,"Paenibacillus(1)","10% LB broth",308
+"801",NA,NA,NA,NA,NA,NA,NA,NA,863,"gompertz_model",35,"Paenibacillus(1)","10% LB broth",308
+"802",NA,NA,NA,NA,NA,NA,NA,NA,864,"gompertz_model",35,"Paenibacillus(2)","10% LB broth",308
+"803",NA,NA,NA,NA,NA,NA,NA,NA,865,"gompertz_model",35,"Paenibacillus(2)","10% LB broth",308
+"804",-1.41643839672182,-1.87146767519617,6.07174055068754,0.000266776297159678,-263.280883283347,-261.990560702702,-255.363288591066,-37.5051879648384,866,"gompertz_model",35,"Paenibacillus(2)","10% LB broth",308
+"805",NA,NA,NA,NA,NA,NA,NA,NA,867,"gompertz_model",35,"Paenibacillus(2)","10% LB broth",308
+"806",-3.39507852312479,-3.03764672749433,8.87314717937261,0.00593691129353423,-178.41318315819,-177.122860577545,-170.49558846591,0.146552851046478,868,"gompertz_model",35,"Bacillus","10% LB broth",308
+"807",NA,NA,NA,NA,NA,NA,NA,NA,869,"gompertz_model",35,"Bacillus","10% LB broth",308
+"808",NA,NA,NA,NA,NA,NA,NA,NA,870,"gompertz_model",35,"Bacillus","10% LB broth",308
+"809",-3.30612465936194,-1.28649671732976,5.15644794562832,0.0260200251586735,-127.525250873289,-126.234928292644,-119.607656181008,-1.50938442704735,871,"gompertz_model",35,"Bacillus","10% LB broth",308

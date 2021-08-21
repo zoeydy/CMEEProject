@@ -131,7 +131,7 @@ mean_rate_group <- function(dat) {
     meandf <- data.frame(temp.c.group = df$temp.c.group[1], 
                          mean.temp.c = df$mean.temp.c[1], CI.temp.c = df$CI.temp.c[1],
                          mean.log.r = mean(df$log.r), CI.r = ci_calc(df$log.r), 
-                         mean.log.t = mean(df$log.one.t), CI.t = ci_calc(df$log.one.t),
+                         mean.log.t = mean(df$log.one.tlag), CI.t = ci_calc(df$log.one.tlag),
                          mean.mi.KT = mean(df$mi.one.over.KT),
                          CI.mi.KT = ci_calc(df$mi.one.over.KT)
                          )
@@ -141,28 +141,141 @@ mean_rate_group <- function(dat) {
 }
 # function to plot grouped data frame with CI
 group_plot <- function(dat){
-  p1 <- ggplot(data = dat, aes(x = mean.mi.KT, y = mean.log.r)) +
+  p1 <- ggplot(data = dat, aes(x = mean.temp.c, y = mean.log.r)) +
     geom_point() +
-    stat_smooth(data = dat[dat$mean.mi.KT <= -1/(K*(273+30)), ],formula = y~x, method = lm, se = TRUE)+
-    geom_errorbar(aes(ymin = mean.log.r - CI.t, ymax = mean.log.r + CI.t, width = .1)) +
-    geom_errorbar(aes(xmin = mean.mi.KT - CI.mi.KT, xmax = mean.mi.KT + CI.mi.KT, width = .1)) +
-    labs(y="log(tlag)(1/h) +/- CI ", x = "Mean of -1/KT(eV) +/- CI ") +
-    geom_ribbon(data = dat[dat$mean.mi.KT >= max(dat[dat$mean.mi.KT <= -1/(K*(273+30)), ]$mean.mi.KT),], aes(ymin = -Inf, ymax = Inf, alpha = .3)) +
+    theme_set(theme_bw()) +
+    theme_classic() +
+    theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+          axis.title.x = element_blank(),
+          axis.title.y = element_blank()) +
+    stat_smooth(method = 'loess', formula = 'y~x',se = FALSE) +
+    
+    geom_errorbar(aes(ymin = mean.log.r - CI.r, ymax = mean.log.r + CI.r, width = .1)) +
+    geom_errorbar(aes(xmin = mean.temp.c - CI.temp.c, xmax = mean.temp.c + CI.temp.c, width = .1)) +
+    geom_vline(xintercept=30, linetype="dashed", color = "black") +
+    # labs(y="log(tlag)(1/h) +/- CI ", x = "Mean of -1/KT(eV) +/- CI ") +
+    # geom_ribbon(data = dat[dat$mean.temp.c >= 27,], aes(ymin = -Inf, ymax = Inf, alpha = .3)) +
     theme(legend.position = 'none') 
     #scale_x_continuous(name = "Temperature Range", labels = dat$GROUP, breaks=dat$mean.mi.KT) +
     # labs(tag = "A")
-  p2 <- ggplot(data = dat, aes(x = mean.mi.KT, y = mean.log.t)) +
+  p2 <- ggplot(data = dat, aes(x = mean.temp.c, y = mean.log.t)) +
     geom_point() +
-    stat_smooth(data = dat[dat$mean.mi.KT <= -1/(K*(273+30)), ],formula = y~x, method = lm, se = TRUE)+
+    theme_set(theme_bw()) +
+    theme_classic() +
+    theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+          axis.title.x = element_blank(),
+          axis.title.y = element_blank()) +
+    stat_smooth(method = 'loess', formula = 'y~x',se = FALSE)+
+    
     geom_errorbar(aes(ymin = mean.log.t - CI.t, ymax = mean.log.t + CI.t, width = .1)) +
-    geom_errorbar(aes(xmin = mean.mi.KT - CI.mi.KT, xmax = mean.mi.KT + CI.mi.KT, width = .1)) +
-    labs(y="log(tlag)(1/h) +/- CI ", x = "Mean of -1/KT(eV) +/- CI ") +
-    geom_ribbon(data = dat[dat$mean.mi.KT >= max(dat[dat$mean.mi.KT <= -1/(K*(273+30)), ]$mean.mi.KT),], aes(ymin = -Inf, ymax = Inf, alpha = .3)) +
+    geom_errorbar(aes(xmin = mean.temp.c - CI.temp.c, xmax = mean.temp.c + CI.temp.c, width = .1)) +
+    geom_vline(xintercept=30, linetype="dashed", color = "black") +
+    # labs(y="log(tlag)(1/h) +/- CI ", x = "Mean of -1/KT(eV) +/- CI ") +
+    # geom_ribbon(data = dat[dat$mean.temp.c >= 27, ], aes(ymin = -Inf, ymax = Inf, alpha = .3)) +
     theme(legend.position = 'none') 
     #scale_x_continuous(name = "Temperature Range", labels = dat$GROUP, breaks=dat$mean.mi.KT) +
     # labs(tag = "B")
   grid.arrange(p1,p2,nrow = 1)
 }
+
+# ##################################################
+# # log of 1/tlag and rmax VS 1/KT #
+# ##################################################
+# p <- ggplot(data = info0, aes(x = mi.one.over.KT, y =log(rmax) )) +
+#   geom_point() +
+#   theme_set(theme_bw()) +
+#   theme(panel.grid.major = element_line(colour = NA)) +
+#   stat_smooth(data = info0[info0$temp_c <= 30,], formula = y~x, method = lm) +
+#   geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
+#   theme(legend.position = 'none')
+# save_plot("../results/arrhenius/log_r_KT",p)
+# 
+# p <- ggplot(data = info0, aes(x = mi.one.over.KT, y =log(1/tlag) )) +
+#   geom_point() +
+#   theme_set(theme_bw()) +
+#   theme(panel.grid.major = element_line(colour = NA)) +
+#   stat_smooth(data = info0[info0$temp_c <= 30,], formula = y~x, method = lm) +
+#   geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
+#   theme(legend.position = 'none')
+# save_plot("../results/arrhenius/log_1tlag_KT",p)
+
+##################################################
+# log of 1/tlag and rmax VS temperature #
+##################################################
+p <- ggplot(data = info0, aes(x = temp.c, y =log.r )) +
+  geom_point() +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        # axis.title.x = element_text(color="#993333", size=17),
+        # axis.title.y = element_text(color="#993333", size=17)
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x') +
+  geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
+  xlab("Temperature")+
+  ylab(expression(Exponential~Phase~Growth~Rate~(log(r[max])) ))
+save_plot("../results/arrhenius/log_r_temp",p)
+
+p <- ggplot(data = info0, aes(x = temp.c, y =log.one.tlag )) +
+  geom_point() +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        # axis.title.x = element_text(color="#993333", size=17),
+        # axis.title.y = element_text(color="#993333", size=17)
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x') +
+  geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
+  xlab("Temperature")+
+  ylab(expression(Lag~Phase~Growth~Rate~(log(1/t[lag])) ))
+  
+save_plot("../results/arrhenius/log_1tlag_temp",p)
+
+##################################################
+# mean log of 1/tlag and rmax VS temperature #
+##################################################
+mean.info <- data.frame()
+temp <- unique(info.sta$temp.c)
+for (i in 1:length(temp)) {
+  df <- info.sta[info.sta$temp.c == temp[i],]
+  meandf <- data.frame(temp.c = df$temp.c[1], mi.one.over.KT = df$mi.one.over.KT[1],
+                       # mean.temp.c = mean(df$temp.c), CI.temp.c = ci_calc(df$temp.c),
+                       mean.log.r = mean(df$log.r), CI.r = ci_calc(df$log.r), 
+                       mean.log.t = mean(df$log.one.tlag), CI.t = ci_calc(df$log.one.tlag)
+  )
+  mean.info <- rbind(mean.info, meandf)
+}
+
+p <- ggplot(data = mean.info, aes(x = temp.c, y = mean.log.r )) +
+  geom_point() +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x')+
+  xlab("Temperature")+
+  ylab(expression(Mean~of~Exponential~Phase~Growth~Rate~(log(r[max])) ))+
+  geom_ribbon(data = mean.info[mean.info$temp.c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
+  geom_errorbar(aes(ymin = mean.log.r - CI.r, ymax = mean.log.r + CI.r, width = .1)) 
+save_plot("../results/arrhenius/log_mean_r_temp",p)
+
+p <- ggplot(data = mean.info, aes(x = temp.c, y = mean.log.t )) +
+  geom_point() +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x')+
+  xlab("Temperature")+
+  ylab(expression(Mean~of~Lag~Phase~Growth~Rate~(log(1/t[lag])) ))+
+  geom_ribbon(data = mean.info[mean.info$temp.c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.7) +
+  geom_errorbar(aes(ymin = mean.log.t - CI.t, ymax = mean.log.t + CI.t, width = .1)) +
+  theme(legend.position = 'none')
+save_plot("../results/arrhenius/log_mean_1tlag_temp",p)
 
 
 #################################
@@ -187,13 +300,16 @@ g5 <- group_plot(mean.info8)
 pdf("../results/arrhenius/mean_rate_temp_group.pdf")
 p <- grid.arrange(
   g2,g3,g4,g5, nrow = 4,
-  top = "Across species mean fitness value VS Temperature(Grouped)",
-  bottom = textGrob(
-    "CI is calculated from normal distribution",
-    gp = gpar(fontface = 6, fontsize = 9),
-    hjust = 1,
-    x = 1
-  )
+  #top = "Across species mean fitness value VS Temperature(Grouped)",
+  left = textGrob("Mean Growth Rate ± 95% CI", rot = 90, #angle
+                  vjust = 1),
+  bottom = textGrob("Mean Temperature ± 95% CI")
+  # bottom = textGrob(
+  #   "CI is calculated from normal distribution",
+  #   gp = gpar(fontface = 6, fontsize = 9),
+  #   hjust = 1,
+  #   x = 1
+  # )
 )
 print(p)
 graphics.off()
@@ -206,8 +322,24 @@ graphics.off()
 # }
 # e_double_mean5 <- double_mean(mean.info5)
 
+####################
+# log_rt_col_temp  #
+####################
+p <- ggplot(data = info0, aes(x = log.one.tlag, y = log.r, colour = temp_c)) +
+  geom_point(size = 1) +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA), panel.border = element_blank(),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  stat_smooth(method = 'loess', formula = 'y~x') +
+  xlab(expression(Lag~Phase~Growth~Rate~(log(t[lag])) ))+
+  ylab(expression(Exponential~Phase~Growth~Rate~(log(r[max]))))
+# stat_smooth(formula = y~x, method = lm, fullrange= TRUE,se = TRUE)
+save_plot("../results/arrhenius/log_rt_col_temp",p)
+
 ##########################################################################################
-# log of rmax and 1/tlag in mean value with CI VS temperature(°C) less than 20°C  #
+# log of rmax and 1/tlag in mean value with CI VS temperature(°C) less than 30°C  #
 ########################################################################################## 
 mean_df <- data.frame()
 temp.c.s <- unique(info.sta$temp.c)
@@ -226,6 +358,9 @@ r.temp <- mean_df[mean_df$mean.rmax == max(mean_df$mean.rmax),]$temp.c
 r.temp <- 30
 p <- ggplot(data = mean_df, aes(x = temp.c, y =mean.rmax )) +
   geom_point() +
+  # theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  theme_set(theme_bw()) +
+  theme(panel.grid.major = element_line(colour = NA)) +
   stat_smooth(data = mean_df[mean_df$temp.c <= r.temp,], 
               formula = y~x, method = lm) +
   geom_errorbar(aes(ymin=mean.rmax - ci.rmax, 
@@ -241,6 +376,8 @@ save_plot("../results/arrhenius/mean_log_r_temp",p)
 t.temp <- 30
 p <- ggplot(data = mean_df, aes(x = temp.c, y =mean.1tlag )) +
   geom_point() +
+  theme_set(theme_bw()) +
+  theme(panel.grid.major = element_line(colour = NA)) +
   stat_smooth(data = mean_df[mean_df$temp.c <= t.temp,],formula = y~x, method = lm) +
   geom_errorbar(aes(ymin=mean.1tlag - ci.1tlag, 
                     ymax=mean.1tlag + ci.1tlag,
@@ -249,6 +386,8 @@ p <- ggplot(data = mean_df, aes(x = temp.c, y =mean.1tlag )) +
   theme(legend.position = 'none') +
   labs(title = "Mean of log(1/tlag) VS temperature(°C) less than T_opt", x = "Temperature(°C)",y = "Mean of log(1/tlag) +/- CI")
 save_plot("../results/arrhenius/mean_log_tlag_temp",p)
+
+
 
 
 ########################################################
@@ -387,6 +526,8 @@ mean.e.r.ci <- ci_calc(E_r$Estimate)
 mean.e.t.ci <- ci_calc(E_t$Estimate)
 p <- ggplot(data = edf, aes(x = Estimate, y = sta.spe, colour = from)) +
   geom_point()+
+  theme_set(theme_bw()) +
+  theme(panel.grid.major = element_line(colour = NA)) +
   geom_errorbar(data = edf, aes(xmin = Estimate - 2*Std..Error, xmax = Estimate + 2*Std..Error)) +
   # geom_rect(aes(xmin=CI.r.spe[2,1], xmax=CI.r.spe[2,2], ymin=-Inf, ymax=Inf), color = 'red') +
   # geom_rect(aes(xmin=CI.t.spe[2,1], xmax=CI.t.spe[2,2], ymin=-Inf, ymax=Inf), color = 'blue') +
@@ -421,17 +562,19 @@ save_plot("../results/arrhenius/E_spe", p)
 
 # plot histogram
 
-p <- ggplot(edf, aes(x=Estimate, fill=from)) +
-  geom_histogram() +
-  #scale_fill_manual(values=c("#69b3a2", "#404080")) +
-  #theme_ipsum() +
-  # geom_bar(stat="count")
-  labs(fill="")
-
-################################################
-# add mean and medium data
-################################################
-save_plot("../results/arrhenius/E_hist", p)
+# p <- ggplot(edf, aes(x=Estimate, fill=from)) +
+#   geom_histogram() +
+#   theme_set(theme_bw()) +
+#   theme(panel.grid.major = element_line(colour = NA)) +
+#   #scale_fill_manual(values=c("#69b3a2", "#404080")) +
+#   #theme_ipsum() +
+#   # geom_bar(stat="count")
+#   labs(fill="")
+# 
+# ################################################
+# # add mean and medium data
+# ################################################
+# save_plot("../results/arrhenius/E_hist", p)
 
 ######################################
 # fitter plot ES, ES_average, and EL #
@@ -460,17 +603,25 @@ E_plot <- rbind(E_short,E_long)
 # histogram of the activation energy 
 hist.linetype <- c("twodash", "twodash","dotted", "dotted")
 hist.color <- c("#D55E00","royalblue3","#D55E00","royalblue3",'#D55E00',"royalblue3")
-p <- ggplot(edf, aes(x=Estimate, color=from, fill = from, alpha = .5)) +
+p <- ggplot(edf, aes(x=Estimate, color=from, fill = from)) +
   geom_density() +
+  theme_set(theme_bw()) +
+  theme(panel.grid.major = element_line(colour = NA)) +
+  xlim(xmin = 0, xmax = 5) +
+  # theme(legend.position = 'none') +
   geom_vline(data = hist_df, aes(xintercept=value, color=label)
-             , linetype = hist.linetype, colour = c("#D55E00","royalblue3","#D55E00","royalblue3")
+             , linetype = hist.linetype
+             , colour = c("#D55E00","royalblue3","#D55E00","royalblue3")
              ) +
+  scale_linetype_manual(guide = guide_legend(override.aes = list(colour = c("#D55E00","royalblue3","#D55E00","royalblue3")))) +
   scale_color_manual(values=hist.color)
 # twodash linetype represents mean value, dotted linetype represents median value
 save_plot("../results/arrhenius/E_hist", p)
   
 # activation energy acorss species short- and long-term plot
 Species_Overlap_Plot  <- ggplot(E_long, aes(x=from)) +
+  theme_set(theme_bw()) +
+  theme(panel.grid.major = element_line(colour = NA)) +
   geom_point(data=edf, aes(y=Estimate, colour='3', shape = '3'), alpha = 0.7, position = position_jitter(width = 0.4, height = 0.0)) +
   geom_errorbar(data = E_short,aes(ymax=E_max, ymin=E_min), width=0.15, size=1, position="dodge") +
   geom_errorbar(data = E_long,aes(ymax=E_max, ymin=E_min), width=0.15, size=1, position="dodge") +
@@ -543,6 +694,3 @@ save_plot("../results/arrhenius/E_comperasion", Species_Overlap_Plot)
 # # save_plot("../results/arrhenius/lnA_spe", p)
 # save_plot("../results/arrhenius/lnA_spe_nostaspe", p)
 
-################################################
-# Sharpe-Schoolfield fitting #
-################################################

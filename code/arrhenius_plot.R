@@ -193,23 +193,7 @@ group_temp <- function(dat, param){
 # Arrhenius plot of everything above #
 ######################################
 
-##################################################
-# log of 1/tlag and rmax VS 1/KT #
-##################################################
-# function to plot y parameters VS 1/temp
-p <- ggplot(data = info0, aes(x = one.over.KT, y =log(rmax) )) +
-  geom_point() +
-  stat_smooth(data = info0[info0$temp_c <= 30,], formula = y~x, method = lm) +
-  geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
-  theme(legend.position = 'none')
-save.plot("../results/arrhenius/log_r_KT",p)
 
-p <- ggplot(data = info0, aes(x = one.over.KT, y =log(1/tlag) )) +
-  geom_point() +
-  stat_smooth(data = info0[info0$temp_c <= 30,], formula = y~x, method = lm) +
-  geom_ribbon(data = info0[info0$temp_c >= 30,], aes(ymin = -Inf, ymax = Inf), fill = 'grey', alpha = 0.5) +
-  theme(legend.position = 'none')
-save.plot("../results/arrhenius/log_1tlag_KT",p)
 
 ##############################################################
 # log of 1/tlag VS 1/KT less than T_pk in mean value with CI #

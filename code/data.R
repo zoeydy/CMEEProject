@@ -75,8 +75,8 @@ for (i in 1:length(unique(Data$id))){
   # graphics.off()
 }
 
-# delete data set has less than 6 points
-Data <- Data[Data$n > 5,]
+# delete data set has less than 5 points
+Data <- Data[Data$n >= 5,]
 length(unique(Data$ID))
 
 # # add taxonomy information
@@ -100,13 +100,13 @@ length(unique(Data$ID))
 #   dat$object <- obj.df[i]
 # }
 ####################################
-test.id <- subset(Data, Data$id == 643)
-cit <- test.id$Citation
-test.cit <- subset(Data, Data$Citation == cit)
-unique(test.cit$Citation)
-unique(test.cit$id)
-length(unique(test.cit$id))
-length(unique(Data$id))
+# test.id <- subset(Data, Data$id == 643)
+# cit <- test.id$Citation
+# test.cit <- subset(Data, Data$Citation == cit)
+# unique(test.cit$Citation)
+# unique(test.cit$id)
+# length(unique(test.cit$id))
+# length(unique(Data$id))
 
 # save pop
-write.csv(Data, "../data/mini_pop.csv")
+write.csv(Data, "../data/pop.csv")

@@ -13,12 +13,12 @@ for (pkg in required_packages){
 #############
 # LOAD DATA #
 #############
-Data <- read.csv("../data/mini_pop.csv")
+Data <- read.csv("../data/pop.csv")
 Data <- Data[order(Data[,'id'], Data[,'Time']),]
 ############
 # FUNCTION #
 ############
-source("mini_model_fit_fun.R")
+source("model_fit_fun.R")
 
 
 # Get vector of run IDs
