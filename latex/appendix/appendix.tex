@@ -1,0 +1,66 @@
+\appendix
+\section{Supplementary Information}
+
+\subsection{Data} \label{Data_SI}
+\citep{bae2014growth,blagodatskaya2007priming,galarz2016predicting,gill1991growth,heo2009estimation,inoue1977effect,kapetanakou2019model,kirchman1997regulation,koutsoumanis2006development,lee2007model,phillips1987relation,roth1962continuity,silva2018modelling,sivonen1990effects,stannard1985temperature,vankerschaver1996influence,willocx1993modelling,zwietering1994modeling}
+
+%%% problematic citation if adding in bib file
+% \citep{bernhardt2018metabolic}
+
+
+
+
+%%%%%% Operational Temperature Range
+% \newpage
+\subsection{Operational Temperature Range}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\textwidth]{Plot/mean_rate_temp_group.pdf}
+\caption{Operational Temperature Range Grouped by Temperature}\label{fig:mean_rate_temp_group}
+{\footnotesize Across species mean maximum growth rate ($log(r_{max})$, left) and lag phase growth rate ($log(1/t_{lag})$, right) with 95\% confidence interval in different groups of temperature, from the first to the forth row represents 5-8 groups respectively.}
+\end{figure}
+
+
+
+%%%%%%%%%%%
+\subsection{Typical Model Fitting Plot}
+\begin{figure}[ht!]
+\centering
+    \begin{subfigure}{.47\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{Plot/typ_gomp_fit.pdf}
+      \caption{Typical Gompertz Model Fitting Plot}
+      \label{fig:typ_gomp_fit}
+    \end{subfigure}%
+    \begin{subfigure}{.47\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{Plot/typ_arrhe_fit.pdf}
+      \caption{Typical Boltzmann-Arrhenius Model Fitting Plot}
+      \label{fig:typ_arrhe_fit}
+    \end{subfigure}
+
+\caption{Typical Model Fitting Plot}\label{fig:typ_fit}
+{\footnotesize The typical model fitting plots. \textbf{a} A typical Gompertz Model fitting plot with \textit{AICc, AIC, BIC} as goodness of fit criteria. \textbf{b} A typical Boltzmann-Arrhenius model fitting plot with \textit{$r^2$}}
+\end{figure}
+
+%%% Activation Energy
+%\newpage
+\subsection{Activation Energy}
+
+% figure
+%1
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\linewidth]{Plot/E_spe.pdf}
+\caption{Activation Energy of Each Species}\label{fig:E_Spe}
+{\footnotesize Variation in short-term thermal sensitivity($E_S$) amongst bacteria groups, with vertical dash lines annotating the mean variations($\Bar{E}_S$, short-term) and the long-term($E_L$) sensitivity both with 95\% confidence interval}
+\end{figure}
+
+\begin{center}
+\input{Table/E_rmax_table}
+\end{center}
+\begin{center}
+\input{Table/E_tlag_table}
+\end{center}
+

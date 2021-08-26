@@ -240,21 +240,32 @@ for (i in 1:length(IDs)){
   }
 }
 
-# ###############################
-# # Plot Typical Growth Pattern #
-# ###############################
-# # 128 765 813
-# pdf(file = "../results/typ_growth_pattern.pdf")
-# typ.data <- subset(Data, Data$id == 813)
-# plot.id <- plot.df[plot.df$id == 813, ]
-# p <- ggplot(typ.data[-1,], aes(x = Time, y = logN)) +
-#   geom_point(size = 1) +
-#   labs(x = "Time (h)", y = "Logarithmic Growth (logN)") +
-#   ggtitle("Gompertz model comparison plot") +
-#   geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
-#   annotate('text', label = legend, x = min(data$Time), y = min(data$logN), hjust = -.5, vjust = 0)
-# print(p)
-# graphics.off()
+###############################
+# Plot Typical Growth Pattern #
+###############################
+# 128 765 813 635
+typ.data <- subset(Data, Data$id == 635)
+plot.id <- plot.df[plot.df$id == 635, ]
+info.id <- infos[infos$id == 635, ]
+#legend <- paste0('AICc = ', info.id$AICc, '\nAIC = ', info.id$AIC,
+#                 '\nBIC = ', info.id$BIC, '\nRsquare = ', info.id$rsq)
+legend <- "AICc = -330.10\nAIC = -331.01\nBIC = -321.55" #\nR^2 = 0.95
+pdf(file = "../results/typ_gomp_fit.pdf")
+p <- ggplot(typ.data, aes(x = Time, y = logN)) +
+  geom_point() +
+  labs(x = "Time (h)", y = "Log of Population Size (log(N))") +
+  # ggtitle("Typical Gompertz Model Fit") +
+  geom_line(data = plot.id, aes(x = time, y = plot.point), size=1) +
+  theme_set(theme_bw()) +
+  theme_classic() +
+  theme(panel.grid.major = element_line(colour = NA),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+#legend.position=c(3.5,0.39) 
+  annotate('text', label = legend, x = 17, y = -2.3, hjust = 0, vjust = 0, size = 4.6)
+
+print(p)
+graphics.off()
 
 
 

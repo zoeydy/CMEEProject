@@ -533,6 +533,7 @@ fit.vali.info <- rbind(fit.vali.info.r,fit.vali.info.t)
 # fit.r.spe <- lm(fit.vali.info.r, formula = log.r ~ mi.one.over.KT)
 # fit.t.spe <- lm(fit.vali.info.t, formula = log.one.tlag~mi.one.over.KT)
 
+######################## long-term using validate species
 spe.r <- unique(fit.vali.info.r$sta.spe)
 spe.pk.r <- data.frame()
 for (i in 1:length(spe.r)) {
@@ -567,6 +568,48 @@ fit.t.spe <- lm(spe.pk.t, formula = log.one.tlag ~ mi.one.over.KT)
 CI.r.spe <- confint(fit.r.spe, level = 0.95)
 CI.t.spe <- confint(fit.t.spe, level = 0.95)
 
+
+
+# ################## long-term using id
+# id.r <- unique(fit.vali.info.r$id)
+# id.pk.r <- data.frame()
+# for (i in 1:length(id.r)) {
+#   spedf <- fit.vali.info.r[fit.vali.info.r$id == id.r[i],]
+#   id.pk <- data.frame()
+#   for (j in 1:length(unique(spedf$temp.c))) {
+#     temp.df <- spedf[spedf$temp.c == unique(spedf$temp.c)[j],]
+#     temp.df$mean.r <- mean(temp.df$log.r)
+#     id.pk <- rbind(id.pk, temp.df)
+#   }
+#   id.pk <- id.pk[id.pk$mean.r == max(id.pk$mean.r),]
+#   id.pk.r <- rbind(id.pk.r, id.pk)
+# }
+# 
+# spe.t <- unique(fit.vali.info.t$sta.spe)
+# id.pk.t <- data.frame()
+# for (i in 1:length(spe.t)) {
+#   spedf <- fit.vali.info.t[fit.vali.info.t$sta.spe == spe.t[i],]
+#   id.pk <- data.frame()
+#   for (j in 1:length(unique(spedf$temp.c))) {
+#     temp.df <- spedf[spedf$temp.c == unique(spedf$temp.c)[j],]
+#     temp.df$mean.t <- mean(temp.df$log.one.tlag)
+#     id.pk <- rbind(id.pk, temp.df)
+#   }
+#   id.pk <- id.pk[id.pk$mean.t == max(id.pk$mean.t),]
+#   id.pk.t <- rbind(id.pk.t, id.pk)
+# }
+# 
+# fit.r.id <- lm(id.pk.r, formula = log.r ~ mi.one.over.KT)
+# fit.t.id <- lm(id.pk.t, formula = log.one.tlag ~ mi.one.over.KT)
+# fit.r.spe <- fit.r.id
+# fit.t.spe <- fit.t.id
+# 
+# CI.r.id <- confint(fit.r.id, level = 0.95)
+# CI.t.id <- confint(fit.t.id, level = 0.95)
+# CI.r.spe <- CI.r.id
+# CI.t.spe <- CI.t.id
+
+#########################################
 ################################
 # save E value tables to latex
 E_r <- fit.vali.r[fit.vali.r$param == "E",]
@@ -683,62 +726,86 @@ E_plot <- rbind(E_short,E_long)
 # histogram of the activation energy 
 hist.linetype <- c("twodash", "twodash","dotted", "dotted")
 hist.color <- c("#D55E00","royalblue3","#D55E00","royalblue3",'#D55E00',"royalblue3")
-p <- ggplot(edf, aes(x=Estimate, color=from, fill = from)) +
+# pdf("../results/arrhenius/E_hist.pdf", width = 9, height = 9)
+p <- ggplot(edf, aes(x=Estimate, color=from)) +
   geom_density() +
   theme_set(theme_bw()) +
-  theme(panel.grid.major = element_line(colour = NA)) +
-  xlim(xmin = 0, xmax = 5) +
-  # theme(legend.position = 'none') +
-  geom_vline(data = hist_df, aes(xintercept=value, color=label)
-             , linetype = hist.linetype
-             , colour = c("#D55E00","royalblue3","#D55E00","royalblue3")
+  #theme_classic() +
+  scale_color_manual(values = c("#D55E00","royalblue3"), 
+                     labels = c(expression(r[max]), expression(t[lag])) ) +
+  guides(fill=guide_legend(title="Parameters")) +
+  labs(colour = "Parameters", size = 17) +
+  theme(panel.grid.major = element_line(colour = NA),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17, angle = -90),
+        legend.position=c(3.5,0.39)
   ) +
-  scale_linetype_manual(guide = guide_legend(override.aes = list(colour = c("#D55E00","royalblue3","#D55E00","royalblue3")))) +
-  scale_color_manual(values=hist.color)
+  xlab("Activation Energy (eV)") +
+  xlim(xmin = 0, xmax = 5) +
+  # geom_vline(data = hist_df, aes(xintercept=value, color=label)
+  #            , linetype = hist.linetype
+  #            , colour = c("#D55E00","royalblue3","#D55E00","royalblue3")
+  # ) +
+  geom_vline(data = hist_df[3:4,], aes(xintercept=value, color=label)
+             , linetype = c("twodash", "twodash")
+             , colour = c("#D55E00","royalblue3")
+  ) +
+  scale_linetype_manual(guide = guide_legend(override.aes = list(colour = c("#D55E00","royalblue3","#D55E00","royalblue3")))) 
+# print(p)
+# graphics.off()
 # twodash linetype represents mean value, dotted linetype represents median value
 save_plot("../results/arrhenius/E_hist", p)
 
 # activation energy acorss species short- and long-term plot
+# pdf("../results/arrhenius/E_comperasion.pdf", width = 12, height = 12)
 Species_Overlap_Plot  <- ggplot(E_long, aes(x=from)) +
   theme_set(theme_bw()) +
-  theme(panel.grid.major = element_line(colour = NA)) +
-  #theme_classic()+
-  geom_point(data=edf, aes(y=Estimate, colour='3', shape = '3'), alpha = 0.7, position = position_jitter(width = 0.4, height = 0.0)) +
-  geom_errorbar(data = E_short,aes(ymax=E_max, ymin=E_min), width=0.15, size=1, position="dodge") +
-  geom_errorbar(data = E_long,aes(ymax=E_max, ymin=E_min), width=0.15, size=1, position="dodge") +
-  geom_point(data = E_plot,aes(y=E, colour=SL, shape = SL), size = 4, position="dodge") +  
-  # xlab('Parameter') +
-  ylab('Activation Energy (E)') +
+  theme(panel.grid.major = element_line(colour = NA),
+        text = element_text(size=17),
+        axis.title.x = element_text(size=17),
+        axis.title.y = element_text(size=17)) +
+  geom_point(data=edf, aes(y=Estimate, colour='3', shape = '3'), 
+             alpha = 0.9, position = position_jitter(width = 0.4, height = 0.0)) +
+  geom_errorbar(data = E_short,aes(ymax=E_max, ymin=E_min), width=0.15, size=1) +
+  geom_errorbar(data = E_long,aes(ymax=E_max, ymin=E_min), width=0.15, size=1) +
+  geom_point(data = E_plot,aes(y=E, colour=from, shape = SL), size = 4) +  
+  ylab('Activation Energy (eV)') +
+  xlab("") +
   theme(legend.title=element_blank(),
         legend.justification=c(-0.5,0.9), legend.position=c(0,0.9),
         plot.margin = unit(c(1,0,1,1), "cm"))+
   scale_colour_manual(name = "Colour", values =c('#E69F00','#D55E00','royalblue3'),
-                      labels = c(expression(italic('E'['S'])),
-                                 expression(italic('E'['L'])),
-                                 quote(italic('\U0112'[S])))
-  ) +
-  # scale_shape(guide = FALSE)+
-  #geom_hline(aes(yintercept=0.65), linetype='dotted') +
-  scale_shape_manual(name = "Shape",values =c(19,15,17),
-                     labels = c(expression(italic('E'['S'])),
-                                expression(italic('E'['L'])),
-                                quote(italic('\U0112'[S])))
+                      # labels = c(expression(italic('E'['S'])),
+                      #            expression(italic('E'['L'])),
+                      #            quote(italic('\U0112'[S])))
   ) 
-  #coord_cartesian(ylim = c(0,5))
-  
-  
-  # scale_shape_manual(guide = 'legend',
-  #                    values =c('3'=19,
-  #                              'ES'=15,
-  #                              'EL'=17
-  #                              ),
-  #                    labels = c(expression(italic('E'['S'])),
-  #                               expression(italic('E'['L'])),
-  #                               quote(italic('\U0112'[S])))
-# ) +
+# print(Species_Overlap_Plot)
+# graphics.off()
+# scale_shape(guide = FALSE)+
+#geom_hline(aes(yintercept=0.65), linetype='dotted') +
+# scale_shape_manual(name = "Shape",values =c(19,15,17),
+#                    labels = c(expression(italic('E'['S'])),
+#                               expression(italic('E'['L'])),
+#                               quote(italic('\U0112'[S])))
+# )
+#coord_cartesian(ylim = c(0,5))
+
+# scale_shape_manual(guide = 'legend',
+#                    values =c('3'=19,
+#                              'ES'=15,
+#                              'EL'=17
+#                              ),
+#                    labels = c(expression(italic('E'['S'])),
+#                               expression(italic('E'['L'])),
+#                               quote(italic('\U0112'[S])))
+# ) 
 # main_theme
+
 save_plot("../results/arrhenius/E_comperasion", Species_Overlap_Plot)
 
+
+
+######################################
 
 # # lnA
 # adf <- fit.vali[fit.vali$param == "lnA",]
