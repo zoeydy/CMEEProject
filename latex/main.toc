@@ -1,0 +1,20 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Methods}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Data Collection}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Estimating Growth Rate Parameters}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Determining the Operational Temperature Range}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Calculating the Activation Energy}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Comparison of Thermal Response Patterns}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Results}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Correlation Between Growth Rate Parameters}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Operational Temperature Range}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Thermal Response Comparison}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{8}{section.4}%
+\contentsline {section}{Data and Code Availability}{12}{section*.11}%
+\contentsline {section}{Acknowledgement}{13}{section*.12}%
+\contentsline {section}{\numberline {A}Supplementary Information}{17}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Data}{17}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Operational Temperature Range}{17}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Typical Model Fitting Plot}{18}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Activation Energy}{18}{subsection.A.4}%
